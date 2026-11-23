@@ -1,0 +1,379 @@
+SMART SCHOOL
+PRODUCT REQUIREMENTS DOCUMENT
+Absensi Wajah Per Mata Pelajaran di Dalam Kelas
+Admin Windows, Guru Android, dan Orang Tua Android
+Berdasarkan 23 frame Figma Smart School — pemmob
+
+Catatan: dokumen ini merupakan spesifikasi rancangan, bukan pernyataan bahwa fitur atau akurasi sistem sudah tersedia/teruji. Semua parameter operasional contoh harus disetujui pihak sekolah.
+
+Ringkasan Eksekutif
+Smart School adalah sistem sekolah lintas perangkat: Admin mengelola data akademik dan relasi guru-kelas-mata pelajaran dari aplikasi Windows; Guru memakai Android untuk membuka sesi dan memindai wajah siswa di dalam kelas; Orang Tua memakai Android untuk menerima notifikasi per mata pelajaran. SETIAP sesi pelajaran yang dijadwalkan dan berlangsung wajib melakukan absensi terpisah. Kehadiran terverifikasi menghasilkan satu notifikasi hadir per siswa/sesi dan foto bukti privat di detail aplikasi orang tua, bukan hanya pada pelajaran pertama. Data diproses dan disimpan di backend Firebase dengan API aman untuk Windows.
+Jika siswa belum tercatat hadir sampai batas absensi suatu sesi, sistem mengirim peringatan “Belum tercatat hadir”. Setelah guru menutup sesi atau mengonfirmasi kondisi akhir, status dapat menjadi Hadir, Terlambat, Izin, Sakit, Tidak Hadir, atau Belum Diverifikasi. Perubahan status penting dikirim ulang agar orang tua tidak salah menyimpulkan.
+1. Identitas dan tujuan produk
+Nama produk: Smart School. Jenis: sistem informasi pembelajaran dan monitoring kehadiran siswa. Solusi utama: absensi per mata pelajaran menggunakan kamera HP guru/tablet kelas, validasi guru, riwayat sesi, foto bukti, dan notifikasi kepada orang tua.
+Masalah yang diselesaikan: pencatatan kehadiran manual memakan waktu; keterlambatan informasi ke wali; sulitnya menelusuri bukti dan koreksi absensi; data kelas, jadwal, nilai, dan kehadiran tersebar.
+1.1 Tujuan terukur
+
+1.2 Batasan dan asumsi
+Scan dilakukan DI DALAM KELAS untuk SETIAP SESI mata pelajaran yang berlangsung (bukan hanya pelajaran pertama), terkait pelajaran, kelas, guru dan waktu; tidak menilai kedatangan ke gerbang sekolah.
+Produk terdiri atas aplikasi Windows khusus admin dan aplikasi Android untuk guru/wali; absensi manual guru tersedia jika kamera, persetujuan wajah, atau jaringan bermasalah.
+Admin bertanggung jawab menetapkan relasi guru–mata pelajaran–kelas–tahun ajaran serta jadwal. Satu guru boleh mengajar lebih dari satu kelas/pelajaran; satu pelajaran boleh diampu guru berbeda sesuai kelas/jadwal.
+Peluncuran dengan siswa sungguhan mensyaratkan persetujuan orang tua/wali yang valid serta jalur alternatif non-biometrik.
+Ambang kecocokan wajah dan anti-spoofing perlu diuji; angka “98%” pada Figma diperlakukan sebagai ilustrasi UI, bukan nilai akurasi yang sudah terbukti.
+2. Pengguna dan kewenangan
+
+2.1 Pola penugasan guru dan kepemilikan jadwal
+Admin Windows adalah satu-satunya role yang dapat menyusun penugasan guru. Contoh: Pak Ahmad mengajar Matematika di 8A dan 8B; Bu Siti mengajar IPA di 8A; Pak Budi mengajar IPA di 8B. Satu mata pelajaran tidak harus hanya punya satu guru pada seluruh sekolah. Masing-masing jadwal memiliki satu guru utama, sementara pengganti dapat ditetapkan khusus untuk sesi tertentu.
+
+Satu blok Matematika 07.00–08.30 dihitung satu sesi sekalipun mencakup dua jam pelajaran administratif. Jika Matematika muncul kembali dalam blok terpisah, itu sesi kedua dan wajib absensi serta notifikasi baru.
+2.2 Prinsip notifikasi pada setiap pelajaran
+Keputusan produk final: TIDAK ADA pembatasan “notifikasi hadir hanya pada pelajaran pertama”. Jika siswa mengikuti tujuh sesi berbeda, sistem dapat mengirim tujuh notifikasi hadir, masing-masing memiliki nama mata pelajaran, guru, jam, dan tautan foto bukti sesi itu. Notifikasi ketidakhadiran atau pembaruan yang diperlukan adalah event tambahan. Semua event di-deduplikasi PER siswa dan PER sesi, bukan digabung lintas pelajaran.
+3. Cakupan dan prioritas
+
+4. Pemetaan 23 frame Figma
+Pemetaan berikut merujuk 23 PNG dari ZIP Figma pemmob. Frame 1–16 merepresentasikan Guru dan frame 17–23 Orang Tua. Dashboard Admin Windows BELUM ADA dalam 23 frame dan harus dibuat sebagai desain baru. Frame yang ada adalah rancangan visual, bukan bukti backend sudah dibangun.
+
+5. Alur pengguna utama
+5.1 Guru — membuka sesi dan mencatat hadir
+1. Guru login dan melihat jadwal Matematika kelas 8A, misalnya 07.00–08.30.
+2. Guru menekan “Mulai Mengajar” lalu mengonfirmasi kelas, tanggal, jam, daftar siswa, dan tenggat absensi.
+3. Sistem membuka sesi dengan status OPEN; siswa yang belum diproses ditandai BELUM_ABSEN, bukan TIDAK_HADIR.
+4. Guru mengarahkan kamera ke satu siswa. Sistem memeriksa kualitas gambar, mendeteksi wajah, memeriksa indikasi spoofing (bila tersedia), lalu membandingkan dengan data siswa yang sah untuk kelas itu.
+5. Sistem menampilkan kandidat identitas. Guru memeriksa wajah, nama, NIS, dan kelas; guru mengonfirmasi Hadir atau memilih Scan Ulang/Tolak.
+6. Backend mencatat absensi serta waktu server, menyimpan foto bukti sesuai kebijakan dan mengirim event ke antrean notifikasi.
+7. Untuk sesi INI, sistem membuat event HADIR unik serta notifikasi kepada setiap wali tertaut. Orang tua mengetuk push untuk melihat foto bukti sesi ini setelah login.
+8. Guru dapat memilih “Scan Siswa Berikutnya”, masuk daftar kehadiran, atau menyelesaikan sesi. Saat pelajaran berikutnya dimulai, guru yang ditugaskan melakukan absensi BARU dan sistem mengirim notifikasi BARU per siswa/sesi.
+5.2 Belum hadir, penutupan sesi, dan koreksi
+1. Pada tenggat yang ditentukan sekolah, job terjadwal memeriksa sesi OPEN/ACTIVE dan daftar siswa yang belum absen.
+2. Sebelum mengirim peringatan, sistem mengecek libur, pembatalan pelajaran, guru pengganti, status izin/sakit, serta apakah absensi terverifikasi sudah tersimpan.
+3. Untuk siswa yang masih BELUM_ABSEN, sistem membuat satu peringatan BELUM_TERCATAT_HADIR per siswa/sesi dan mengirim push ke wali.
+4. Saat sesi ditutup, guru meninjau siswa yang tersisa dan menetapkan Tidak Hadir, Izin, Sakit, atau status evaluasi jika belum pasti.
+5. Jika siswa terlambat kemudian hadir, status diperbarui ke TERLAMBAT/HADIR, audit disimpan dan wali menerima pemberitahuan pembaruan.
+6. Jika guru membetulkan identitas/absensi, sistem memperbarui data dan notifikasi dengan teks koreksi; tidak menghapus jejak lama secara diam-diam.
+5.3 Orang tua — mendapatkan bukti
+1. Orang tua login menggunakan akun yang ditautkan admin ke siswa.
+2. FCM mengirim pemberitahuan singkat tanpa foto sensitif di layar kunci secara default.
+3. Orang tua membuka detail notifikasi untuk melihat nama siswa, pelajaran, guru, waktu, status, dan foto bukti yang masih berlaku.
+4. Orang tua dapat melihat riwayat dan mengajukan klarifikasi melalui kanal sekolah; orang tua tidak dapat memalsukan atau mengubah catatan.
+6. Aturan bisnis absensi
+
+6.1 Aturan tambahan multi-pelajaran
+BR-14: Setiap sesi pelajaran yang benar-benar berlangsung memiliki proses absensi mandiri; sesi berikutnya tidak mewarisi status HADIR sesi sebelumnya.
+BR-15: Satu hasil HADIR terverifikasi menghasilkan tepat satu notifikasi HADIR PER siswa PER sesi ke setiap wali yang berhak, walau pada hari yang sama sudah pernah hadir.
+BR-16: Admin menentukan teaching assignment dan jadwal. Guru hanya boleh membuka jadwal yang ditugaskan, kecuali ditunjuk sebagai pengganti secara resmi.
+BR-17: Jika guru tidak membuka sesi dan status masih NOT_STARTED, sistem memperingatkan guru/admin, BUKAN otomatis menyebut seluruh siswa tidak hadir.
+BR-18: Pengiriman foto bukti adalah melalui tautan detail aplikasi orang tua setelah login; payload FCM tidak boleh memuat foto, template wajah, atau URL foto publik.
+BR-19: Pada absensi manual karena kendala biometrik, notifikasi tetap dikirim untuk sesi tersebut dan menerangkan metode MANUAL; tidak mengarang foto hasil scan.
+BR-20: Jika ada jadwal ganda yang beririsan untuk kelas/guru/ruang, admin harus menyelesaikan konflik sebelum jadwal dapat diaktifkan.
+6.2 Mesin status absensi
+Status catatan: BELUM_ABSEN → MENUNGGU_VERIFIKASI → HADIR / TERLAMBAT / MANUAL_HADIR; atau BELUM_ABSEN → BELUM_TERCATAT_HADIR (status peringatan) → IZIN / SAKIT / TIDAK_HADIR / HADIR_TERLAMBAT. Status peringatan tidak boleh dipakai menghitung jumlah “bolos” final. Semua koreksi memakai riwayat versi.
+7. Kebutuhan fungsional terperinci
+
+8. Spesifikasi notifikasi
+
+Pemberitahuan push adalah sinyal, bukan bukti pengantaran 100% ke layar HP. FCM dapat terdampak izin notifikasi, jaringan, dan kondisi perangkat. Karena itu, setiap event juga disimpan dalam inbox aplikasi. Thumbnail foto di push dapat dipertimbangkan sebagai opt-in P1, namun default aman adalah foto hanya tampil setelah membuka aplikasi dan login.
+8.1 Tenggat dan deduplikasi
+Tenggat default usulan: +15 menit dari waktu mulai sesi, tetapi admin mengatur per sekolah/jadwal; job berjalan dengan timezone dan kalender sekolah.
+Kunci peringatan unik: sessionId + studentId + eventType. Peristiwa berulang tidak mengirim spam.
+Pembaruan status menggunakan eventId berbeda namun tetap berkaitan dengan sessionId/studentId; utamakan notifikasi koreksi, bukan menghapus push lama.
+Catat delivery state: QUEUED → SENT_TO_FCM atau FAILED/RETRY; status DELIVERED_TO_DEVICE hanya bila ada sinyal resmi yang sah, jangan diasumsikan.
+9. Arsitektur dan teknologi
+Arsitektur FINAL: (1) Flutter Windows Desktop untuk Admin, (2) Flutter Android untuk Guru, (3) Flutter Android untuk Orang Tua, (4) Cloud Run HTTPS API atau layanan API setara yang memverifikasi identitas dan role admin, (5) Firebase Authentication, Firestore, Storage, Cloud Functions v2, Scheduler dan FCM. Admin Windows berkomunikasi dengan API backend, BUKAN mengandalkan plugin FlutterFire Windows untuk operasi produksi. Android memakai SDK Firebase resmi bila didukung. Semua penulisan istimewa, penugasan guru, perubahan jadwal, pembuatan signed access, dan notifikasi divalidasi di backend.
+
+9.1 Diagram alur komponen (logis)
+ADMIN WINDOWS → HTTPS API terautentikasi → Firebase Admin SDK → Firestore (master data/penugasan/jadwal). GURU ANDROID → Firebase Auth + layanan backend → Firestore (sessions/attendance) dan Storage privat (foto). ORANG TUA ANDROID → Firebase Auth + rules/API read → Firestore (inbox/riwayat) dan foto berizin. Cloud Scheduler → Functions → evaluasi tenggat tiap sesi; event absensi → Functions → notifikasi per sesi → FCM → aplikasi orang tua.
+9.2 Batasan FlutterFire di Windows dan strategi aman
+Per 18 Oktober 2026 dokumentasi resmi Firebase menyatakan plugin FlutterFire pada Windows masih untuk alur pengembangan lokal, bukan produksi. Karena itu aplikasi Admin Windows WAJIB menggunakan Backend API HTTPS yang memegang kredensial server secara aman. Jangan mendistribusikan service-account JSON, Firebase Admin SDK credential, atau secret cloud dalam file .exe. Backend memakai verifikasi identitas, pemeriksaan role dan schoolId, kebijakan least privilege, rate limit, dan audit. Auth desktop sebaiknya menggunakan alur OAuth/OIDC dengan browser sistem dan PKCE (bila penyedia/konfigurasi mendukung) atau metode identitas aman lain yang tervalidasi; mekanisme final diputuskan saat desain teknis.
+Distribusi Windows bukan semata satu file .exe: sertakan DLL/runtime yang diperlukan, aset aplikasi, installer, dan mekanisme pembaruan. Bangun dan uji pada PC Windows sekolah dengan Visual Studio workload Desktop development with C++.
+9.3 Struktur repositori yang direkomendasikan
+
+Alternatif satu monorepo Flutter dengan beberapa entrypoint juga sah. Pemisahan build admin-guru-wali tetap harus jelas, termasuk pengujian role dan keamanan.
+10. Model data Firestore
+Gunakan document ID internal acak; NIS bukan kunci keamanan. Gunakan waktu server (Timestamp) untuk peristiwa transaksi, dateKey YYYY-MM-DD dalam zona sekolah untuk pengelompokan; jangan menyimpan foto langsung di dokumen Firestore.
+
+10.1 Relasi guru - mapel - kelas dan identitas penerima
+`teachers`/users berelasi banyak-ke-banyak dengan `subjects` dan `classes` melalui `teaching_assignments`. `schedules` menunjuk assignment; `sessions` dibuat dari jadwal dengan guru aktual yang dapat berbeda dari guru utama bila ada substitusi. `student_guardians` menjadi sumber otorisasi penerima (termasuk lebih dari satu wali). `attendance` menggunakan pasangan (sessionId, studentId), sedangkan `notifications` menggunakan (recipientUid, sessionId, eventType, revision) sebagai kunci idempoten. Dengan struktur ini 7 mata pelajaran = 7 sesi yang terpisah, dan setiap foto tidak tertukar.
+10.2 Contoh dokumen absensi
+attendance/SESSION_8A_MTK_20261005__STU_001
+  sessionId: "SESSION_8A_MTK_20261005"
+  studentId: "STU_001"
+  status: "HADIR"               // bukan "BELUM_ABSEN"
+  method: "FACE_VERIFIED"
+  capturedAt: Timestamp(...)
+  verifiedAt: Timestamp(...)
+  verifiedBy: "uid_guru_ahmad"
+  proofPhotoPath: "attendance-proof/2026-10-05/STU_001/abc.jpg"
+  version: 1
+  updatedAt: Timestamp(...)
+
+11. Keamanan, privasi, dan tata kelola
+Data biometrik serta data anak termasuk data pribadi spesifik pada UU No. 27 Tahun 2022, Pasal 4; Pasal 25 mengharuskan persetujuan orang tua/wali untuk pemrosesan data pribadi anak. Kebijakan retensi, penolakan biometrik dan transparansi tujuan wajib siap sebelum penggunaan.
+Gunakan prinsip minimalisasi: ambil satu foto bukti yang perlu; hindari menyimpan video kelas/semua wajah yang tampak; jangan menaruh embedding/foto dalam push payload.
+Pendaftaran wajah harus dapat ditolak/ditarik persetujuannya; fasilitas absensi manual tetap tersedia dan tidak merugikan siswa.
+Izin baca wali dibatasi pada siswa yang terverifikasi tertaut; guru pada kelas/sesi yang ditugaskan; admin dibatasi berbasis kebutuhan.
+Terapkan Firestore & Storage Security Rules, App Check bila sesuai, logging akses staf, keamanan kunci, verifikasi otorisasi di Cloud Functions, dan penghapusan token perangkat yang tidak valid.
+Tentukan retensi foto bukti (usulan awal untuk diputuskan: 30–90 hari), masa simpan templat wajah, dan prosedur penghapusan setelah siswa keluar/consent dicabut.
+Sediakan prosedur insiden data dan banding atas salah cocok; lakukan evaluasi bias model, false match, false reject dan dampaknya sebelum operasional.
+12. Non-functional requirements / NFR
+
+13. Acceptance criteria dan skenario uji
+
+14. Rencana implementasi bertahap
+
+Strategi pengerjaan: selesaikan absensi manual dan notifikasi sebelum face recognition. Dengan begitu alur bisnis teruji meskipun kualitas model wajah masih perlu diperbaiki.
+15. Risiko dan mitigasi
+
+16. Gap desain dan backlog UI yang perlu ditambah
+Aplikasi ADMIN WINDOWS BARU: layar login, dashboard statistik, master data siswa/guru/wali, mata pelajaran/kelas, teaching assignments, penjadwalan, kalender/izin, monitoring, audit, kebijakan biometrik dan pengaturan.
+Halaman awal Wali: login/registrasi akun, pemilihan anak jika memiliki lebih dari satu.
+Frame 08–09: kondisi banyak wajah, wajah terlalu jauh, pencahayaan buruk, tidak cocok, consent tidak ada, dan tombol absensi manual.
+Frame 10: bedakan “absensi tersimpan” vs “push diproses”; kegagalan pengiriman tidak mengubah status Hadir.
+Frame 11: status BELUM_TERCATAT_HADIR (sementara), IZIN, SAKIT, TERLAMBAT, koreksi dengan alasan, dan dialog Selesaikan Absensi.
+Frame 18: notifikasi masing-masing sesi mata pelajaran (meskipun sama-sama HADIR di hari itu), jenis Belum tercatat/Tidak Hadir/Koreksi, dan detail bukti foto yang terproteksi.
+Frame 19: filter tanggal/mata pelajaran dan tandai apakah statistik berdasarkan sesi, bukan hitungan hari sekolah.
+Semua layar: loading, empty state, permission denied, offline, akses ditolak, error dan penghapusan data.
+17. Keputusan terbuka sebelum coding produksi
+
+17.1 Rincian layar Admin Windows (tambahan di luar 23 frame)
+
+Layar desktop harus mendukung tabel, paginasi, filter, konfirmasi sebelum hapus, status loading, validasi bentrok, ekspor terbatas, dan ukuran jendela 1280×720 ke atas sebagai acuan desain awal; semua angka merupakan target usulan yang diuji.
+17.2 Alur layar Windows → Android → orang tua
+1. Admin membuka W-06 dan memilih Pak Ahmad → Matematika → kelas 8A (penugasan).
+2. Admin mengisi W-07: Senin 07.00–08.30 dan sistem memeriksa konflik guru/kelas.
+3. Saat Senin, Pak Ahmad login Android; jadwal 8A Matematika tampil dari backend.
+4. Pak Ahmad membuka sesi, memindai Andi, memverifikasi wajah dan mengunggah bukti privat.
+5. Backend mencatat attendance pada sessionId Matematika dan membuat event notifikasi HADIR untuk wali Andi.
+6. Orang tua Andi menerima push Matematika, membuka aplikasi lalu melihat foto bukti Matematika.
+7. Pada pelajaran berikutnya, guru terkait memulai sessionId baru dan proses HADIR + foto + notifikasi diulang.
+8. Jika Andi belum absen sampai tenggat satu sesi, wali mendapat BELUM TERCATAT; sesudah konfirmasi guru barulah dapat status TIDAK HADIR.
+17.3 Indikator penerimaan MVP untuk pengembangan
+Definisi selesai (Definition of Done): alur utama berjalan pada satu PC Windows admin dan minimal dua HP Android (guru & wali), relasi guru-pelajaran-kelas dari Windows tercermin pada jadwal guru, absensi manual dan wajah diuji, tujuh sesi dapat menghasilkan tujuh notifikasi terpisah, wali yang salah ditolak membuka foto, tenggat per sesi berhasil, proses koreksi mencatat audit, dan penggunaan data biometrik mengikuti kebijakan sekolah serta persetujuan sah. Pengujian pertama menggunakan data/siswa fiktif sampai proses legal dan keamanan siap.
+18. Referensi teknis dan hukum
+1. Figma Smart School (berdasarkan 23 PNG yang dikirimkan pengguna), tautan desain: https://www.figma.com/design/1FR3rY6gK4UyihXOJ1VENl/pemmob
+2. Google ML Kit — Face Detection: https://developers.google.com/ml-kit/vision/face-detection/
+3. Firebase — Scheduled Functions: https://firebase.google.com/docs/functions/schedule-functions
+4. Firebase — Receive FCM in Flutter: https://firebase.google.com/docs/cloud-messaging/flutter/receive-messages
+5. Firebase — Cloud Storage Security Rules: https://firebase.google.com/docs/storage/security
+6. UU No. 27 Tahun 2022 — JDIH Komdigi (Pasal 4 dan 25): https://jdih.komdigi.go.id/produk_hukum/view/id/832/t/undangundang%2Bnomor%2B27%2Btahun%2B2022
+7. Flutter — Windows setup dan desktop support: https://docs.flutter.dev/platform-integration/windows/setup
+8. Firebase — Flutter supported plugins dan catatan Windows: https://firebase.google.com/docs/flutter/setup
+9. Firebase — FCM image restrictions (jika kelak rich notification): https://firebase.google.com/docs/cloud-messaging/customize-messages/cross-platform
+Lampiran A — Cuplikan desain sumber
+Contoh frame asli dari ZIP Figma yang menjadi referensi alur utama. Desain Admin Windows belum ada di 23 frame dan tercatat sebagai rancangan tambahan. Foto wajah di mockup hanya ilustrasi bawaan file pengguna dan tidak dipakai sebagai dataset identitas siswa.
+
+
+Properti | Keterangan
+Versi dokumen | 1.1 — Spesifikasi pengembangan / draft validasi sekolah
+Tanggal | 18 Oktober 2026
+Platform target | Flutter Windows (Admin) + Flutter Android (Guru dan Orang Tua)
+Fokus utama | Absensi WAJIB setiap sesi mata pelajaran; push dan foto bukti per sesi
+Pihak terlibat | Admin sekolah, guru, siswa, orang tua/wali
+Sumber desain | Figma pemmob, 23 frame PNG + penambahan UI Windows Admin
+ID | Tujuan | Indikator penerimaan awal
+G-01 | Absensi mudah dilakukan di ruang kelas | Guru dapat membuka sesi, memindai dan memverifikasi siswa tanpa berganti aplikasi.
+G-02 | Wali mendapat informasi SETIAP pelajaran | Setiap siswa/sesi absensi terverifikasi membuat notifikasi sendiri dan tautan foto bukti privat.
+G-03 | Peringatan ketidakhadiran adil | Siswa yang belum tercatat diberi status sementara, bukan langsung dituduh bolos.
+G-04 | Transparansi dan koreksi | Perubahan status disertai alasan, pembuat perubahan, waktu, dan jejak audit.
+G-05 | Lindungi identitas siswa | Foto/templat biometrik tidak dapat diakses pihak yang tidak berwenang.
+Peran | Kebutuhan | Kewenangan inti
+Guru | Mulai pelajaran, scan, koreksi kehadiran, input nilai | Hanya kelas/mata pelajaran yang ditugaskan; verifikasi dan finalisasi sesi.
+Orang tua/wali | Tahu anak hadir/belum hadir, lihat bukti dan rekap | Baca data anak yang tertaut; tidak boleh mengubah absensi langsung.
+Admin sekolah (Windows) | Kelola jadwal, akun, siswa, perizinan, audit | Menggunakan desktop Windows; memetakan guru-pelajaran-kelas, kelola master data dan koreksi dengan izin ketat.
+Siswa | Mengikuti absensi dan menerima verifikasi | Tidak wajib memiliki aplikasi; bisa menggunakan jalur manual.
+Entitas | Contoh | Aturan
+Teacher | Pak Ahmad | Satu akun guru bisa mempunyai banyak assignment.
+Subject | Matematika | Satu pelajaran bisa ditugaskan ke guru berbeda.
+Teaching assignment | Pak Ahmad • Matematika • 8A • TA 2026/2027 | Dibuat/diubah admin; memiliki masa berlaku.
+Schedule | Senin 07.00–08.30 • Assignment 8A-MTK | Terhubung ke satu assignment; validasi bentrok jadwal.
+Session | Senin 19 Okt 2026 • Matematika 8A | Satu per blok jadwal aktual; bisa punya guru pengganti.
+Prioritas | Cakupan
+P0 / MVP | Admin desktop Windows; login 3 role; penugasan guru-mata pelajaran-kelas; jadwal; sesi untuk setiap pelajaran; scan + verifikasi; manual fallback; foto privat; push HADIR di setiap sesi; warning per sesi; finalisasi/koreksi; backend API aman, audit dan izin biometrik.
+P1 | Rekap lanjutan, persetujuan izin/sakit digital, ekspor CSV/PDF, kualitas liveness teruji, antarmuka nilai, kanal status pengantaran lanjutan, antrean offline aman.
+P2 | Analitik kehadiran, dashboard manajemen lanjutan, integrasi rapor/sistem akademik, multi-sekolah, pesan wali-guru terkelola.
+Di luar MVP | Absensi melalui CCTV massal, absensi gerbang, pelacakan lokasi siswa, pengawasan kontinu, WhatsApp sebagai kanal utama, klaim pengenalan wajah tanpa supervisi.
+Frame | Desain aktual | Keputusan produk
+01 | Login guru | Pertahankan; tambahkan pemilihan role/login wali dan penanganan gagal masuk.
+02–03 | Beranda guru | Pertahankan; tautkan Mulai Mengajar dan status sesi dinamis.
+04 | Pusat notifikasi guru | Hubungkan ke kejadian sesi dan notifikasi pembelajaran.
+05 | Lapor berhalangan | Hubungkan perubahan jadwal; jangan buat absent otomatis pada sesi batal.
+06 | Konfirmasi informasi terkirim | Tampilkan status pengiriman sebenarnya, bukan selalu sukses.
+07 | Konfirmasi mulai mengajar | P0: buat sessionId dan tentukan deadline absensi.
+08 | Pemindai wajah | P0: satu wajah per percobaan; kualitas kamera dan fallback manual.
+09 | Verifikasi kehadiran | P0: guru konfirmasi/tolak; label skor harus terkalibrasi.
+10 | Absensi berhasil | P0: catatan kehadiran + status antrian notifikasi.
+11 | Daftar kehadiran | P0: status sementara dan final, koreksi, tutup sesi.
+12 | Jadwal guru | P0: mata pelajaran, kelas, jam, guru pengganti.
+13–14 | Daftar dan input nilai | Pertahankan sebagai modul akademik; P1 untuk backend lengkap.
+15–16 | Profil guru & kata sandi | P0: profil dasar, keluar akun, keamanan.
+17 | Beranda orang tua | P0: kartu anak dan status sesi terbaru.
+18 | Notifikasi orang tua | P0: push dan inbox, tautan detail bukti kehadiran.
+19 | Rekap kehadiran | P0: ringkasan per sesi, filter, status koreksi.
+20 | Jadwal orang tua | P0: jadwal anak dan mata pelajaran.
+21 | Nilai akademik | Pertahankan; P1 untuk input–tampil terintegrasi.
+22–23 | Profil wali & kata sandi | P0: anak tertaut, profil, ganti sandi.
+Kode | Aturan wajib
+BR-01 | Satu siswa hanya punya satu catatan utama per sessionId + studentId; permintaan berulang idempoten.
+BR-02 | Setiap sesi terkait scheduleId, teachingAssignmentId, scheduledTeacherUid, actualTeacherUid, classId, subjectId, zona waktu sekolah dan tenggat.
+BR-03 | Scan dianggap hadir hanya setelah validasi backend dan konfirmasi guru; wajah tak dikenal tidak dibuat sebagai siswa baru.
+BR-04 | Dilarang mencatat Hadir otomatis bila terdapat >1 wajah yang jelas, foto buruk, atau identitas ambigu.
+BR-05 | Batas waktu contoh: awal pelajaran +15 menit; harus bisa diubah sekolah/kelas. Jangan menetapkan jam 07.30 global untuk semua sesi.
+BR-06 | Peringatan batas waktu = BELUM_TERCATAT_HADIR; TIDAK_HADIR final perlu keputusan guru/aturan yang ditetapkan sekolah.
+BR-07 | Tidak kirim peringatan jika sesi CANCELLED/HOLIDAY/NOT_STARTED atau siswa tidak diwajibkan hadir.
+BR-08 | Koreksi mencatat status lama/baru, actor, alasan, waktu; event koreksi diteruskan ke wali.
+BR-09 | Jika tidak ada izin biometrik sah, guru menyediakan absensi manual dengan standar catatan setara.
+BR-10 | Foto bukti hanya untuk siswa terkait; tidak otomatis tampil di lockscreen; penghapusan berdasarkan retensi yang disahkan.
+BR-11 | Pesan “notifikasi terkirim” hanya bila FCM diterima penyedia layanan; tampilkan gagal/menunggu jika belum sukses.
+BR-12 | Satu siswa dapat memiliki lebih dari satu wali berwenang; masing-masing hanya bisa melihat anak yang ditautkan.
+BR-13 | Kamera guru hanya aktif ketika memindai per siswa secara jelas di sesi berjalan; bukan pengawasan kelas terus-menerus.
+ID | Prioritas | Spesifikasi
+FR-01 | P0 | Login, logout dan pemulihan akun berdasarkan role guru/wali/admin.
+FR-02 | P0 | Admin Windows membuat guru, siswa, kelas, pelajaran, teaching assignments, jadwal, wali, dan tautan wali–siswa.
+FR-03 | P0 | Sistem memeriksa persetujuan sebelum merekam/menyimpan template wajah; opsi absensi manual setara.
+FR-04 | P0 | Registrasi wajah khusus admin/staf berizin; kualitas & jumlah sampel mengikuti model yang dipilih.
+FR-05 | P0 | Guru dapat membuka, menjeda, menutup sesi mengajar; tidak boleh ada dua sesi identik aktif.
+FR-06 | P0 | Kamera mendeteksi satu wajah, mengecek kualitas, menghasilkan kandidat yang dapat ditinjau guru.
+FR-07 | P0 | Guru menerima/menolak kandidat; nama, NIS, kelas dan mata pelajaran terlihat jelas.
+FR-08 | P0 | Catatan terverifikasi menyimpan studentId, sessionId, waktu server, metode, aktor, dan status.
+FR-09 | P0 | Foto bukti disimpan privat dan dapat dilihat wali terkait di aplikasi setelah login.
+FR-10 | P0 | Daftar siswa menampilkan hadir/terlambat/izin/sakit/tidak hadir/belum tercatat.
+FR-11 | P0 | Guru dapat mencatat kehadiran manual dengan alasan dan audit trail.
+FR-12 | P0 | Job terjadwal mengevaluasi siswa belum absen pada tenggat SETIAP sesi pelajaran yang aktif; tidak saat sesi NOT_STARTED.
+FR-13 | P0 | Penetapan status akhir dan perubahan status mengirim notifikasi pembaruan terdeduplikasi.
+FR-14 | P0 | Orang tua melihat inbox per mata pelajaran, detail foto untuk setiap absensi wajah, riwayat, rekap, dan jadwal anak.
+FR-15 | P0 | Tampilan notifikasi memiliki jenis, waktu, status terkirim/dibaca dan tautan detail.
+FR-16 | P0 | Admin Windows dapat membatalkan sesi, menunjuk guru pengganti, mengubah jam, dan mencegah absent palsu.
+FR-17 | P0 | Sistem membatasi akses database/storage sesuai penugasan kelas dan relasi wali–siswa.
+FR-18 | P0 | Audit log merekam akses administratif, pendaftaran wajah, perubahan kehadiran, dan foto bukti.
+FR-19 | P1 | Guru memberi laporan berhalangan; admin menyetujui dan merelokasi pelajaran.
+FR-20 | P1 | Guru input nilai; wali melihat rangkuman nilai akademik sesuai frame 13–14 dan 21.
+FR-21 | P1 | Ekspor rekap kelas dan orang tua dalam rentang tanggal/mata pelajaran.
+FR-22 | P1 | Liveness khusus dan penyempurnaan kualitas model sebelum penggunaan luas.
+FR-23 | P1 | Antrean lokal untuk gangguan koneksi dan rekonsiliasi server saat online.
+FR-24 | P2 | Dashboard analitik tren kehadiran tanpa eksploitasi identitas biometrik.
+FR-25 | P0 | Admin Windows login melalui alur autentikasi aman dan melakukan operasi lewat API backend terotorisasi.
+FR-26 | P0 | Admin mengatur relasi guru-ke-pelajaran-ke-kelas dengan validasi bentrok dan hak akses guru.
+FR-27 | P0 | Setiap sesi mengirim notifikasi HADIR baru setelah absensi terverifikasi; tidak ada pembatasan satu notifikasi per hari.
+FR-28 | P0 | Satu sesi memiliki daftar siswa, deadline, guru utama, guru aktual, serta status OPEN/CLOSED/CANCELLED.
+FR-29 | P0 | Bukti foto per sesi terikat kepada studentId+sessionId dan hanya dapat dibuka wali tertaut setelah autentikasi.
+FR-30 | P0 | Jika sesi tidak dimulai, sistem mengingatkan guru/admin tanpa menyatakan siswa tidak hadir.
+FR-31 | P1 | Admin mengimpor data siswa, guru, jadwal melalui CSV dengan validasi dan pratinjau.
+Pemicu | Judul push | Pesan/aksi di aplikasi
+Hadir terverifikasi | [Smart School] Anak hadir | “Ahmad Rizki hadir pada Matematika pukul 07.15 WIB.” Ketuk → detail + foto privat.
+Belum absen melewati batas | [Smart School] Belum tercatat hadir | “Ahmad Rizki belum tercatat hadir pada Matematika sampai 07.15 WIB. Silakan cek status.”
+Tidak hadir sudah final | [Smart School] Status tidak hadir | “Ketidakhadiran Ahmad Rizki pada Matematika telah dikonfirmasi sekolah.”
+Izin/sakit | [Smart School] Status kehadiran diperbarui | “Status Ahmad Rizki pada Matematika: Izin/Sakit.”
+Koreksi/terlambat | [Smart School] Pembaruan absensi | “Status Ahmad Rizki diperbarui menjadi Hadir/Terlambat. Lihat rincian.”
+Kelas dibatalkan | [Smart School] Jadwal diperbarui | “Sesi Matematika dibatalkan/diganti. Tidak ada peringatan ketidakhadiran.”
+Komponen | Teknologi usulan | Catatan implementasi
+Admin Windows | Flutter Desktop + Dart | Aplikasi desktop terpasang di PC sekolah; layout tabel dan manajemen data.
+Guru Android | Flutter + Dart | Kamera, jadwal, sesi kelas, scan/verifikasi dan koreksi.
+Orang Tua Android | Flutter + Dart | Inbox per sesi, notifikasi, foto bukti privat, nilai, jadwal.
+Backend Admin | Cloud Run HTTPS API + Firebase Admin SDK | Validasi token/role; operasi istimewa tidak ditanam di executable desktop.
+Kamera | camera (Flutter) | Scan 1 orang secara eksplisit, tidak face tracking massal.
+Deteksi | Google ML Kit Face Detection | Mendeteksi lokasi wajah, bukan identitas.
+Pengenalan | TFLite model embedding + pencocokan | Perlu dataset pengujian dan kalibrasi threshold; jangan menafsirkan skor mentah sebagai persentase akurasi.
+Autentikasi | Firebase Authentication / OIDC | Alur token teruji untuk desktop; API verifikasi ID token; otorisasi RBAC server-side.
+Data transaksional | Cloud Firestore | Dokumen per siswa/per sesi; indeks & transaksi idempoten.
+Foto | Cloud Storage | Private by default; path + akses server/rules.
+Otomasi | Cloud Functions v2 + Cloud Scheduler | Peringatan sesi, validasi server, retry aman.
+Notifikasi | FCM + inbox Firestore | FCM best-effort, inbox jadi sumber riwayat.
+Area | Folder / aplikasi | Fungsi
+Klien admin | apps/admin_windows/ | Flutter desktop responsif untuk tabel, pencarian, impor, dan audit.
+Klien guru | apps/teacher_android/ | Flutter Android scan, jadwal, absensi dan nilai.
+Klien orang tua | apps/parent_android/ | Flutter Android riwayat anak, foto bukti, dan notifikasi.
+Berbagi | packages/shared_models/ | Model data, validasi input, enum status, tema Smart School.
+Server API | services/admin_api/ | HTTPS API Cloud Run dengan Firebase Admin SDK dan RBAC.
+Pekerjaan latar | functions/ | Scheduled check, event notifications, deduplication/retry.
+Aturan keamanan | firebase/ | Rules Firestore & Storage, indexes, emulator tests.
+Koleksi | Kolom penting | Relasi / aturan
+users/{uid} | role, displayName, email, active, schoolId | Satu akun guru/wali/admin; auth.uid sebagai penghubung.
+students/{studentId} | nis, name, classId, active, schoolId | Pendaftaran siswa oleh admin; NIS unik dalam sekolah.
+guardians/{guardianId} | uid, phone, studentIds[] | Bisa beberapa wali per siswa; lebih baik tautan relasional terpisah.
+student_guardians/{linkId} | studentId, guardianUid, relation, verified | Daftar akses tegas orang tua ke siswa.
+classes/{classId} | name, grade, academicYear | Contoh 8A.
+subjects/{subjectId} | name, code | Contoh Matematika.
+teaching_assignments/{assignmentId} | teacherUid, subjectId, classId, academicYearId, activeFrom, activeUntil | Ditentukan admin; satu guru dapat banyak assignment.
+schedules/{scheduleId} | assignmentId, weekday, startTime, endTime, roomId, status | Jadwal mingguan; sumber penetapan guru, mata pelajaran, dan kelas.
+sessions/{sessionId} | scheduleId, assignmentId, dateKey, scheduledTeacherUid, actualTeacherUid, openedAt, deadlineAt, status | NOT_STARTED, OPEN, CLOSED, CANCELLED; satu per blok pelajaran.
+attendance/{sessionId_studentId} | sessionId, studentId, status, method, capturedAt, verifiedAt, verifiedBy, proofPhotoPath, version | Unique per siswa/sesi; foto milik sesi yang tepat.
+face_enrollments/{studentId} | encryptedTemplateRef, modelVersion, consentId, enrollmentStatus | Akses server/staf sangat terbatas; tidak disimpan publik.
+consents/{consentId} | studentId, guardianUid, purpose, grantedAt, withdrawnAt, evidenceRef | Bukti persetujuan per tujuan/retensi.
+notifications/{notificationId} | recipientUid, studentId, sessionId, subjectId, eventType, status, photoRef, deliveryState | Notifikasi per sesi; eventId unik recipientUid+sessionId+eventType+revision.
+user_devices/{deviceId} | ownerUid, fcmToken, platform, updatedAt | Token diputar; hapus bila logout/invalid.
+attendance_audits/{auditId} | attendanceId, before, after, actorUid, reason, createdAt | Append-only; perubahan penting tercatat.
+calendar_exceptions/{id} | dateKey, classId, scheduleId, kind, approvedBy | Libur, ujian, kelas dibatalkan, guru pengganti.
+ID | Persyaratan / target usulan | Metode uji
+NFR-01 | Waktu respon scan sampai kandidat ≤3 detik pada perangkat acuan (target, bukan janji). | Uji 30+ scan berbagai pencahayaan dan perangkat.
+NFR-02 | Proses konfirmasi guru dan simpan data ≤5 detik pada jaringan normal. | Uji integrasi dan logging end-to-end.
+NFR-03 | Target p95 event tersimpan → request FCM ≤60 detik pada kondisi normal. | Uji job + log server; bukan SLA push sampai HP.
+NFR-04 | Mencegah duplikasi event saat jaringan ulang/kegagalan fungsi. | Uji retry, race condition, dua perangkat.
+NFR-05 | Orang tua hanya dapat melihat foto anak yang tertaut. | Uji izin silang akun wali, guru, admin.
+NFR-06 | Aplikasi dapat menampilkan kondisi tanpa izin kamera, tanpa jaringan, wajah tak cocok. | Uji UX kasus gagal.
+NFR-07 | Keputusan salah cocok tidak boleh otomatis menciptakan absensi final. | Uji false match + verifikasi guru.
+NFR-08 | Penanggalan dan jam konsisten dalam zona sekolah, waktu simpan UTC/server. | Uji pergantian tanggal/timezone.
+NFR-09 | Dukungan aksesibilitas dasar: kontras, ukuran teks, status tak hanya warna. | Audit UI dan uji usability.
+NFR-10 | Fitur nonbiometrik bisa digunakan tanpa kehilangan hak absensi. | Uji proses manual alternatif.
+NFR-11 | Admin Windows hanya memanggil HTTPS API terautentikasi; semua operasi memerlukan RBAC server-side. | Uji role bypass, expired token, cross-school, client tampering.
+NFR-12 | Notifikasi HADIR harus terjadi untuk SETIAP sesi yang diverifikasi, bukan satu kali per hari. | Uji siswa sama pada 7 sesi berbeda.
+NFR-13 | Aplikasi desktop dapat dipasang/dijalankan pada PC Windows uji beserta dependensinya. | Smoke test installer, update dan uninstall Windows.
+Skenario | Given / When | Then (hasil yang diterima)
+AC-01 Hadir | Sesi aktif; siswa terdaftar & izin valid; guru memverifikasi wajah | Satu absensi HADIR, satu foto privat (jika disetujui), satu event notifikasi hadir tercatat.
+AC-02 Ambigu | Terdeteksi 2 wajah atau kandidat di bawah ambang | Tidak tersimpan HADIR otomatis; guru diminta ulang/manual.
+AC-03 Belum hadir | Tenggat sesi lewat; siswa belum absen; sesi tidak batal | Inbox wali menerima “Belum tercatat hadir” hanya sekali.
+AC-04 Terlambat | Wali mendapat peringatan; siswa valid absen kemudian | Status berubah menjadi TERLAMBAT; wali mendapat notifikasi pembaruan.
+AC-05 Izin/sakit | Status izin/sakit telah disetujui sebelum tenggat | Tidak dikirim tuduhan ketidakhadiran; status benar muncul di riwayat.
+AC-06 Kelas batal | Jadwal dibatalkan atau guru berhalangan tanpa pengganti | Tidak dikirim peringatan belum hadir; sesi mencatat CANCELLED.
+AC-07 Foto privat | Wali A mencoba mengakses bukti siswa milik wali B | Ditolak server/rules; tidak bocor URL publik.
+AC-08 FCM mati | HP wali tanpa izin notifikasi / offline | Inbox tetap menyimpan event; layar tidak salah mengklaim “diterima HP”.
+AC-09 Retry | Cloud Function atau aplikasi mengulang request sama | Tidak ada data duplikat atau spam notifikasi.
+AC-10 Koreksi | Guru merevisi absensi menjadi TIDAK_HADIR/IZIN/HADIR | Audit before/after lengkap; wali mendapat pembaruan yang relevan.
+AC-11 Tanpa consent | Siswa tidak punya izin wajah atau mencabutnya | Registrasi/pemrosesan wajah dinonaktifkan; jalur manual berfungsi.
+AC-12 Jam berbeda | Pelajaran baru mulai siang | Tenggat mengikuti sesi tersebut, bukan satu jam global pagi.
+AC-13 Setiap mapel | Andi hadir pada 7 sesi berbeda di hari sama | Terdapat 7 catatan sesi dan 7 event HADIR berbeda; semua foto bukti terkait sesi yang benar.
+AC-14 Admin Windows | Admin mengatur Pak Ahmad untuk Matematika 8A dan 8B | Pak Ahmad melihat kedua jadwal di Android dan guru lain tidak bisa buka.
+AC-15 Peran diganti | Admin menetapkan Bu Siti pengganti pada sesi IPA 8A | Bu Siti berwenang membuka sesi tersebut; audit mencatat guru utama dan guru aktual.
+AC-16 Sesi belum dibuka | Guru tidak memulai jadwal dan tenggat berlalu | Sistem memperingatkan guru/admin, tidak menyatakan semua siswa tidak hadir.
+AC-17 RBAC Windows | Pengguna bukan admin memanggil endpoint master data | Backend mengembalikan akses ditolak meskipun UI dimodifikasi.
+Tahap | Pekerjaan | Output yang bisa diuji
+1. Fondasi | Setup 3 target Flutter, backend API, role, login dan repo | Admin Windows dan guru/wali Android login; RBAC diuji.
+2. Master data Windows | Admin CRUD siswa, guru, wali, kelas, mapel, teaching assignments, jadwal | Admin menetapkan guru; guru Android melihat jadwal sesuai penugasan.
+3. Absensi manual | Session open/close, daftar hadir, status, audit | Satu sesi dengan siklus lengkap tanpa AI.
+4. Scan wajah | Kamera, deteksi, enrollment consent, face embedding, guru konfirmasi | Kandidat wajah dikenali dalam kondisi uji terbatas.
+5. Bukti foto | Upload private Storage, foto detail wali, rules | Wali yang tepat melihat foto; wali lain ditolak.
+6. Notifikasi PER sesi | FCM, inbox, scheduler per sesi, dedupe, koreksi | Andi ikut 7 pelajaran: 7 event HADIR terpisah beserta bukti per sesi.
+7. Figma dan UI Admin | Nilai, profil, jadwal, laporan berhalangan, layar Admin Windows | 23 frame Android + dashboard desktop baru terintegrasi.
+8. QA & pilot | Uji keamanan, hak akses, kegagalan, false matches, retensi | Pilot tertutup dengan data fiktif/izin sah & catatan hasil.
+Risiko | Dampak | Mitigasi
+Salah pengenalan wajah | Absensi siswa keliru | Kandidat + verifikasi guru; threshold dari uji; audit dan koreksi.
+Penyamaran lewat foto/video | Absensi palsu | Supervisi guru, liveness yang divalidasi, aturan satu wajah.
+Wali panik karena false absent | Kerugian komunikasi dan kepercayaan | Gunakan “belum tercatat”; cek pengecualian; koreksi/notif update.
+Kebocoran foto/biometrik | Risiko privasi tinggi | Private storage, akses minimal, retensi pendek, consent, audit.
+HP tanpa koneksi/push off | Notifikasi tidak sampai | Inbox persisten, retry server, indikator keadaan pengiriman.
+Jadwal berubah | Peringatan palsu | Kalender sekolah, pengganti guru, pembatalan sesi.
+Biaya cloud | Tagihan storage/functions meningkat | Kuota, compress foto wajar, retensi, logging biaya & anggaran.
+Topik | Rekomendasi awal / perlu disetujui
+Deadline per sesi | Default +15 menit dari mulai pelajaran; admin bisa ubah.
+Foto pada push | Notifikasi muncul tiap sesi; foto bukti per sesi dibuka privat setelah login, bukan lampiran foto terbuka di lockscreen secara default.
+Perangkat scan | Satu HP guru Android; satu wajah per scan.
+Status akhir Tidak Hadir | Diputuskan guru saat menutup sesi / prosedur sekolah, bukan asumsi tunggal dari job.
+Pengelolaan kelas batal | Admin/pegawai berizin dapat mengubah jadwal; kirim notifikasi pembaruan.
+Penyimpanan foto | Tentukan retensi, contohnya 30–90 hari, setelah kebijakan disahkan.
+Model wajah | Pilih dan evaluasi model/ambang pada perangkat; kinerja belum terverifikasi.
+Admin | Aplikasi Flutter WINDOWS wajib; akses Firebase melalui API backend, bukan FlutterFire Windows langsung untuk produksi.
+Penggunaan lapangan | Jalankan persetujuan wali, penilaian risiko, konsultasi sekolah dan uji pilot terlebih dahulu.
+Layar | Konten dan operasi utama | Hak akses
+W-01 Login Admin | Masuk aman, lupa sandi, sesi login, logout | Admin aktif saja.
+W-02 Dashboard | Siswa/guru/kelas aktif, sesi hari ini, daftar pengecualian | Baca agregat sesuai sekolah.
+W-03 Manajemen Guru | CRUD, aktif/nonaktif, bidang ajar, pencarian | Admin master data.
+W-04 Siswa & Wali | CRUD siswa, kelas, wali, verifikasi relasi anak-wali | Admin berizin.
+W-05 Mata Pelajaran & Kelas | Daftar pelajaran, kelas, tahun ajaran, rombel | Admin master data.
+W-06 Penugasan Guru | Pilih guru + mapel + kelas + tahun ajaran; aktifkan/nonaktifkan | Hanya admin; audit perubahan.
+W-07 Jadwal Mengajar | Kalender/drag or form per hari-jam; konflik jadwal | Admin dengan validasi konflik.
+W-08 Monitoring & Koreksi | Cari sesi, cek bukti/status, koreksi dengan alasan | Admin sesuai kewenangan.
+W-09 Izin & Guru Pengganti | Konfirmasi kelas batal, alasan guru berhalangan, substitute | Admin; audit penugasan.
+W-10 Data Wajah & Persetujuan | Status consent, registrasi terenkripsi, pencabutan, penghapusan | Staf berizin khusus.
+W-11 Pengaturan & Audit | Tenggat sesi, kalender libur, riwayat perubahan, retensi | Admin berotorisasi tinggi.
+ |  | 
+Frame 8 | Frame 9 | Frame 10
+ |  | 
+Frame 17 | Frame 18 | Frame 19

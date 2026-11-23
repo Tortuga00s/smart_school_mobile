@@ -1,0 +1,42 @@
+[
+  {
+    "path": "apps/mobile/lib/features/parent/demo_store.dart",
+    "unchanged": true,
+    "sha256": "ea6e2cdaf0af1fc94eb28cd2e94e33911fa28093d8df68f218d7e21464ba9aa1"
+  },
+  {
+    "path": "apps/mobile/lib/features/parent/models.dart",
+    "unchanged": true,
+    "sha256": "f5cf337cf3444afd3b3111fe4c8bac42051eeb1e2454fc50e72d6e3bf12bb515"
+  },
+  {
+    "path": "apps/mobile/lib/features/parent/parent_app.dart",
+    "unchanged": true,
+    "sha256": "17bd7e4b59d0fa0c39b89dfe58c9dc79f7d4fa4576087305b68c1548a30ec4d7"
+  },
+  {
+    "path": "apps/mobile/lib/features/parent/password_page.dart",
+    "unchanged": true,
+    "sha256": "0f5190d587705303a1cc530ddc1a8f61859e0b0616d69bec5119e66e95e0c4f3"
+  },
+  {
+    "path": "apps/mobile/lib/features/parent/widgets.dart",
+    "unchanged": true,
+    "sha256": "466746bf90d6352baf3f0ee793993a0a8977c43b2fbb029f1a605434130ad775"
+  },
+  {
+    "path": "apps/mobile/lib/features/teacher/teacher_shell.dart",
+    "unchanged": true,
+    "sha256": "e3d512649490db4e5980cead06fce3c94bdf7b0a37de9e1a24b8193926db18d4"
+  },
+  {
+    "path": "apps/mobile/lib/main.dart",
+    "unchanged": true,
+    "sha256": "4ed393abe2acaefa36de9bddfe0f663636582e8aa1e516169779533912f8a290"
+  },
+  {
+    "path": "apps/mobile/lib/role_app.dart",
+    "unchanged": true,
+    "sha256": "b048e6f1d75e244fe91cbdcab1ce745a79124a3bc4dce726e74d35e956ce169c"
+  }
+]

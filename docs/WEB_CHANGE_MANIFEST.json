@@ -1,0 +1,220 @@
+{
+  "source_zip": "SMART_SCHOOL(1).zip",
+  "source_sha256": "f55cf96feb927c2d3b05beab7b501f2234d39c5dda5e51891e73cb801bfa103c",
+  "ui_unchanged": true,
+  "runtime_dart_io": 0,
+  "changes": [
+    {
+      "path": "README.md",
+      "change": "modified"
+    },
+    {
+      "path": "apps/admin_windows/pubspec.lock",
+      "change": "modified"
+    },
+    {
+      "path": "apps/mobile/README.md",
+      "change": "modified"
+    },
+    {
+      "path": "apps/mobile/android/.kotlin/sessions/kotlin-compiler-3419097483319329759.salive",
+      "change": "added"
+    },
+    {
+      "path": "apps/mobile/android/settings.gradle.kts",
+      "change": "modified"
+    },
+    {
+      "path": "apps/mobile/ios/Flutter/Generated.xcconfig",
+      "change": "modified"
+    },
+    {
+      "path": "apps/mobile/ios/Flutter/flutter_export_environment.sh",
+      "change": "modified"
+    },
+    {
+      "path": "apps/mobile/pubspec.lock",
+      "change": "modified"
+    },
+    {
+      "path": "apps/mobile/pubspec.yaml",
+      "change": "modified"
+    },
+    {
+      "path": "apps/mobile/test/browser/web_smoke_test.dart",
+      "change": "added"
+    },
+    {
+      "path": "apps/mobile/test/live_flow_vm_test.dart",
+      "change": "added"
+    },
+    {
+      "path": "apps/mobile/test/screenshots_test.dart",
+      "change": "modified"
+    },
+    {
+      "path": "apps/mobile/test/support/live_flow.dart",
+      "change": "added"
+    },
+    {
+      "path": "apps/mobile/web/index.html",
+      "change": "modified"
+    },
+    {
+      "path": "apps/mobile/web/manifest.json",
+      "change": "modified"
+    },
+    {
+      "path": "docs/ARSITEKTUR.md",
+      "change": "modified"
+    },
+    {
+      "path": "docs/AUDIT_FLUTTER_WEB.md",
+      "change": "added"
+    },
+    {
+      "path": "docs/BELUM_SELESAI.md",
+      "change": "modified"
+    },
+    {
+      "path": "docs/HASIL_PENGUJIAN.md",
+      "change": "modified"
+    },
+    {
+      "path": "docs/HASIL_PENGUJIAN_WEB.md",
+      "change": "added"
+    },
+    {
+      "path": "docs/PANDUAN_FLUTTER_WEB.md",
+      "change": "added"
+    },
+    {
+      "path": "docs/web-test-logs/admin_windows-analyze.txt",
+      "change": "added"
+    },
+    {
+      "path": "docs/web-test-logs/admin_windows-pub.txt",
+      "change": "added"
+    },
+    {
+      "path": "docs/web-test-logs/admin_windows-test.txt",
+      "change": "added"
+    },
+    {
+      "path": "docs/web-test-logs/android-build.txt",
+      "change": "added"
+    },
+    {
+      "path": "docs/web-test-logs/build-web-artifacts.json",
+      "change": "added"
+    },
+    {
+      "path": "docs/web-test-logs/build-web.txt",
+      "change": "added"
+    },
+    {
+      "path": "docs/web-test-logs/checks.json",
+      "change": "added"
+    },
+    {
+      "path": "docs/web-test-logs/chrome-tests.txt",
+      "change": "added"
+    },
+    {
+      "path": "docs/web-test-logs/demo-api-cors-tests.txt",
+      "change": "added"
+    },
+    {
+      "path": "docs/web-test-logs/live-flow-api.txt",
+      "change": "added"
+    },
+    {
+      "path": "docs/web-test-logs/mobile-analyze.txt",
+      "change": "added"
+    },
+    {
+      "path": "docs/web-test-logs/mobile-pub.txt",
+      "change": "added"
+    },
+    {
+      "path": "docs/web-test-logs/mobile-test.txt",
+      "change": "added"
+    },
+    {
+      "path": "docs/web-test-logs/native-live-flow.txt",
+      "change": "added"
+    },
+    {
+      "path": "docs/web-test-logs/school_data-analyze.txt",
+      "change": "added"
+    },
+    {
+      "path": "docs/web-test-logs/school_data-pub.txt",
+      "change": "added"
+    },
+    {
+      "path": "docs/web-test-logs/school_data-test.txt",
+      "change": "added"
+    },
+    {
+      "path": "docs/web-test-logs/ui-preservation.json",
+      "change": "added"
+    },
+    {
+      "path": "packages/school_data/lib/demo_connection.dart",
+      "change": "modified"
+    },
+    {
+      "path": "packages/school_data/lib/demo_endpoint.dart",
+      "change": "added"
+    },
+    {
+      "path": "packages/school_data/lib/live_api.dart",
+      "change": "modified"
+    },
+    {
+      "path": "packages/school_data/lib/src/demo_repository.dart",
+      "change": "modified"
+    },
+    {
+      "path": "packages/school_data/lib/src/json_http_transport.dart",
+      "change": "added"
+    },
+    {
+      "path": "packages/school_data/pubspec.lock",
+      "change": "modified"
+    },
+    {
+      "path": "packages/school_data/pubspec.yaml",
+      "change": "modified"
+    },
+    {
+      "path": "packages/school_data/test/api_integration_test.dart",
+      "change": "modified"
+    },
+    {
+      "path": "packages/school_data/test/seed_test.dart",
+      "change": "modified"
+    },
+    {
+      "path": "packages/school_data/test/web_transport_test.dart",
+      "change": "added"
+    },
+    {
+      "path": "scripts/check_web.ps1",
+      "change": "added"
+    },
+    {
+      "path": "scripts/run_web.bat",
+      "change": "added"
+    },
+    {
+      "path": "services/demo_api/server.py",
+      "change": "modified"
+    },
+    {
+      "path": "services/demo_api/test_cors.py",
+      "change": "added"
+    }
+  ]
+}

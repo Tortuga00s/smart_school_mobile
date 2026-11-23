@@ -1,0 +1,17 @@
+**/.dart_tool/
+**/build/
+**/.flutter-plugins*
+**/local.properties
+**/.gradle/
+**/ephemeral/
+**/__pycache__/
+**/.venv/
+**/demo-state.json
+**/demo-state.tmp
+*.jks
+*.keystore
+**/key.properties
+**/google-services.json
+**/firebase_options.dart
+**/service-account*.json
+.env

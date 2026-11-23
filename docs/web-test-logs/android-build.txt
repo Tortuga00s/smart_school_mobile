@@ -1,0 +1,401 @@
+[1/1] Android SDK
+  ├─ [1/6] android-arm-profile/linux-x64                            7.1s
+  ├─ [2/6] android-arm-release/linux-x64                            7.2s
+  ├─ [3/6] android-arm64-profile/linux-x64                          7.1s
+  ├─ [4/6] android-arm64-release/linux-x64                          7.1s
+  ├─ [5/6] android-x64-profile/linux-x64                            7.2s
+  └─ [6/6] android-x64-release/linux-x64                            7.3s
+Running Gradle task 'assembleDebug'...                          
+Exception in thread "main" java.net.SocketException: Network is unreachable
+	at java.base/sun.nio.ch.Net.connect0(Native Method)
+	at java.base/sun.nio.ch.Net.connect(Net.java:601)
+	at java.base/sun.nio.ch.Net.connect(Net.java:590)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:583)
+	at java.base/java.net.Socket.connect(Socket.java:751)
+	at java.base/java.net.Socket.connect(Socket.java:686)
+	at java.base/sun.net.NetworkClient.doConnect(NetworkClient.java:183)
+	at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:539)
+	at java.base/sun.net.www.http.HttpClient$1.run(HttpClient.java:598)
+	at java.base/sun.net.www.http.HttpClient$1.run(HttpClient.java:596)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:571)
+	at java.base/sun.net.www.http.HttpClient.privilegedOpenServer(HttpClient.java:595)
+	at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:639)
+	at java.base/sun.net.www.protocol.https.HttpsClient.<init>(HttpsClient.java:265)
+	at java.base/sun.net.www.protocol.https.HttpsClient.New(HttpsClient.java:378)
+	at java.base/sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.getNewHttpClient(AbstractDelegateHttpsURLConnection.java:205)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1281)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1146)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:1075)
+	at java.base/sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.connect(AbstractDelegateHttpsURLConnection.java:181)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1707)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1632)
+	at java.base/sun.net.www.protocol.https.HttpsURLConnectionImpl.getInputStream(HttpsURLConnectionImpl.java:223)
+	at org.gradle.wrapper.Download.downloadInternal(Download.java:58)
+	at org.gradle.wrapper.Download.download(Download.java:44)
+	at org.gradle.wrapper.Install$1.call(Install.java:61)
+	at org.gradle.wrapper.Install$1.call(Install.java:48)
+	at org.gradle.wrapper.ExclusiveFileAccessManager.access(ExclusiveFileAccessManager.java:65)
+	at org.gradle.wrapper.Install.createDist(Install.java:48)
+	at org.gradle.wrapper.WrapperExecutor.execute(WrapperExecutor.java:128)
+	at org.gradle.wrapper.GradleWrapperMain.main(GradleWrapperMain.java:61)
+Running Gradle task 'assembleDebug'...                             663ms
+Gradle task assembleDebug failed with exit code 1
+
+Retry using the environment network proxy for Gradle dependency downloads.
+Running Gradle task 'assembleDebug'...                          
+Warning: Flutter support for your project's Gradle version (9.3.1) will soon be dropped. Please upgrade your Gradle version to a version of at least 9.5.0 soon.
+Alternatively, use the flag "--android-skip-build-dependency-validation" to bypass this check.
+
+Potential fix: Your project's gradle version is typically defined in the gradle wrapper file. By default, this can be found at /workspace/scratch/6e7f0ffd107d/web-work/SMART_SCHOOL/apps/mobile/android/gradle/wrapper/gradle-wrapper.properties. 
+For more information, see https://docs.gradle.org/current/userguide/gradle_wrapper.html.
+
+
+FAILURE: Build failed with an exception.
+
+* Where:
+Build file '/workspace/scratch/6e7f0ffd107d/web-work/SMART_SCHOOL/apps/mobile/android/app/build.gradle.kts' line: 1
+
+* What went wrong:
+An exception occurred applying plugin request [id: 'dev.flutter.flutter-gradle-plugin']
+> Failed to apply plugin 'dev.flutter.flutter-gradle-plugin'.
+   > Error: Your project's Android Gradle Plugin version (Android Gradle Plugin version 9.1.0) is lower than Flutter's minimum supported version of Android Gradle Plugin version 9.1.1. Please upgrade your Android Gradle Plugin version. 
+     Alternatively, use the flag "--android-skip-build-dependency-validation" to bypass this check.
+
+     Potential fix: Your project's AGP version is typically defined in the plugins block of the `settings.gradle` file (/workspace/scratch/6e7f0ffd107d/web-work/SMART_SCHOOL/apps/mobile/android/settings.gradle), by a plugin with the id of com.android.application. 
+     If you don't see a plugins block, your project was likely created with an older template version. In this case it is most likely defined in the top-level build.gradle file (/workspace/scratch/6e7f0ffd107d/web-work/SMART_SCHOOL/apps/mobile/android/build.gradle) by the following line in the dependencies block of the buildscript: "classpath 'com.android.tools.build:gradle:<version>'".
+
+
+* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --info or --debug option to get more log output.
+> Run with --scan to get full insights from a Build Scan (powered by Develocity).
+> Get more help at https://help.gradle.org.
+
+BUILD FAILED in 6m 15s
+Running Gradle task 'assembleDebug'...                            375.8s
+Gradle task assembleDebug failed with exit code 1
+
+Retry using the environment network proxy for Gradle dependency downloads.
+Running Gradle task 'assembleDebug'...                          
+Warning: Flutter support for your project's Gradle version (9.3.1) will soon be dropped. Please upgrade your Gradle version to a version of at least 9.5.0 soon.
+Alternatively, use the flag "--android-skip-build-dependency-validation" to bypass this check.
+
+Potential fix: Your project's gradle version is typically defined in the gradle wrapper file. By default, this can be found at /workspace/scratch/6e7f0ffd107d/web-work/SMART_SCHOOL/apps/mobile/android/gradle/wrapper/gradle-wrapper.properties. 
+For more information, see https://docs.gradle.org/current/userguide/gradle_wrapper.html.
+
+Warning: Flutter support for your project's Android Gradle Plugin version (Android Gradle Plugin version 9.1.1) will soon be dropped. Please upgrade your Android Gradle Plugin version to a version of at least Android Gradle Plugin version 9.3.1 soon.
+Alternatively, use the flag "--android-skip-build-dependency-validation" to bypass this check.
+
+Potential fix: Your project's AGP version is typically defined in the plugins block of the `settings.gradle` file (/workspace/scratch/6e7f0ffd107d/web-work/SMART_SCHOOL/apps/mobile/android/settings.gradle), by a plugin with the id of com.android.application. 
+If you don't see a plugins block, your project was likely created with an older template version. In this case it is most likely defined in the top-level build.gradle file (/workspace/scratch/6e7f0ffd107d/web-work/SMART_SCHOOL/apps/mobile/android/build.gradle) by the following line in the dependencies block of the buildscript: "classpath 'com.android.tools.build:gradle:<version>'".
+
+Warning: Flutter support for your project's Kotlin version (2.4.10) will soon be dropped. Please upgrade your Kotlin version to a version of at least 2.4.20 soon.
+Alternatively, use the flag "--android-skip-build-dependency-validation" to bypass this check.
+
+Potential fix: Your project's KGP version is typically defined in the plugins block of the `settings.gradle` file (/workspace/scratch/6e7f0ffd107d/web-work/SMART_SCHOOL/apps/mobile/android/settings.gradle), by a plugin with the id of org.jetbrains.kotlin.android. 
+If you don't see a plugins block, your project was likely created with an older template version, in which case it is most likely defined in the top-level build.gradle file (/workspace/scratch/6e7f0ffd107d/web-work/SMART_SCHOOL/apps/mobile/android/build.gradle) by the ext.kotlin_version property.
+
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Could not determine the dependencies of task ':app:packageDebug'.
+> Could not create task ':app:compileDebugJavaWithJavac'.
+   > Failed to calculate the value of task ':app:compileDebugJavaWithJavac' property 'javaCompiler'.
+      > Toolchain installation '/usr/lib/jvm/java-21-openjdk-amd64' does not provide the required capabilities: [JAVA_COMPILER]
+
+* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --info or --debug option to get more log output.
+> Run with --scan to get full insights from a Build Scan (powered by Develocity).
+> Get more help at https://help.gradle.org.
+
+BUILD FAILED in 48s
+Running Gradle task 'assembleDebug'...                             48.9s
+Gradle task assembleDebug failed with exit code 1
+
+Retry using the environment network proxy for Gradle dependency downloads.
+Running Gradle task 'assembleDebug'...                          
+Warning: Flutter support for your project's Gradle version (9.3.1) will soon be dropped. Please upgrade your Gradle version to a version of at least 9.5.0 soon.
+Alternatively, use the flag "--android-skip-build-dependency-validation" to bypass this check.
+
+Potential fix: Your project's gradle version is typically defined in the gradle wrapper file. By default, this can be found at /workspace/scratch/6e7f0ffd107d/web-work/SMART_SCHOOL/apps/mobile/android/gradle/wrapper/gradle-wrapper.properties. 
+For more information, see https://docs.gradle.org/current/userguide/gradle_wrapper.html.
+
+Warning: Flutter support for your project's Android Gradle Plugin version (Android Gradle Plugin version 9.1.1) will soon be dropped. Please upgrade your Android Gradle Plugin version to a version of at least Android Gradle Plugin version 9.3.1 soon.
+Alternatively, use the flag "--android-skip-build-dependency-validation" to bypass this check.
+
+Potential fix: Your project's AGP version is typically defined in the plugins block of the `settings.gradle` file (/workspace/scratch/6e7f0ffd107d/web-work/SMART_SCHOOL/apps/mobile/android/settings.gradle), by a plugin with the id of com.android.application. 
+If you don't see a plugins block, your project was likely created with an older template version. In this case it is most likely defined in the top-level build.gradle file (/workspace/scratch/6e7f0ffd107d/web-work/SMART_SCHOOL/apps/mobile/android/build.gradle) by the following line in the dependencies block of the buildscript: "classpath 'com.android.tools.build:gradle:<version>'".
+
+Warning: Flutter support for your project's Kotlin version (2.4.10) will soon be dropped. Please upgrade your Kotlin version to a version of at least 2.4.20 soon.
+Alternatively, use the flag "--android-skip-build-dependency-validation" to bypass this check.
+
+Potential fix: Your project's KGP version is typically defined in the plugins block of the `settings.gradle` file (/workspace/scratch/6e7f0ffd107d/web-work/SMART_SCHOOL/apps/mobile/android/settings.gradle), by a plugin with the id of org.jetbrains.kotlin.android. 
+If you don't see a plugins block, your project was likely created with an older template version, in which case it is most likely defined in the top-level build.gradle file (/workspace/scratch/6e7f0ffd107d/web-work/SMART_SCHOOL/apps/mobile/android/build.gradle) by the ext.kotlin_version property.
+
+Warning: SDK processing. This version only understands SDK XML versions up to 3 but an SDK XML file of version 4 was encountered. This can happen if you use versions of Android Studio and the command-line tools that were released at different times.
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':app:processDebugNavigationResources'.
+> Could not resolve all files for configuration ':app:debugRuntimeClasspath'.
+   > Could not resolve org.jetbrains.kotlin:kotlin-stdlib:2.4.10.
+     Required by:
+         project ':app'
+      > Could not resolve org.jetbrains.kotlin:kotlin-stdlib:2.4.10.
+         > Could not get resource 'https://dl.google.com/dl/android/maven2/org/jetbrains/kotlin/kotlin-stdlib/2.4.10/kotlin-stdlib-2.4.10.pom'.
+            > Could not GET 'https://dl.google.com/dl/android/maven2/org/jetbrains/kotlin/kotlin-stdlib/2.4.10/kotlin-stdlib-2.4.10.pom'.
+               > Got SSL handshake exception during request. It might be caused by SSL misconfiguration
+                  > (certificate_unknown) PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+      > Could not resolve org.jetbrains.kotlin:kotlin-stdlib:2.4.10.
+         > Could not get resource 'https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-stdlib/2.4.10/kotlin-stdlib-2.4.10.pom'.
+            > Could not GET 'https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-stdlib/2.4.10/kotlin-stdlib-2.4.10.pom'.
+               > Got SSL handshake exception during request. It might be caused by SSL misconfiguration
+                  > (certificate_unknown) PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+      > Could not resolve org.jetbrains.kotlin:kotlin-stdlib:2.4.10.
+         > Could not get resource 'https://storage.googleapis.com/download.flutter.io/org/jetbrains/kotlin/kotlin-stdlib/2.4.10/kotlin-stdlib-2.4.10.pom'.
+            > Could not GET 'https://storage.googleapis.com/download.flutter.io/org/jetbrains/kotlin/kotlin-stdlib/2.4.10/kotlin-stdlib-2.4.10.pom'.
+               > Got SSL handshake exception during request. It might be caused by SSL misconfiguration
+                  > (certificate_unknown) PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+   > Could not resolve io.flutter:flutter_embedding_debug:1.0.0-371f77202a73e8dff57a8b3bff75bca55c090aee.
+     Required by:
+         project ':app'
+      > Could not resolve io.flutter:flutter_embedding_debug:1.0.0-371f77202a73e8dff57a8b3bff75bca55c090aee.
+         > Could not get resource 'https://dl.google.com/dl/android/maven2/io/flutter/flutter_embedding_debug/1.0.0-371f77202a73e8dff57a8b3bff75bca55c090aee/flutter_embedding_debug-1.0.0-371f77202a73e8dff57a8b3bff75bca55c090aee.pom'.
+            > Could not GET 'https://dl.google.com/dl/android/maven2/io/flutter/flutter_embedding_debug/1.0.0-371f77202a73e8dff57a8b3bff75bca55c090aee/flutter_embedding_debug-1.0.0-371f77202a73e8dff57a8b3bff75bca55c090aee.pom'.
+               > Got SSL handshake exception during request. It might be caused by SSL misconfiguration
+                  > (certificate_unknown) PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+      > Could not resolve io.flutter:flutter_embedding_debug:1.0.0-371f77202a73e8dff57a8b3bff75bca55c090aee.
+         > Could not get resource 'https://repo.maven.apache.org/maven2/io/flutter/flutter_embedding_debug/1.0.0-371f77202a73e8dff57a8b3bff75bca55c090aee/flutter_embedding_debug-1.0.0-371f77202a73e8dff57a8b3bff75bca55c090aee.pom'.
+            > Could not GET 'https://repo.maven.apache.org/maven2/io/flutter/flutter_embedding_debug/1.0.0-371f77202a73e8dff57a8b3bff75bca55c090aee/flutter_embedding_debug-1.0.0-371f77202a73e8dff57a8b3bff75bca55c090aee.pom'.
+               > Got SSL handshake exception during request. It might be caused by SSL misconfiguration
+                  > (certificate_unknown) PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+      > Could not resolve io.flutter:flutter_embedding_debug:1.0.0-371f77202a73e8dff57a8b3bff75bca55c090aee.
+         > Could not get resource 'https://storage.googleapis.com/download.flutter.io/io/flutter/flutter_embedding_debug/1.0.0-371f77202a73e8dff57a8b3bff75bca55c090aee/flutter_embedding_debug-1.0.0-371f77202a73e8dff57a8b3bff75bca55c090aee.pom'.
+            > Could not GET 'https://storage.googleapis.com/download.flutter.io/io/flutter/flutter_embedding_debug/1.0.0-371f77202a73e8dff57a8b3bff75bca55c090aee/flutter_embedding_debug-1.0.0-371f77202a73e8dff57a8b3bff75bca55c090aee.pom'.
+               > Got SSL handshake exception during request. It might be caused by SSL misconfiguration
+                  > (certificate_unknown) PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+   > Could not resolve io.flutter:armeabi_v7a_debug:1.0.0-371f77202a73e8dff57a8b3bff75bca55c090aee.
+     Required by:
+         project ':app'
+      > Could not resolve io.flutter:armeabi_v7a_debug:1.0.0-371f77202a73e8dff57a8b3bff75bca55c090aee.
+         > Could not get resource 'https://dl.google.com/dl/android/maven2/io/flutter/armeabi_v7a_debug/1.0.0-371f77202a73e8dff57a8b3bff75bca55c090aee/armeabi_v7a_debug-1.0.0-371f77202a73e8dff57a8b3bff75bca55c090aee.pom'.
+            > Could not GET 'https://dl.google.com/dl/android/maven2/io/flutter/armeabi_v7a_debug/1.0.0-371f77202a73e8dff57a8b3bff75bca55c090aee/armeabi_v7a_debug-1.0.0-371f77202a73e8dff57a8b3bff75bca55c090aee.pom'.
+               > Got SSL handshake exception during request. It might be caused by SSL misconfiguration
+                  > (certificate_unknown) PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+      > Could not resolve io.flutter:armeabi_v7a_debug:1.0.0-371f77202a73e8dff57a8b3bff75bca55c090aee.
+         > Could not get resource 'https://repo.maven.apache.org/maven2/io/flutter/armeabi_v7a_debug/1.0.0-371f77202a73e8dff57a8b3bff75bca55c090aee/armeabi_v7a_debug-1.0.0-371f77202a73e8dff57a8b3bff75bca55c090aee.pom'.
+            > Could not GET 'https://repo.maven.apache.org/maven2/io/flutter/armeabi_v7a_debug/1.0.0-371f77202a73e8dff57a8b3bff75bca55c090aee/armeabi_v7a_debug-1.0.0-371f77202a73e8dff57a8b3bff75bca55c090aee.pom'.
+               > Got SSL handshake exception during request. It might be caused by SSL misconfiguration
+                  > (certificate_unknown) PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+      > Could not resolve io.flutter:armeabi_v7a_debug:1.0.0-371f77202a73e8dff57a8b3bff75bca55c090aee.
+         > Could not get resource 'https://storage.googleapis.com/download.flutter.io/io/flutter/armeabi_v7a_debug/1.0.0-371f77202a73e8dff57a8b3bff75bca55c090aee/armeabi_v7a_debug-1.0.0-371f77202a73e8dff57a8b3bff75bca55c090aee.pom'.
+            > Could not GET 'https://storage.googleapis.com/download.flutter.io/io/flutter/armeabi_v7a_debug/1.0.0-371f77202a73e8dff57a8b3bff75bca55c090aee/armeabi_v7a_debug-1.0.0-371f77202a73e8dff57a8b3bff75bca55c090aee.pom'.
+               > Got SSL handshake exception during request. It might be caused by SSL misconfiguration
+                  > (certificate_unknown) PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+   > Could not resolve io.flutter:arm64_v8a_debug:1.0.0-371f77202a73e8dff57a8b3bff75bca55c090aee.
+     Required by:
+         project ':app'
+      > Could not resolve io.flutter:arm64_v8a_debug:1.0.0-371f77202a73e8dff57a8b3bff75bca55c090aee.
+         > Could not get resource 'https://dl.google.com/dl/android/maven2/io/flutter/arm64_v8a_debug/1.0.0-371f77202a73e8dff57a8b3bff75bca55c090aee/arm64_v8a_debug-1.0.0-371f77202a73e8dff57a8b3bff75bca55c090aee.pom'.
+            > Could not GET 'https://dl.google.com/dl/android/maven2/io/flutter/arm64_v8a_debug/1.0.0-371f77202a73e8dff57a8b3bff75bca55c090aee/arm64_v8a_debug-1.0.0-371f77202a73e8dff57a8b3bff75bca55c090aee.pom'.
+               > Got SSL handshake exception during request. It might be caused by SSL misconfiguration
+                  > (certificate_unknown) PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+      > Could not resolve io.flutter:arm64_v8a_debug:1.0.0-371f77202a73e8dff57a8b3bff75bca55c090aee.
+         > Could not get resource 'https://repo.maven.apache.org/maven2/io/flutter/arm64_v8a_debug/1.0.0-371f77202a73e8dff57a8b3bff75bca55c090aee/arm64_v8a_debug-1.0.0-371f77202a73e8dff57a8b3bff75bca55c090aee.pom'.
+            > Could not GET 'https://repo.maven.apache.org/maven2/io/flutter/arm64_v8a_debug/1.0.0-371f77202a73e8dff57a8b3bff75bca55c090aee/arm64_v8a_debug-1.0.0-371f77202a73e8dff57a8b3bff75bca55c090aee.pom'.
+               > Got SSL handshake exception during request. It might be caused by SSL misconfiguration
+                  > (certificate_unknown) PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+      > Could not resolve io.flutter:arm64_v8a_debug:1.0.0-371f77202a73e8dff57a8b3bff75bca55c090aee.
+         > Could not get resource 'https://storage.googleapis.com/download.flutter.io/io/flutter/arm64_v8a_debug/1.0.0-371f77202a73e8dff57a8b3bff75bca55c090aee/arm64_v8a_debug-1.0.0-371f77202a73e8dff57a8b3bff75bca55c090aee.pom'.
+            > Could not GET 'https://storage.googleapis.com/download.flutter.io/io/flutter/arm64_v8a_debug/1.0.0-371f77202a73e8dff57a8b3bff75bca55c090aee/arm64_v8a_debug-1.0.0-371f77202a73e8dff57a8b3bff75bca55c090aee.pom'.
+               > Got SSL handshake exception during request. It might be caused by SSL misconfiguration
+                  > (certificate_unknown) PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+   > Could not resolve io.flutter:x86_64_debug:1.0.0-371f77202a73e8dff57a8b3bff75bca55c090aee.
+     Required by:
+         project ':app'
+      > Could not resolve io.flutter:x86_64_debug:1.0.0-371f77202a73e8dff57a8b3bff75bca55c090aee.
+         > Could not get resource 'https://dl.google.com/dl/android/maven2/io/flutter/x86_64_debug/1.0.0-371f77202a73e8dff57a8b3bff75bca55c090aee/x86_64_debug-1.0.0-371f77202a73e8dff57a8b3bff75bca55c090aee.pom'.
+            > Could not GET 'https://dl.google.com/dl/android/maven2/io/flutter/x86_64_debug/1.0.0-371f77202a73e8dff57a8b3bff75bca55c090aee/x86_64_debug-1.0.0-371f77202a73e8dff57a8b3bff75bca55c090aee.pom'.
+               > Got SSL handshake exception during request. It might be caused by SSL misconfiguration
+                  > (certificate_unknown) PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+      > Could not resolve io.flutter:x86_64_debug:1.0.0-371f77202a73e8dff57a8b3bff75bca55c090aee.
+         > Could not get resource 'https://repo.maven.apache.org/maven2/io/flutter/x86_64_debug/1.0.0-371f77202a73e8dff57a8b3bff75bca55c090aee/x86_64_debug-1.0.0-371f77202a73e8dff57a8b3bff75bca55c090aee.pom'.
+            > Could not GET 'https://repo.maven.apache.org/maven2/io/flutter/x86_64_debug/1.0.0-371f77202a73e8dff57a8b3bff75bca55c090aee/x86_64_debug-1.0.0-371f77202a73e8dff57a8b3bff75bca55c090aee.pom'.
+               > Got SSL handshake exception during request. It might be caused by SSL misconfiguration
+                  > (certificate_unknown) PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+      > Could not resolve io.flutter:x86_64_debug:1.0.0-371f77202a73e8dff57a8b3bff75bca55c090aee.
+         > Could not get resource 'https://storage.googleapis.com/download.flutter.io/io/flutter/x86_64_debug/1.0.0-371f77202a73e8dff57a8b3bff75bca55c090aee/x86_64_debug-1.0.0-371f77202a73e8dff57a8b3bff75bca55c090aee.pom'.
+            > Could not GET 'https://storage.googleapis.com/download.flutter.io/io/flutter/x86_64_debug/1.0.0-371f77202a73e8dff57a8b3bff75bca55c090aee/x86_64_debug-1.0.0-371f77202a73e8dff57a8b3bff75bca55c090aee.pom'.
+               > Got SSL handshake exception during request. It might be caused by SSL misconfiguration
+                  > (certificate_unknown) PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+
+* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --info or --debug option to get more log output.
+> Run with --scan to get full insights from a Build Scan (powered by Develocity).
+> Get more help at https://help.gradle.org.
+
+BUILD FAILED in 37s
+Running Gradle task 'assembleDebug'...                             38.5s
+[!] Gradle threw an error while downloading artifacts from the network.
+Retrying Gradle Build: #1, wait time: 100ms
+Running Gradle task 'assembleDebug'...                          
+Warning: Flutter support for your project's Gradle version (9.3.1) will soon be dropped. Please upgrade your Gradle version to a version of at least 9.5.0 soon.
+Alternatively, use the flag "--android-skip-build-dependency-validation" to bypass this check.
+
+Potential fix: Your project's gradle version is typically defined in the gradle wrapper file. By default, this can be found at /workspace/scratch/6e7f0ffd107d/web-work/SMART_SCHOOL/apps/mobile/android/gradle/wrapper/gradle-wrapper.properties. 
+For more information, see https://docs.gradle.org/current/userguide/gradle_wrapper.html.
+
+Warning: Flutter support for your project's Android Gradle Plugin version (Android Gradle Plugin version 9.1.1) will soon be dropped. Please upgrade your Android Gradle Plugin version to a version of at least Android Gradle Plugin version 9.3.1 soon.
+Alternatively, use the flag "--android-skip-build-dependency-validation" to bypass this check.
+
+Potential fix: Your project's AGP version is typically defined in the plugins block of the `settings.gradle` file (/workspace/scratch/6e7f0ffd107d/web-work/SMART_SCHOOL/apps/mobile/android/settings.gradle), by a plugin with the id of com.android.application. 
+If you don't see a plugins block, your project was likely created with an older template version. In this case it is most likely defined in the top-level build.gradle file (/workspace/scratch/6e7f0ffd107d/web-work/SMART_SCHOOL/apps/mobile/android/build.gradle) by the following line in the dependencies block of the buildscript: "classpath 'com.android.tools.build:gradle:<version>'".
+
+Warning: Flutter support for your project's Kotlin version (2.4.10) will soon be dropped. Please upgrade your Kotlin version to a version of at least 2.4.20 soon.
+Alternatively, use the flag "--android-skip-build-dependency-validation" to bypass this check.
+
+Potential fix: Your project's KGP version is typically defined in the plugins block of the `settings.gradle` file (/workspace/scratch/6e7f0ffd107d/web-work/SMART_SCHOOL/apps/mobile/android/settings.gradle), by a plugin with the id of org.jetbrains.kotlin.android. 
+If you don't see a plugins block, your project was likely created with an older template version, in which case it is most likely defined in the top-level build.gradle file (/workspace/scratch/6e7f0ffd107d/web-work/SMART_SCHOOL/apps/mobile/android/build.gradle) by the ext.kotlin_version property.
+
+
+Retry using the environment network proxy for Gradle dependency downloads.
+Running Gradle task 'assembleDebug'...                          
+Picked up JAVA_TOOL_OPTIONS: -Djavax.net.ssl.trustStore=/etc/ssl/certs/java/cacerts
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':app:processDebugNavigationResources'.
+> Could not resolve all files for configuration ':app:debugRuntimeClasspath'.
+   > Could not resolve org.jetbrains.kotlin:kotlin-stdlib:2.4.10.
+     Required by:
+         project ':app'
+      > Could not resolve org.jetbrains.kotlin:kotlin-stdlib:2.4.10.
+         > Could not get resource 'https://dl.google.com/dl/android/maven2/org/jetbrains/kotlin/kotlin-stdlib/2.4.10/kotlin-stdlib-2.4.10.pom'.
+            > Could not GET 'https://dl.google.com/dl/android/maven2/org/jetbrains/kotlin/kotlin-stdlib/2.4.10/kotlin-stdlib-2.4.10.pom'.
+               > Got SSL handshake exception during request. It might be caused by SSL misconfiguration
+                  > (certificate_unknown) PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+      > Could not resolve org.jetbrains.kotlin:kotlin-stdlib:2.4.10.
+         > Could not get resource 'https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-stdlib/2.4.10/kotlin-stdlib-2.4.10.pom'.
+            > Could not GET 'https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-stdlib/2.4.10/kotlin-stdlib-2.4.10.pom'.
+               > Got SSL handshake exception during request. It might be caused by SSL misconfiguration
+                  > (certificate_unknown) PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+      > Could not resolve org.jetbrains.kotlin:kotlin-stdlib:2.4.10.
+         > Could not get resource 'https://storage.googleapis.com/download.flutter.io/org/jetbrains/kotlin/kotlin-stdlib/2.4.10/kotlin-stdlib-2.4.10.pom'.
+            > Could not GET 'https://storage.googleapis.com/download.flutter.io/org/jetbrains/kotlin/kotlin-stdlib/2.4.10/kotlin-stdlib-2.4.10.pom'.
+               > Got SSL handshake exception during request. It might be caused by SSL misconfiguration
+                  > (certificate_unknown) PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+   > Could not resolve io.flutter:flutter_embedding_debug:1.0.0-371f77202a73e8dff57a8b3bff75bca55c090aee.
+     Required by:
+         project ':app'
+      > Could not resolve io.flutter:flutter_embedding_debug:1.0.0-371f77202a73e8dff57a8b3bff75bca55c090aee.
+         > Could not get resource 'https://dl.google.com/dl/android/maven2/io/flutter/flutter_embedding_debug/1.0.0-371f77202a73e8dff57a8b3bff75bca55c090aee/flutter_embedding_debug-1.0.0-371f77202a73e8dff57a8b3bff75bca55c090aee.pom'.
+            > Could not GET 'https://dl.google.com/dl/android/maven2/io/flutter/flutter_embedding_debug/1.0.0-371f77202a73e8dff57a8b3bff75bca55c090aee/flutter_embedding_debug-1.0.0-371f77202a73e8dff57a8b3bff75bca55c090aee.pom'.
+               > Got SSL handshake exception during request. It might be caused by SSL misconfiguration
+                  > (certificate_unknown) PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+      > Could not resolve io.flutter:flutter_embedding_debug:1.0.0-371f77202a73e8dff57a8b3bff75bca55c090aee.
+         > Could not get resource 'https://repo.maven.apache.org/maven2/io/flutter/flutter_embedding_debug/1.0.0-371f77202a73e8dff57a8b3bff75bca55c090aee/flutter_embedding_debug-1.0.0-371f77202a73e8dff57a8b3bff75bca55c090aee.pom'.
+            > Could not GET 'https://repo.maven.apache.org/maven2/io/flutter/flutter_embedding_debug/1.0.0-371f77202a73e8dff57a8b3bff75bca55c090aee/flutter_embedding_debug-1.0.0-371f77202a73e8dff57a8b3bff75bca55c090aee.pom'.
+               > Got SSL handshake exception during request. It might be caused by SSL misconfiguration
+                  > (certificate_unknown) PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+      > Could not resolve io.flutter:flutter_embedding_debug:1.0.0-371f77202a73e8dff57a8b3bff75bca55c090aee.
+         > Could not get resource 'https://storage.googleapis.com/download.flutter.io/io/flutter/flutter_embedding_debug/1.0.0-371f77202a73e8dff57a8b3bff75bca55c090aee/flutter_embedding_debug-1.0.0-371f77202a73e8dff57a8b3bff75bca55c090aee.pom'.
+            > Could not GET 'https://storage.googleapis.com/download.flutter.io/io/flutter/flutter_embedding_debug/1.0.0-371f77202a73e8dff57a8b3bff75bca55c090aee/flutter_embedding_debug-1.0.0-371f77202a73e8dff57a8b3bff75bca55c090aee.pom'.
+               > Got SSL handshake exception during request. It might be caused by SSL misconfiguration
+                  > (certificate_unknown) PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+   > Could not resolve io.flutter:armeabi_v7a_debug:1.0.0-371f77202a73e8dff57a8b3bff75bca55c090aee.
+     Required by:
+         project ':app'
+      > Could not resolve io.flutter:armeabi_v7a_debug:1.0.0-371f77202a73e8dff57a8b3bff75bca55c090aee.
+         > Could not get resource 'https://dl.google.com/dl/android/maven2/io/flutter/armeabi_v7a_debug/1.0.0-371f77202a73e8dff57a8b3bff75bca55c090aee/armeabi_v7a_debug-1.0.0-371f77202a73e8dff57a8b3bff75bca55c090aee.pom'.
+            > Could not GET 'https://dl.google.com/dl/android/maven2/io/flutter/armeabi_v7a_debug/1.0.0-371f77202a73e8dff57a8b3bff75bca55c090aee/armeabi_v7a_debug-1.0.0-371f77202a73e8dff57a8b3bff75bca55c090aee.pom'.
+               > Got SSL handshake exception during request. It might be caused by SSL misconfiguration
+                  > (certificate_unknown) PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+      > Could not resolve io.flutter:armeabi_v7a_debug:1.0.0-371f77202a73e8dff57a8b3bff75bca55c090aee.
+         > Could not get resource 'https://repo.maven.apache.org/maven2/io/flutter/armeabi_v7a_debug/1.0.0-371f77202a73e8dff57a8b3bff75bca55c090aee/armeabi_v7a_debug-1.0.0-371f77202a73e8dff57a8b3bff75bca55c090aee.pom'.
+            > Could not GET 'https://repo.maven.apache.org/maven2/io/flutter/armeabi_v7a_debug/1.0.0-371f77202a73e8dff57a8b3bff75bca55c090aee/armeabi_v7a_debug-1.0.0-371f77202a73e8dff57a8b3bff75bca55c090aee.pom'.
+               > Got SSL handshake exception during request. It might be caused by SSL misconfiguration
+                  > (certificate_unknown) PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+      > Could not resolve io.flutter:armeabi_v7a_debug:1.0.0-371f77202a73e8dff57a8b3bff75bca55c090aee.
+         > Could not get resource 'https://storage.googleapis.com/download.flutter.io/io/flutter/armeabi_v7a_debug/1.0.0-371f77202a73e8dff57a8b3bff75bca55c090aee/armeabi_v7a_debug-1.0.0-371f77202a73e8dff57a8b3bff75bca55c090aee.pom'.
+            > Could not GET 'https://storage.googleapis.com/download.flutter.io/io/flutter/armeabi_v7a_debug/1.0.0-371f77202a73e8dff57a8b3bff75bca55c090aee/armeabi_v7a_debug-1.0.0-371f77202a73e8dff57a8b3bff75bca55c090aee.pom'.
+               > Got SSL handshake exception during request. It might be caused by SSL misconfiguration
+                  > (certificate_unknown) PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+   > Could not resolve io.flutter:arm64_v8a_debug:1.0.0-371f77202a73e8dff57a8b3bff75bca55c090aee.
+     Required by:
+         project ':app'
+      > Could not resolve io.flutter:arm64_v8a_debug:1.0.0-371f77202a73e8dff57a8b3bff75bca55c090aee.
+         > Could not get resource 'https://dl.google.com/dl/android/maven2/io/flutter/arm64_v8a_debug/1.0.0-371f77202a73e8dff57a8b3bff75bca55c090aee/arm64_v8a_debug-1.0.0-371f77202a73e8dff57a8b3bff75bca55c090aee.pom'.
+            > Could not GET 'https://dl.google.com/dl/android/maven2/io/flutter/arm64_v8a_debug/1.0.0-371f77202a73e8dff57a8b3bff75bca55c090aee/arm64_v8a_debug-1.0.0-371f77202a73e8dff57a8b3bff75bca55c090aee.pom'.
+               > Got SSL handshake exception during request. It might be caused by SSL misconfiguration
+                  > (certificate_unknown) PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+      > Could not resolve io.flutter:arm64_v8a_debug:1.0.0-371f77202a73e8dff57a8b3bff75bca55c090aee.
+         > Could not get resource 'https://repo.maven.apache.org/maven2/io/flutter/arm64_v8a_debug/1.0.0-371f77202a73e8dff57a8b3bff75bca55c090aee/arm64_v8a_debug-1.0.0-371f77202a73e8dff57a8b3bff75bca55c090aee.pom'.
+            > Could not GET 'https://repo.maven.apache.org/maven2/io/flutter/arm64_v8a_debug/1.0.0-371f77202a73e8dff57a8b3bff75bca55c090aee/arm64_v8a_debug-1.0.0-371f77202a73e8dff57a8b3bff75bca55c090aee.pom'.
+               > Got SSL handshake exception during request. It might be caused by SSL misconfiguration
+                  > (certificate_unknown) PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+      > Could not resolve io.flutter:arm64_v8a_debug:1.0.0-371f77202a73e8dff57a8b3bff75bca55c090aee.
+         > Could not get resource 'https://storage.googleapis.com/download.flutter.io/io/flutter/arm64_v8a_debug/1.0.0-371f77202a73e8dff57a8b3bff75bca55c090aee/arm64_v8a_debug-1.0.0-371f77202a73e8dff57a8b3bff75bca55c090aee.pom'.
+            > Could not GET 'https://storage.googleapis.com/download.flutter.io/io/flutter/arm64_v8a_debug/1.0.0-371f77202a73e8dff57a8b3bff75bca55c090aee/arm64_v8a_debug-1.0.0-371f77202a73e8dff57a8b3bff75bca55c090aee.pom'.
+               > Got SSL handshake exception during request. It might be caused by SSL misconfiguration
+                  > (certificate_unknown) PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+   > Could not resolve io.flutter:x86_64_debug:1.0.0-371f77202a73e8dff57a8b3bff75bca55c090aee.
+     Required by:
+         project ':app'
+      > Could not resolve io.flutter:x86_64_debug:1.0.0-371f77202a73e8dff57a8b3bff75bca55c090aee.
+         > Could not get resource 'https://dl.google.com/dl/android/maven2/io/flutter/x86_64_debug/1.0.0-371f77202a73e8dff57a8b3bff75bca55c090aee/x86_64_debug-1.0.0-371f77202a73e8dff57a8b3bff75bca55c090aee.pom'.
+            > Could not GET 'https://dl.google.com/dl/android/maven2/io/flutter/x86_64_debug/1.0.0-371f77202a73e8dff57a8b3bff75bca55c090aee/x86_64_debug-1.0.0-371f77202a73e8dff57a8b3bff75bca55c090aee.pom'.
+               > Got SSL handshake exception during request. It might be caused by SSL misconfiguration
+                  > (certificate_unknown) PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+      > Could not resolve io.flutter:x86_64_debug:1.0.0-371f77202a73e8dff57a8b3bff75bca55c090aee.
+         > Could not get resource 'https://repo.maven.apache.org/maven2/io/flutter/x86_64_debug/1.0.0-371f77202a73e8dff57a8b3bff75bca55c090aee/x86_64_debug-1.0.0-371f77202a73e8dff57a8b3bff75bca55c090aee.pom'.
+            > Could not GET 'https://repo.maven.apache.org/maven2/io/flutter/x86_64_debug/1.0.0-371f77202a73e8dff57a8b3bff75bca55c090aee/x86_64_debug-1.0.0-371f77202a73e8dff57a8b3bff75bca55c090aee.pom'.
+               > Got SSL handshake exception during request. It might be caused by SSL misconfiguration
+                  > (certificate_unknown) PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+      > Could not resolve io.flutter:x86_64_debug:1.0.0-371f77202a73e8dff57a8b3bff75bca55c090aee.
+         > Could not get resource 'https://storage.googleapis.com/download.flutter.io/io/flutter/x86_64_debug/1.0.0-371f77202a73e8dff57a8b3bff75bca55c090aee/x86_64_debug-1.0.0-371f77202a73e8dff57a8b3bff75bca55c090aee.pom'.
+            > Could not GET 'https://storage.googleapis.com/download.flutter.io/io/flutter/x86_64_debug/1.0.0-371f77202a73e8dff57a8b3bff75bca55c090aee/x86_64_debug-1.0.0-371f77202a73e8dff57a8b3bff75bca55c090aee.pom'.
+               > Got SSL handshake exception during request. It might be caused by SSL misconfiguration
+                  > (certificate_unknown) PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+
+* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --info or --debug option to get more log output.
+> Run with --scan to get full insights from a Build Scan (powered by Develocity).
+> Get more help at https://help.gradle.org.
+
+BUILD FAILED in 22s
+Running Gradle task 'assembleDebug'...                             23.3s
+[!] Gradle threw an error while downloading artifacts from the network.
+Gradle task assembleDebug failed with exit code 1
+Warning: Flutter support for your project's Gradle version (9.3.1) will soon be dropped. Please upgrade your Gradle version to a version of at least 9.5.0 soon.
+Alternatively, use the flag "--android-skip-build-dependency-validation" to bypass this check.
+
+Potential fix: Your project's gradle version is typically defined in the gradle wrapper file. By default, this can be found at /workspace/scratch/6e7f0ffd107d/web-work/SMART_SCHOOL/apps/mobile/android/gradle/wrapper/gradle-wrapper.properties. 
+For more information, see https://docs.gradle.org/current/userguide/gradle_wrapper.html.
+
+Warning: Flutter support for your project's Android Gradle Plugin version (Android Gradle Plugin version 9.1.1) will soon be dropped. Please upgrade your Android Gradle Plugin version to a version of at least Android Gradle Plugin version 9.3.1 soon.
+Alternatively, use the flag "--android-skip-build-dependency-validation" to bypass this check.
+
+Potential fix: Your project's AGP version is typically defined in the plugins block of the `settings.gradle` file (/workspace/scratch/6e7f0ffd107d/web-work/SMART_SCHOOL/apps/mobile/android/settings.gradle), by a plugin with the id of com.android.application. 
+If you don't see a plugins block, your project was likely created with an older template version. In this case it is most likely defined in the top-level build.gradle file (/workspace/scratch/6e7f0ffd107d/web-work/SMART_SCHOOL/apps/mobile/android/build.gradle) by the following line in the dependencies block of the buildscript: "classpath 'com.android.tools.build:gradle:<version>'".
+
+Warning: Flutter support for your project's Kotlin version (2.4.10) will soon be dropped. Please upgrade your Kotlin version to a version of at least 2.4.20 soon.
+Alternatively, use the flag "--android-skip-build-dependency-validation" to bypass this check.
+
+Potential fix: Your project's KGP version is typically defined in the plugins block of the `settings.gradle` file (/workspace/scratch/6e7f0ffd107d/web-work/SMART_SCHOOL/apps/mobile/android/settings.gradle), by a plugin with the id of org.jetbrains.kotlin.android. 
+If you don't see a plugins block, your project was likely created with an older template version, in which case it is most likely defined in the top-level build.gradle file (/workspace/scratch/6e7f0ffd107d/web-work/SMART_SCHOOL/apps/mobile/android/build.gradle) by the ext.kotlin_version property.
+
+Warning: SDK processing. This version only understands SDK XML versions up to 3 but an SDK XML file of version 4 was encountered. This can happen if you use versions of Android Studio and the command-line tools that were released at different times.
+Picked up JAVA_TOOL_OPTIONS: -Djavax.net.ssl.trustStore=/etc/ssl/certs/java/cacerts
+
+Picked up JAVA_TOOL_OPTIONS: -Djavax.net.ssl.trustStore=/etc/ssl/certs/java/cacerts
+
+Picked up JAVA_TOOL_OPTIONS: -Djavax.net.ssl.trustStore=/etc/ssl/certs/java/cacerts
+
+Running Gradle task 'assembleDebug'...                            185.9s
+✓ Built build/app/outputs/flutter-apk/app-debug.apk

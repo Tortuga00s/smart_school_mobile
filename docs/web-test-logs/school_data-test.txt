@@ -1,0 +1,19 @@
+00:00 +0: loading /workspace/scratch/6e7f0ffd107d/web-work/SMART_SCHOOL/packages/school_data/test/web_transport_test.dart
+00:00 +0: /workspace/scratch/6e7f0ffd107d/web-work/SMART_SCHOOL/packages/school_data/test/web_transport_test.dart: Chrome default wins over Android user-agent platform
+00:00 +1: /workspace/scratch/6e7f0ffd107d/web-work/SMART_SCHOOL/packages/school_data/test/web_transport_test.dart: Android native retains emulator address
+00:00 +2: /workspace/scratch/6e7f0ffd107d/web-work/SMART_SCHOOL/packages/school_data/test/web_transport_test.dart: Windows native uses localhost and explicit address wins
+00:00 +3: /workspace/scratch/6e7f0ffd107d/web-work/SMART_SCHOOL/packages/school_data/test/web_transport_test.dart: GET uses portable http client with UTF8 and demo headers
+00:00 +4: /workspace/scratch/6e7f0ffd107d/web-work/SMART_SCHOOL/packages/school_data/test/web_transport_test.dart: POST uses portable http client with UTF8 and demo headers
+00:00 +5: /workspace/scratch/6e7f0ffd107d/web-work/SMART_SCHOOL/packages/school_data/test/web_transport_test.dart: PUT uses portable http client with UTF8 and demo headers
+00:00 +6: /workspace/scratch/6e7f0ffd107d/web-work/SMART_SCHOOL/packages/school_data/test/web_transport_test.dart: OPTIONS uses portable http client with UTF8 and demo headers
+00:00 +7: /workspace/scratch/6e7f0ffd107d/web-work/SMART_SCHOOL/packages/school_data/test/web_transport_test.dart: non-JSON errors preserve status and empty 204 is accepted
+00:00 +8: /workspace/scratch/6e7f0ffd107d/web-work/SMART_SCHOOL/packages/school_data/test/web_transport_test.dart: full response timeout is retained
+00:00 +9: /workspace/scratch/6e7f0ffd107d/web-work/SMART_SCHOOL/packages/school_data/test/web_transport_test.dart: live adapter preserves Bearer token and POST body without dart io
+00:00 +10: /workspace/scratch/6e7f0ffd107d/web-work/SMART_SCHOOL/packages/school_data/test/seed_test.dart: canonical demo seed roundtrips its domain state
+00:01 +11: /workspace/scratch/6e7f0ffd107d/web-work/SMART_SCHOOL/packages/school_data/test/api_integration_test.dart: real demo API shares admin changes, teacher attendance and parent inbox
+00:01 +12: /workspace/scratch/6e7f0ffd107d/web-work/SMART_SCHOOL/packages/school_data/test/session_test.dart: session open is idempotent, assignment protected and independent per lesson
+00:01 +13: /workspace/scratch/6e7f0ffd107d/web-work/SMART_SCHOOL/packages/school_data/test/session_test.dart: manual attendance updates inbox per lesson and duplicate status is idempotent
+00:01 +14: /workspace/scratch/6e7f0ffd107d/web-work/SMART_SCHOOL/packages/school_data/test/session_test.dart: closing requires review; closed sessions reject attendance edits
+00:01 +15: /workspace/scratch/6e7f0ffd107d/web-work/SMART_SCHOOL/packages/school_data/test/session_test.dart: serialization preserves state and schedule conflicts reject writes
+00:01 +16: /workspace/scratch/6e7f0ffd107d/web-work/SMART_SCHOOL/packages/school_data/test/session_test.dart: grade input rejects cross-class teacher and invalid values
+00:01 +17: All tests passed!

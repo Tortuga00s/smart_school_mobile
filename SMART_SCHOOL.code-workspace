@@ -1,0 +1,1 @@
+{"folders":[{"name":"SMART_SCHOOL","path":"."},{"name":"Admin Windows","path":"apps/admin_windows"},{"name":"Mobile Android","path":"apps/mobile"},{"name":"Shared Data","path":"packages/school_data"}],"settings":{"files.exclude":{"**/.dart_tool":true,"**/build":true}}}

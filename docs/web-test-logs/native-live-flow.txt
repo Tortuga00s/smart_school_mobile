@@ -1,0 +1,4 @@
+00:00 +0: loading /workspace/scratch/6e7f0ffd107d/web-work/SMART_SCHOOL/apps/mobile/test/live_flow_vm_test.dart
+00:00 +0: real HTTP GET POST PUT OPTIONS reach shared backend
+00:00 +1: teacher to parent role switch, navigation, manual attendance, grades and inbox
+00:06 +2: All tests passed!

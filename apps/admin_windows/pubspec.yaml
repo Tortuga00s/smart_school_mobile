@@ -1,0 +1,17 @@
+name: smart_school_admin
+version: 0.1.0+1
+publish_to: none
+description: Prototype aplikasi Smart School Admin untuk Flutter Windows.
+environment:
+  sdk: '>=3.10.0 <4.0.0'
+dependencies:
+  school_data:
+    path: ../../packages/school_data
+  flutter:
+    sdk: flutter
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+flutter:
+  uses-material-design: true

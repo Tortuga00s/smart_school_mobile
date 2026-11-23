@@ -1,0 +1,7 @@
+{
+  "path": "build/app/outputs/flutter-apk/app-debug.apk",
+  "bytes": 148940544,
+  "sha256": "476af993c1b9cbebfdf5406069c29a79ac3cfbaf13af746e79371702eec86ce0",
+  "build": "flutter build apk --debug --dart-define=DEMO_API_URL=http://10.0.2.2:8080",
+  "installed_on_device": false
+}

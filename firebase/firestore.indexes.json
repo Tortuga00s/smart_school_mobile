@@ -1,0 +1,1 @@
+{"indexes":[{"collectionGroup":"teaching_assignments","queryScope":"COLLECTION","fields":[{"fieldPath":"schoolId","order":"ASCENDING"},{"fieldPath":"teacherUid","order":"ASCENDING"}]}],"fieldOverrides":[]}

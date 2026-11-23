@@ -1,0 +1,55 @@
+test_cors_headers_on_json_error (test_cors.CorsTests.test_cors_headers_on_json_error) ... 127.0.0.1 - - [16/Nov/2026 17:04:23] "GET /snapshot HTTP/1.1" 403 -
+127.0.0.1 - - [16/Nov/2026 17:04:23] "PUT /snapshot HTTP/1.1" 409 -
+ok
+test_get_put_post_keep_same_revision_and_role_rules (test_cors.CorsTests.test_get_put_post_keep_same_revision_and_role_rules) ... 127.0.0.1 - - [16/Nov/2026 17:04:23] "GET /snapshot HTTP/1.1" 200 -
+127.0.0.1 - - [16/Nov/2026 17:04:23] "PUT /snapshot HTTP/1.1" 200 -
+127.0.0.1 - - [16/Nov/2026 17:04:23] "POST /snapshot HTTP/1.1" 200 -
+ok
+test_local_origin_validation (test_cors.CorsTests.test_local_origin_validation) ... ok
+test_preflight_for_get_post_put_options (test_cors.CorsTests.test_preflight_for_get_post_put_options) ... 127.0.0.1 - - [16/Nov/2026 17:04:23] "OPTIONS /snapshot HTTP/1.1" 204 -
+127.0.0.1 - - [16/Nov/2026 17:04:23] "OPTIONS /snapshot HTTP/1.1" 204 -
+127.0.0.1 - - [16/Nov/2026 17:04:23] "OPTIONS /snapshot HTTP/1.1" 204 -
+127.0.0.1 - - [16/Nov/2026 17:04:23] "OPTIONS /snapshot HTTP/1.1" 204 -
+ok
+test_reject_remote_origin_before_mutation (test_cors.CorsTests.test_reject_remote_origin_before_mutation) ... 127.0.0.1 - - [16/Nov/2026 17:04:23] "POST /snapshot HTTP/1.1" 403 -
+ok
+test_reject_unexpected_preflight (test_cors.CorsTests.test_reject_unexpected_preflight) ... 127.0.0.1 - - [16/Nov/2026 17:04:23] "OPTIONS /snapshot HTTP/1.1" 403 -
+127.0.0.1 - - [16/Nov/2026 17:04:23] "OPTIONS /snapshot HTTP/1.1" 403 -
+ok
+test_unknown_path_has_cors (test_cors.CorsTests.test_unknown_path_has_cors) ... 127.0.0.1 - - [16/Nov/2026 17:04:23] "GET /missing HTTP/1.1" 404 -
+ok
+test_admin_write_persists_and_stale_writer_gets_conflict (test_server.DemoApiTests.test_admin_write_persists_and_stale_writer_gets_conflict) ... 127.0.0.1 - - [16/Nov/2026 17:04:23] "GET /snapshot HTTP/1.1" 200 -
+127.0.0.1 - - [16/Nov/2026 17:04:23] "PUT /snapshot HTTP/1.1" 200 -
+127.0.0.1 - - [16/Nov/2026 17:04:23] "PUT /snapshot HTTP/1.1" 409 -
+ok
+test_closed_session_rejects_teacher_change (test_server.DemoApiTests.test_closed_session_rejects_teacher_change) ... 127.0.0.1 - - [16/Nov/2026 17:04:23] "GET /snapshot HTTP/1.1" 200 -
+127.0.0.1 - - [16/Nov/2026 17:04:23] "PUT /snapshot HTTP/1.1" 403 -
+ok
+test_identity_is_required (test_server.DemoApiTests.test_identity_is_required) ... 127.0.0.1 - - [16/Nov/2026 17:04:23] "GET /snapshot HTTP/1.1" 403 -
+ok
+test_parent_cannot_change_attendance (test_server.DemoApiTests.test_parent_cannot_change_attendance) ... 127.0.0.1 - - [16/Nov/2026 17:04:23] "GET /snapshot HTTP/1.1" 200 -
+127.0.0.1 - - [16/Nov/2026 17:04:23] "PUT /snapshot HTTP/1.1" 403 -
+ok
+test_parent_only_gets_linked_students (test_server.DemoApiTests.test_parent_only_gets_linked_students) ... 127.0.0.1 - - [16/Nov/2026 17:04:23] "GET /snapshot HTTP/1.1" 200 -
+ok
+test_parent_profile_cannot_relink_child (test_server.DemoApiTests.test_parent_profile_cannot_relink_child) ... 127.0.0.1 - - [16/Nov/2026 17:04:23] "GET /snapshot HTTP/1.1" 200 -
+127.0.0.1 - - [16/Nov/2026 17:04:23] "PUT /snapshot HTTP/1.1" 403 -
+ok
+test_shared_flow_manual_attendance_to_parent_and_admin (test_server.DemoApiTests.test_shared_flow_manual_attendance_to_parent_and_admin) ... 127.0.0.1 - - [16/Nov/2026 17:04:23] "GET /snapshot HTTP/1.1" 200 -
+127.0.0.1 - - [16/Nov/2026 17:04:23] "PUT /snapshot HTTP/1.1" 200 -
+127.0.0.1 - - [16/Nov/2026 17:04:23] "PUT /snapshot HTTP/1.1" 200 -
+127.0.0.1 - - [16/Nov/2026 17:04:23] "GET /snapshot HTTP/1.1" 200 -
+127.0.0.1 - - [16/Nov/2026 17:04:23] "PUT /snapshot HTTP/1.1" 200 -
+127.0.0.1 - - [16/Nov/2026 17:04:23] "GET /snapshot HTTP/1.1" 200 -
+ok
+test_teacher_cannot_change_master_data (test_server.DemoApiTests.test_teacher_cannot_change_master_data) ... 127.0.0.1 - - [16/Nov/2026 17:04:23] "GET /snapshot HTTP/1.1" 200 -
+127.0.0.1 - - [16/Nov/2026 17:04:23] "PUT /snapshot HTTP/1.1" 403 -
+ok
+test_teacher_cannot_submit_wrong_session (test_server.DemoApiTests.test_teacher_cannot_submit_wrong_session) ... 127.0.0.1 - - [16/Nov/2026 17:04:23] "GET /snapshot HTTP/1.1" 200 -
+127.0.0.1 - - [16/Nov/2026 17:04:23] "PUT /snapshot HTTP/1.1" 403 -
+ok
+
+----------------------------------------------------------------------
+Ran 16 tests in 1.070s
+
+OK

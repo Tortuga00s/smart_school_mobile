@@ -1,0 +1,6 @@
+Command: flutter build web --release --no-web-resources-cdn --dart-define=DEMO_API_URL=http://127.0.0.1:8080
+Exit code: 0
+Output excerpt captured from execution:
+Wasm dry run succeeded.
+Compiling lib/main.dart for the Web... 61.1s
+Built build/web

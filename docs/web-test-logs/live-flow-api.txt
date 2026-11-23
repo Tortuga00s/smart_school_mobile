@@ -1,0 +1,18 @@
+DEMO LOCAL ONLY http://127.0.0.1:8080 — data fiktif, tanpa Firebase/FCM
+127.0.0.1 - - [16/Nov/2026 17:20:54] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [16/Nov/2026 17:20:59] "GET /snapshot HTTP/1.1" 200 -
+127.0.0.1 - - [16/Nov/2026 17:20:59] "GET /snapshot HTTP/1.1" 200 -
+127.0.0.1 - - [16/Nov/2026 17:20:59] "POST /snapshot HTTP/1.1" 200 -
+127.0.0.1 - - [16/Nov/2026 17:20:59] "PUT /snapshot HTTP/1.1" 200 -
+127.0.0.1 - - [16/Nov/2026 17:20:59] "OPTIONS /snapshot HTTP/1.1" 204 -
+127.0.0.1 - - [16/Nov/2026 17:20:59] "PUT /snapshot HTTP/1.1" 409 -
+127.0.0.1 - - [16/Nov/2026 17:21:00] "GET /snapshot HTTP/1.1" 200 -
+127.0.0.1 - - [16/Nov/2026 17:21:01] "GET /snapshot HTTP/1.1" 200 -
+127.0.0.1 - - [16/Nov/2026 17:21:01] "PUT /snapshot HTTP/1.1" 200 -
+127.0.0.1 - - [16/Nov/2026 17:21:01] "GET /snapshot HTTP/1.1" 200 -
+127.0.0.1 - - [16/Nov/2026 17:21:02] "GET /snapshot HTTP/1.1" 200 -
+127.0.0.1 - - [16/Nov/2026 17:21:02] "PUT /snapshot HTTP/1.1" 200 -
+127.0.0.1 - - [16/Nov/2026 17:21:03] "PUT /snapshot HTTP/1.1" 200 -
+127.0.0.1 - - [16/Nov/2026 17:21:03] "GET /snapshot HTTP/1.1" 200 -
+127.0.0.1 - - [16/Nov/2026 17:21:03] "GET /snapshot HTTP/1.1" 200 -
+127.0.0.1 - - [16/Nov/2026 17:21:05] "GET /snapshot HTTP/1.1" 200 -

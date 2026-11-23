@@ -1,0 +1,73 @@
+[
+  {
+    "name": "school_data-analyze",
+    "exit_code": 0,
+    "command": [
+      "analyze"
+    ]
+  },
+  {
+    "name": "school_data-tests",
+    "exit_code": 0,
+    "command": [
+      "test",
+      "--dart-define=CAPTURE_VISUALS=true",
+      "--update-goldens",
+      "--reporter",
+      "expanded"
+    ]
+  },
+  {
+    "name": "admin_windows-analyze",
+    "exit_code": 0,
+    "command": [
+      "analyze"
+    ]
+  },
+  {
+    "name": "admin_windows-tests",
+    "exit_code": 0,
+    "command": [
+      "test",
+      "--reporter",
+      "expanded"
+    ]
+  },
+  {
+    "name": "mobile-analyze",
+    "exit_code": 0,
+    "command": [
+      "analyze"
+    ]
+  },
+  {
+    "name": "mobile-tests",
+    "exit_code": 0,
+    "command": [
+      "test",
+      "--dart-define=CAPTURE_VISUALS=true",
+      "--update-goldens",
+      "--reporter",
+      "expanded"
+    ]
+  },
+  {
+    "name": "demo-api-tests",
+    "exit_code": 0,
+    "command": [
+      "-m",
+      "unittest",
+      "-v"
+    ]
+  },
+  {
+    "name": "android-build-attempt",
+    "exit_code": 1,
+    "command": [
+      "build",
+      "apk",
+      "--debug",
+      "--dart-define=DEMO_API_URL=http://10.0.2.2:8080"
+    ]
+  }
+]

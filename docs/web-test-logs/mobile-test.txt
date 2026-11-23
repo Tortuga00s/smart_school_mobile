@@ -1,0 +1,9 @@
+00:00 +0: loading /workspace/scratch/6e7f0ffd107d/web-work/SMART_SCHOOL/apps/mobile/test/screenshots_test.dart
+00:00 +0: /workspace/scratch/6e7f0ffd107d/web-work/SMART_SCHOOL/apps/mobile/test/screenshots_test.dart: phone layouts at 390x844 render without overflow
+00:00 +1: /workspace/scratch/6e7f0ffd107d/web-work/SMART_SCHOOL/apps/mobile/test/screenshots_test.dart: phone layouts at 390x844 render without overflow
+00:00 +1 ~1: /workspace/scratch/6e7f0ffd107d/web-work/SMART_SCHOOL/apps/mobile/test/screenshots_test.dart: phone layouts at 390x844 render without overflow
+00:00 +1 ~2: /workspace/scratch/6e7f0ffd107d/web-work/SMART_SCHOOL/apps/mobile/test/screenshots_test.dart: phone layouts at 390x844 render without overflow
+00:01 +2 ~2: /workspace/scratch/6e7f0ffd107d/web-work/SMART_SCHOOL/apps/mobile/test/screenshots_test.dart: phone layouts at 390x844 render without overflow
+00:03 +3 ~2: /workspace/scratch/6e7f0ffd107d/web-work/SMART_SCHOOL/apps/mobile/test/screenshots_test.dart: phone layouts at 390x844 render without overflow
+00:03 +4 ~2: /workspace/scratch/6e7f0ffd107d/web-work/SMART_SCHOOL/apps/mobile/test/screenshots_test.dart: phone layouts at 390x844 render without overflow
+00:04 +5 ~2: All tests passed!

@@ -1,0 +1,9 @@
+00:00 +0: loading /workspace/scratch/6e7f0ffd107d/SMART_SCHOOL/packages/school_data/test/session_test.dart
+00:00 +0: /workspace/scratch/6e7f0ffd107d/SMART_SCHOOL/packages/school_data/test/session_test.dart: session open is idempotent, assignment protected and independent per lesson
+00:00 +1: /workspace/scratch/6e7f0ffd107d/SMART_SCHOOL/packages/school_data/test/session_test.dart: manual attendance updates inbox per lesson and duplicate status is idempotent
+00:00 +2: /workspace/scratch/6e7f0ffd107d/SMART_SCHOOL/packages/school_data/test/session_test.dart: closing requires review; closed sessions reject attendance edits
+00:00 +3: /workspace/scratch/6e7f0ffd107d/SMART_SCHOOL/packages/school_data/test/session_test.dart: serialization preserves state and schedule conflicts reject writes
+00:00 +4: /workspace/scratch/6e7f0ffd107d/SMART_SCHOOL/packages/school_data/test/session_test.dart: grade input rejects cross-class teacher and invalid values
+00:00 +5: /workspace/scratch/6e7f0ffd107d/SMART_SCHOOL/packages/school_data/test/api_integration_test.dart: real demo API shares admin changes, teacher attendance and parent inbox
+00:00 +6: /workspace/scratch/6e7f0ffd107d/SMART_SCHOOL/packages/school_data/test/seed_test.dart: canonical demo seed roundtrips its domain state
+00:00 +7: All tests passed!

@@ -1,0 +1,402 @@
+{
+  "teachers": [
+    {
+      "id": "T01",
+      "name": "Ahmad Hidayat",
+      "email": "ahmad@example.test",
+      "specialty": "Matematika",
+      "active": true
+    },
+    {
+      "id": "T02",
+      "name": "Siti Rahmawati",
+      "email": "siti@example.test",
+      "specialty": "IPA",
+      "active": true
+    },
+    {
+      "id": "T03",
+      "name": "Budi Santoso",
+      "email": "budi@example.test",
+      "specialty": "Bahasa Indonesia",
+      "active": true
+    },
+    {
+      "id": "T04",
+      "name": "Dina Permata",
+      "email": "dina@example.test",
+      "specialty": "Bahasa Inggris",
+      "active": true
+    },
+    {
+      "id": "T05",
+      "name": "Rizal Pratama",
+      "email": "rizal@example.test",
+      "specialty": "IPS",
+      "active": true
+    }
+  ],
+  "students": [
+    {
+      "id": "ST01",
+      "name": "Ahmad Rizki",
+      "nis": "2026001",
+      "classId": "C01",
+      "guardianId": "G01",
+      "active": true
+    },
+    {
+      "id": "ST02",
+      "name": "Nadia Putri",
+      "nis": "2026002",
+      "classId": "C01",
+      "guardianId": "G02",
+      "active": true
+    },
+    {
+      "id": "ST03",
+      "name": "Raka Pratama",
+      "nis": "2026003",
+      "classId": "C01",
+      "guardianId": "G03",
+      "active": true
+    },
+    {
+      "id": "ST04",
+      "name": "Alya Safira",
+      "nis": "2026004",
+      "classId": "C02",
+      "guardianId": "G04",
+      "active": true
+    },
+    {
+      "id": "ST05",
+      "name": "Putra Wijaya",
+      "nis": "2026005",
+      "classId": "C02",
+      "guardianId": "G01",
+      "active": true
+    },
+    {
+      "id": "ST06",
+      "name": "Laras Anjani",
+      "nis": "2026006",
+      "classId": "C03",
+      "guardianId": "G02",
+      "active": true
+    }
+  ],
+  "guardians": [
+    {
+      "id": "G01",
+      "name": "Rina Andini",
+      "phone": "081200000001",
+      "email": "rina@example.test"
+    },
+    {
+      "id": "G02",
+      "name": "Dedi Saputra",
+      "phone": "081200000002",
+      "email": "dedi@example.test"
+    },
+    {
+      "id": "G03",
+      "name": "Maya Putri",
+      "phone": "081200000003",
+      "email": "maya@example.test"
+    },
+    {
+      "id": "G04",
+      "name": "Fajar Nugroho",
+      "phone": "081200000004",
+      "email": "fajar@example.test"
+    }
+  ],
+  "classes": [
+    {
+      "id": "C01",
+      "name": "8A",
+      "room": "R. 201"
+    },
+    {
+      "id": "C02",
+      "name": "8B",
+      "room": "R. 202"
+    },
+    {
+      "id": "C03",
+      "name": "9A",
+      "room": "R. 301"
+    }
+  ],
+  "subjects": [
+    {
+      "id": "S01",
+      "name": "Matematika",
+      "code": "MTK"
+    },
+    {
+      "id": "S02",
+      "name": "IPA",
+      "code": "IPA"
+    },
+    {
+      "id": "S03",
+      "name": "Bahasa Indonesia",
+      "code": "BIN"
+    },
+    {
+      "id": "S04",
+      "name": "Bahasa Inggris",
+      "code": "BIG"
+    },
+    {
+      "id": "S05",
+      "name": "IPS",
+      "code": "IPS"
+    }
+  ],
+  "assignments": [
+    {
+      "id": "A01",
+      "teacherId": "T01",
+      "subjectId": "S01",
+      "classId": "C01",
+      "academicYear": "2026/2027",
+      "active": true
+    },
+    {
+      "id": "A02",
+      "teacherId": "T01",
+      "subjectId": "S01",
+      "classId": "C02",
+      "academicYear": "2026/2027",
+      "active": true
+    },
+    {
+      "id": "A03",
+      "teacherId": "T02",
+      "subjectId": "S02",
+      "classId": "C01",
+      "academicYear": "2026/2027",
+      "active": true
+    },
+    {
+      "id": "A04",
+      "teacherId": "T03",
+      "subjectId": "S03",
+      "classId": "C02",
+      "academicYear": "2026/2027",
+      "active": true
+    },
+    {
+      "id": "A05",
+      "teacherId": "T04",
+      "subjectId": "S04",
+      "classId": "C03",
+      "academicYear": "2026/2027",
+      "active": true
+    }
+  ],
+  "schedules": [
+    {
+      "id": "SC01",
+      "assignmentId": "A01",
+      "weekday": 1,
+      "startMinute": 420,
+      "endMinute": 510,
+      "room": "R. 201",
+      "status": "ACTIVE",
+      "substituteTeacherId": null
+    },
+    {
+      "id": "SC02",
+      "assignmentId": "A03",
+      "weekday": 1,
+      "startMinute": 510,
+      "endMinute": 600,
+      "room": "R. 201",
+      "status": "ACTIVE",
+      "substituteTeacherId": null
+    },
+    {
+      "id": "SC03",
+      "assignmentId": "A02",
+      "weekday": 1,
+      "startMinute": 600,
+      "endMinute": 690,
+      "room": "R. 202",
+      "status": "ACTIVE",
+      "substituteTeacherId": null
+    },
+    {
+      "id": "SC04",
+      "assignmentId": "A04",
+      "weekday": 2,
+      "startMinute": 420,
+      "endMinute": 510,
+      "room": "R. 202",
+      "status": "ACTIVE",
+      "substituteTeacherId": null
+    },
+    {
+      "id": "SC05",
+      "assignmentId": "A05",
+      "weekday": 3,
+      "startMinute": 510,
+      "endMinute": 600,
+      "room": "R. 301",
+      "status": "ACTIVE",
+      "substituteTeacherId": null
+    }
+  ],
+  "attendance": [
+    {
+      "id": "AT01",
+      "studentId": "ST01",
+      "subjectId": "S01",
+      "classId": "C01",
+      "sessionCode": "SESI-MTK-8A-01",
+      "status": "HADIR",
+      "method": "WAJAH",
+      "time": "07:15"
+    },
+    {
+      "id": "AT02",
+      "studentId": "ST02",
+      "subjectId": "S01",
+      "classId": "C01",
+      "sessionCode": "SESI-MTK-8A-01",
+      "status": "TERLAMBAT",
+      "method": "MANUAL",
+      "time": "07:32"
+    },
+    {
+      "id": "AT03",
+      "studentId": "ST03",
+      "subjectId": "S01",
+      "classId": "C01",
+      "sessionCode": "SESI-MTK-8A-01",
+      "status": "BELUM_ABSEN",
+      "method": "-",
+      "time": "-"
+    },
+    {
+      "id": "AT04",
+      "studentId": "ST04",
+      "subjectId": "S03",
+      "classId": "C02",
+      "sessionCode": "SESI-BIN-8B-01",
+      "status": "IZIN",
+      "method": "MANUAL",
+      "time": "07:06"
+    },
+    {
+      "id": "AT05",
+      "studentId": "ST05",
+      "subjectId": "S03",
+      "classId": "C02",
+      "sessionCode": "SESI-BIN-8B-01",
+      "status": "HADIR",
+      "method": "WAJAH",
+      "time": "07:10"
+    }
+  ],
+  "leaveRequests": [
+    {
+      "id": "LV01",
+      "teacherId": "T02",
+      "scheduleId": "SC02",
+      "reason": "Pemeriksaan kesehatan",
+      "status": "PENDING"
+    },
+    {
+      "id": "LV02",
+      "teacherId": "T04",
+      "scheduleId": "SC05",
+      "reason": "Kegiatan dinas sekolah",
+      "status": "PENDING"
+    }
+  ],
+  "consents": [
+    {
+      "studentId": "ST01",
+      "guardianId": "G01",
+      "status": "DISETUJUI",
+      "updatedAt": "01 Nov 2026"
+    },
+    {
+      "studentId": "ST02",
+      "guardianId": "G02",
+      "status": "DISETUJUI",
+      "updatedAt": "01 Nov 2026"
+    },
+    {
+      "studentId": "ST03",
+      "guardianId": "G03",
+      "status": "BELUM_ADA",
+      "updatedAt": "-"
+    },
+    {
+      "studentId": "ST04",
+      "guardianId": "G04",
+      "status": "DICABUT",
+      "updatedAt": "10 Nov 2026"
+    },
+    {
+      "studentId": "ST05",
+      "guardianId": "G01",
+      "status": "DISETUJUI",
+      "updatedAt": "01 Nov 2026"
+    },
+    {
+      "studentId": "ST06",
+      "guardianId": "G02",
+      "status": "BELUM_ADA",
+      "updatedAt": "-"
+    }
+  ],
+  "audits": [
+    {
+      "when": "16 Nov 2026 · 07:32",
+      "actor": "admin.demo",
+      "action": "Status sesi",
+      "details": "Contoh riwayat perubahan data demo"
+    },
+    {
+      "when": "16 Nov 2026 · 07:15",
+      "actor": "guru.demo",
+      "action": "Absensi",
+      "details": "Contoh absensi siswa per sesi Matematika 8A"
+    }
+  ],
+  "schoolName": "SMP Smart School",
+  "academicYear": "2026/2027",
+  "deadlineMinutes": 15,
+  "retentionDays": 60,
+  "holidays": [
+    "25 Des 2026"
+  ],
+  "serial": 100,
+  "sessionStates": {},
+  "events": [
+    {
+      "id": "AT01_1",
+      "attendanceId": "AT01",
+      "studentId": "ST01",
+      "guardianId": "G01",
+      "sessionId": "SESI-MTK-8A-01",
+      "subject": "Matematika",
+      "status": "HADIR",
+      "time": "2026-11-16T14:04:18.447006",
+      "delivery": "DEMO_INBOX_ONLY",
+      "read": false
+    }
+  ],
+  "grades": {
+    "ST01_S01": {
+      "uts": 85,
+      "uas": 90
+    }
+  }
+}

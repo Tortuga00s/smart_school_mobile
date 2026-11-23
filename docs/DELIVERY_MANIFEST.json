@@ -1,0 +1,1449 @@
+{
+  "root": "SMART_SCHOOL",
+  "flutter_apps": [
+    "apps/admin_windows",
+    "apps/mobile"
+  ],
+  "mobile_targets": [
+    "android",
+    "web"
+  ],
+  "source_latest": "SMART_SCHOOL(1).zip",
+  "tests_passed": 46,
+  "web_build": "PASS",
+  "android_debug_build": "PASS",
+  "chrome_direct_test": "BLOCKED: environment socket permission",
+  "android_device_test": "NOT_TESTED",
+  "files": [
+    {
+      "path": ".gitignore",
+      "bytes": 269,
+      "sha256": "2271e0608e03d8f0f6ef6f8ca574ef60aa9a442d8a9f0f9efdf87f69b43347e1"
+    },
+    {
+      "path": "README.md",
+      "bytes": 6410,
+      "sha256": "27a1ebf3db15d1eecaa7d06de623413ba5b7fd7335b12575397d29452ec339d2"
+    },
+    {
+      "path": "SMART_SCHOOL.code-workspace",
+      "bytes": 270,
+      "sha256": "ee23ff91c817567488b802ff54fd5b637dfd0f8c25edefe5b80d50b87d604725"
+    },
+    {
+      "path": "apps/admin_windows/README.md",
+      "bytes": 359,
+      "sha256": "a6cb116b3a90cd2bb18eba23161bba8c9f94784583c5b4ffa7abfcf37ace30e2"
+    },
+    {
+      "path": "apps/admin_windows/analysis_options.yaml",
+      "bytes": 97,
+      "sha256": "631a1f5b2937a67a45964c37f4d44974783807886e4b1a0b9d9c618d29ec5264"
+    },
+    {
+      "path": "apps/admin_windows/lib/main.dart",
+      "bytes": 279,
+      "sha256": "eafc5db4dbd0b3f84d179471356cda73e5f778dc22c87cc3acd5b99ba25fb7f7"
+    },
+    {
+      "path": "apps/admin_windows/lib/src/admin_app.dart",
+      "bytes": 16059,
+      "sha256": "e91e31728b42bdefde55f5e9e3fec0112ab8bd802ab01fe1139f0160004c3007"
+    },
+    {
+      "path": "apps/admin_windows/lib/src/app_state.dart",
+      "bytes": 47,
+      "sha256": "1b692ca514d74f972f837fa26dd6d6ae17a272e4715cce3c71273fa687194de3"
+    },
+    {
+      "path": "apps/admin_windows/lib/src/screens.dart",
+      "bytes": 80591,
+      "sha256": "d17b96092c67e2872ac3efcac335221e4a5d1159900c5f2738b0534b6bfaaf51"
+    },
+    {
+      "path": "apps/admin_windows/lib/src/ui.dart",
+      "bytes": 12104,
+      "sha256": "642d462cc2739ef29b882d093a4928a36c3e1240ea13459c14d69271b2e1388e"
+    },
+    {
+      "path": "apps/admin_windows/pubspec.lock",
+      "bytes": 7123,
+      "sha256": "53dd890029d63f97dc47827c0f31f008d5df5f052475e298e716ba2beadb5ef8"
+    },
+    {
+      "path": "apps/admin_windows/pubspec.yaml",
+      "bytes": 378,
+      "sha256": "78c1bd9907182cb5e138f60cf975356976c5a521d39d2c1b020538ae49f447dc"
+    },
+    {
+      "path": "apps/admin_windows/test/store_test.dart",
+      "bytes": 1483,
+      "sha256": "6c49a60227d208141231a5a32fe533aaaa84a4c24b8ee96181e0a37c355a7cd9"
+    },
+    {
+      "path": "apps/admin_windows/test/widget_test.dart",
+      "bytes": 2336,
+      "sha256": "e45565d92d0e3c2a6f2201fa98a8d94f2e38c5dd349f1fa36f7c9c47cb5e7913"
+    },
+    {
+      "path": "apps/admin_windows/windows/.gitignore",
+      "bytes": 308,
+      "sha256": "955e3110cb16494ee76e1cd5df47e2c212309eb94a49a123fe87f718de413cb8"
+    },
+    {
+      "path": "apps/admin_windows/windows/CMakeLists.txt",
+      "bytes": 4172,
+      "sha256": "e07621c9e16c2e364d51035cff0ccfa10169d58400fe15b98d9af86d76a09747"
+    },
+    {
+      "path": "apps/admin_windows/windows/flutter/CMakeLists.txt",
+      "bytes": 3742,
+      "sha256": "1fe418971b6f41bb35ceb3d64113a835f3f6f171ecaa707bf232492b57a588d6"
+    },
+    {
+      "path": "apps/admin_windows/windows/flutter/generated_plugin_registrant.cc",
+      "bytes": 164,
+      "sha256": "82e02567f2faf5e732dc92a2fb0d01104f7ba8c48973f8cfd41a860b4fac3f3b"
+    },
+    {
+      "path": "apps/admin_windows/windows/flutter/generated_plugin_registrant.h",
+      "bytes": 302,
+      "sha256": "dbc11635d7b1ba1887adf40df5b83d634e9c3ab0bee34510c71528bb4d73602a"
+    },
+    {
+      "path": "apps/admin_windows/windows/flutter/generated_plugins.cmake",
+      "bytes": 743,
+      "sha256": "286346b0d5303dc6b41072f9582d4c52bca35255b85b27b310f858e264dfdc56"
+    },
+    {
+      "path": "apps/admin_windows/windows/runner/CMakeLists.txt",
+      "bytes": 1796,
+      "sha256": "34119ec122e36940235ef4bc245fcfb43b6960ed443e28af1a8d833a81209b9e"
+    },
+    {
+      "path": "apps/admin_windows/windows/runner/Runner.rc",
+      "bytes": 3069,
+      "sha256": "ed514b6aa31f2e9be3f30d0e471e0338eb017b4d646d523f6cddc87b4d5fd02e"
+    },
+    {
+      "path": "apps/admin_windows/windows/runner/flutter_window.cpp",
+      "bytes": 2122,
+      "sha256": "dd185884c0b5301d400b58f12ebb36b1c8b326531597e531b40e44a6eeb0e943"
+    },
+    {
+      "path": "apps/admin_windows/windows/runner/flutter_window.h",
+      "bytes": 961,
+      "sha256": "0252b804f5da380c7709cbe1daff2b8d18daf6c49d7e6dd43e5af3c99c19f56c"
+    },
+    {
+      "path": "apps/admin_windows/windows/runner/main.cpp",
+      "bytes": 1271,
+      "sha256": "11fbb118fc57aac065646998633b10da877e04e66ec0ff79153e69ed86b414e3"
+    },
+    {
+      "path": "apps/admin_windows/windows/runner/resource.h",
+      "bytes": 448,
+      "sha256": "d0e8bf7835468b4b6b1f8f0747f2e8f25c19841f2df2ac60aaa584ddae3aa7c6"
+    },
+    {
+      "path": "apps/admin_windows/windows/runner/resources/app_icon.ico",
+      "bytes": 33772,
+      "sha256": "c098d3fc85cacff98b8e69811b48e9f0d852fcee278132d794411d978869cbf8"
+    },
+    {
+      "path": "apps/admin_windows/windows/runner/runner.exe.manifest",
+      "bytes": 616,
+      "sha256": "639a56233fcd8cbcb8bbefcd93e4680ec2664f32d9acfb3d2ec1d8726a96e090"
+    },
+    {
+      "path": "apps/admin_windows/windows/runner/utils.cpp",
+      "bytes": 2168,
+      "sha256": "6c2c87106b4b29d534c7edcafb3b7f7b9079caa3cdafa7e56671ad2adf5a2543"
+    },
+    {
+      "path": "apps/admin_windows/windows/runner/utils.h",
+      "bytes": 691,
+      "sha256": "832e246b6758253f89016fb0374b30791242e97ad950d27fc678b3d9feacfdc4"
+    },
+    {
+      "path": "apps/admin_windows/windows/runner/win32_window.cpp",
+      "bytes": 8534,
+      "sha256": "9065f31ccf746cf8b390121f958f9e959033af864aed779597066625ed56bc36"
+    },
+    {
+      "path": "apps/admin_windows/windows/runner/win32_window.h",
+      "bytes": 3624,
+      "sha256": "d154cf89ba85f820631a9b5bedacbe64fc5815e428fe6bc5da579ce649f69841"
+    },
+    {
+      "path": "apps/mobile/.gitignore",
+      "bytes": 812,
+      "sha256": "ed9a77a825bbb440bb307be75ba2791abc0c4ced4a935e9ac874f7146c1bc0fe"
+    },
+    {
+      "path": "apps/mobile/.metadata",
+      "bytes": 1706,
+      "sha256": "99645f3c5d764dcc4f85c77bf0b0264e1e4490f94d47cbca95526d616584e08d"
+    },
+    {
+      "path": "apps/mobile/README.md",
+      "bytes": 798,
+      "sha256": "018baff7507301e36589f6f1d55598d8cf5e2a643cccb0c24e7e8939f55064e3"
+    },
+    {
+      "path": "apps/mobile/analysis_options.yaml",
+      "bytes": 1585,
+      "sha256": "98d70dd5a9033911f40e2e7f3ff9d74618e2aa13652990efe860ed0fe1cedfa9"
+    },
+    {
+      "path": "apps/mobile/android/.gitignore",
+      "bytes": 267,
+      "sha256": "c9af75dbc2c8aa867476a09426c80b178c4aeed8b9393ae48503eedfa3273d71"
+    },
+    {
+      "path": "apps/mobile/android/app/build.gradle.kts",
+      "bytes": 1835,
+      "sha256": "dc7049f28217297b0f0e31dcf512db710817e2fe7862c0241cbd3103f95ea270"
+    },
+    {
+      "path": "apps/mobile/android/app/src/debug/AndroidManifest.xml",
+      "bytes": 433,
+      "sha256": "26092959ab0bfc16953408b7e6cca993d6e48e4b763159142f1e33e4ab44ab16"
+    },
+    {
+      "path": "apps/mobile/android/app/src/main/AndroidManifest.xml",
+      "bytes": 2266,
+      "sha256": "f3e721ef1de5ae51e5be266566acde1707540d8912ac462c605352c1ca45bc54"
+    },
+    {
+      "path": "apps/mobile/android/app/src/main/java/io/flutter/plugins/GeneratedPluginRegistrant.java",
+      "bytes": 516,
+      "sha256": "462f4a19778f3fe486674c6ab64b62f555095bddb6dfb6690a1d63ad92ef0f54"
+    },
+    {
+      "path": "apps/mobile/android/app/src/main/kotlin/com/example/smartschool_mobile/MainActivity.kt",
+      "bytes": 137,
+      "sha256": "0524be82db699552928e943eb0a651e1c1a2b579cd21f6f02309327d797ede99"
+    },
+    {
+      "path": "apps/mobile/android/app/src/main/res/drawable/launch_background.xml",
+      "bytes": 446,
+      "sha256": "2df60e2cfbee873ce2858088cf003e6b93498f2f568476da437610467ea1a9d7"
+    },
+    {
+      "path": "apps/mobile/android/app/src/main/res/drawable-v21/launch_background.xml",
+      "bytes": 450,
+      "sha256": "dca312ec77de83e43ef70a825c299b51451247286c29167d62f19165750b8793"
+    },
+    {
+      "path": "apps/mobile/android/app/src/main/res/mipmap-hdpi/ic_launcher.png",
+      "bytes": 544,
+      "sha256": "6a7c8f0d703e3682108f9662f813302236240d3f8f638bb391e32bfb96055fef"
+    },
+    {
+      "path": "apps/mobile/android/app/src/main/res/mipmap-mdpi/ic_launcher.png",
+      "bytes": 442,
+      "sha256": "c7c0c0189145e4e32a401c61c9bdc615754b0264e7afae24e834bb81049eaf81"
+    },
+    {
+      "path": "apps/mobile/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png",
+      "bytes": 721,
+      "sha256": "e14aa40904929bf313fded22cf7e7ffcbf1d1aac4263b5ef1be8bfce650397aa"
+    },
+    {
+      "path": "apps/mobile/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png",
+      "bytes": 1031,
+      "sha256": "4d470bf22d5c17d84edc5f82516d1ba8a1c09559cd761cefb792f86d9f52b540"
+    },
+    {
+      "path": "apps/mobile/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png",
+      "bytes": 1443,
+      "sha256": "3c34e1f298d0c9ea3455d46db6b7759c8211a49e9ec6e44b635fc5c87dfb4180"
+    },
+    {
+      "path": "apps/mobile/android/app/src/main/res/values/styles.xml",
+      "bytes": 1014,
+      "sha256": "cca15a99b59380a548bf6a890f7ca5380ee509b1f9bbb2f5f9ec3589fa25c2f7"
+    },
+    {
+      "path": "apps/mobile/android/app/src/main/res/values-night/styles.xml",
+      "bytes": 1013,
+      "sha256": "ea763597dc1a84c8034251caee98d7753e0fbf57340ffc94677427de4b537516"
+    },
+    {
+      "path": "apps/mobile/android/app/src/profile/AndroidManifest.xml",
+      "bytes": 385,
+      "sha256": "b01a4541a8144c15bc617bab7eb267c99fa1476368fbbda5a12cdbf4e316a34c"
+    },
+    {
+      "path": "apps/mobile/android/build.gradle.kts",
+      "bytes": 561,
+      "sha256": "218f400e3fff31c9c986a2535dfb974560e1b4d33cc27b7c1fee96a2b7e44454"
+    },
+    {
+      "path": "apps/mobile/android/gradle/wrapper/gradle-wrapper.jar",
+      "bytes": 53636,
+      "sha256": "16caeaf66d57a0d1d2087fef6a97efa62de8da69afa5b908f40db35afc4342da"
+    },
+    {
+      "path": "apps/mobile/android/gradle/wrapper/gradle-wrapper.properties",
+      "bytes": 207,
+      "sha256": "594a00250ef7a36609a01f3263bf5ed63963afaf9ca9f82f2cd1de0f6f056383"
+    },
+    {
+      "path": "apps/mobile/android/gradle.properties",
+      "bytes": 306,
+      "sha256": "7714698de712a7872e371f0dbae626c255fc83ac1c15e52e7cd9fcaa241b5092"
+    },
+    {
+      "path": "apps/mobile/android/gradlew",
+      "bytes": 4971,
+      "sha256": "ec56c02543666d92d9ac5ae7fcc48f88ce4de0deb8b7f9b39928ca46f68c1b2b"
+    },
+    {
+      "path": "apps/mobile/android/gradlew.bat",
+      "bytes": 2404,
+      "sha256": "c13c6e91b9a517783976de213d46398c661ea9e17651376d7301e839eaedcc62"
+    },
+    {
+      "path": "apps/mobile/android/settings.gradle.kts",
+      "bytes": 770,
+      "sha256": "a4b5e2c0a9b1b28eb08854e97706146542c7d950b77dd1290d0cc9d26f4369b8"
+    },
+    {
+      "path": "apps/mobile/ios/.gitignore",
+      "bytes": 603,
+      "sha256": "e85b4db8ba6ed14708e5f7d3c60336e5a3067ce11329b84aa8ba5d98603ee253"
+    },
+    {
+      "path": "apps/mobile/ios/Flutter/AppFrameworkInfo.plist",
+      "bytes": 744,
+      "sha256": "e51cfa76fca1ae586244b43bf97423577315d2906394c1e7768ef43b8d23e161"
+    },
+    {
+      "path": "apps/mobile/ios/Flutter/Debug.xcconfig",
+      "bytes": 31,
+      "sha256": "c0d1da54718e75f2028962b689258ecc741abf7cdaed50483aa5225264d0a7d7"
+    },
+    {
+      "path": "apps/mobile/ios/Flutter/Generated.xcconfig",
+      "bytes": 717,
+      "sha256": "c38f2e073879c6d748d5ba72889bbd61066c0e3faf7ddf5864da360fbb96c77f"
+    },
+    {
+      "path": "apps/mobile/ios/Flutter/Release.xcconfig",
+      "bytes": 31,
+      "sha256": "c0d1da54718e75f2028962b689258ecc741abf7cdaed50483aa5225264d0a7d7"
+    },
+    {
+      "path": "apps/mobile/ios/Flutter/flutter_export_environment.sh",
+      "bytes": 756,
+      "sha256": "7aaa38f2355e10a21bd370666fe7a7ef50d3d0cbb737e70b65f78450263bf1e1"
+    },
+    {
+      "path": "apps/mobile/ios/Runner/AppDelegate.swift",
+      "bytes": 555,
+      "sha256": "54a5e98d6c3e8a79413ad50607b83aac8ded8828bc913eda1fe86bb33a66cd5d"
+    },
+    {
+      "path": "apps/mobile/ios/Runner/Assets.xcassets/AppIcon.appiconset/Contents.json",
+      "bytes": 2641,
+      "sha256": "5f8b941b774bde4496d73347c1f79cbdd786bb76fbdab9ed1f3f0cb78a0fb0d3"
+    },
+    {
+      "path": "apps/mobile/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x.png",
+      "bytes": 10932,
+      "sha256": "7770183009e914112de7d8ef1d235a6a30c5834424858e0d2f8253f6b8d31926"
+    },
+    {
+      "path": "apps/mobile/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@1x.png",
+      "bytes": 295,
+      "sha256": "cab10a0d391ec5bc09ef50ce49e8ad401cee7ef03707ec0923a222c5c2b3d212"
+    },
+    {
+      "path": "apps/mobile/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@2x.png",
+      "bytes": 406,
+      "sha256": "b9ad02cf6576a04d1b6806ac02a2431481b448dd0c2e505ce25842d1f7c4730b"
+    },
+    {
+      "path": "apps/mobile/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@3x.png",
+      "bytes": 450,
+      "sha256": "c6e6d3b215ae744a9c391f4c4d44157eff5e739d6ad6c39f9bfa5df66dddd267"
+    },
+    {
+      "path": "apps/mobile/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@1x.png",
+      "bytes": 282,
+      "sha256": "5dee24dc104ac76dc162e42ae0beb163d426bf365562ee28ba7b3ad368559a60"
+    },
+    {
+      "path": "apps/mobile/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@2x.png",
+      "bytes": 462,
+      "sha256": "a9b21eb6f4271385655a8771f76e29eef8c1107d7879cbcfc567e6619d1f716a"
+    },
+    {
+      "path": "apps/mobile/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@3x.png",
+      "bytes": 704,
+      "sha256": "e677d701ffe4af7bc2935098d6b3984cc9ab7ace573e6900955a5535b12410cf"
+    },
+    {
+      "path": "apps/mobile/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@1x.png",
+      "bytes": 406,
+      "sha256": "b9ad02cf6576a04d1b6806ac02a2431481b448dd0c2e505ce25842d1f7c4730b"
+    },
+    {
+      "path": "apps/mobile/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@2x.png",
+      "bytes": 586,
+      "sha256": "7c61c42fc7b657d9cf314d32a4ec458f0647c3aaf360be1b9377857266ec2499"
+    },
+    {
+      "path": "apps/mobile/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@3x.png",
+      "bytes": 862,
+      "sha256": "19be171481dc71a0b2803ebcd01dd8b0c5fd5778dee34c0a3cabc948c225f24e"
+    },
+    {
+      "path": "apps/mobile/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-60x60@2x.png",
+      "bytes": 862,
+      "sha256": "19be171481dc71a0b2803ebcd01dd8b0c5fd5778dee34c0a3cabc948c225f24e"
+    },
+    {
+      "path": "apps/mobile/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-60x60@3x.png",
+      "bytes": 1674,
+      "sha256": "4209a49e44a92ec40a327d3455eb1b1c153ee83d75de1c2be0a12ab18b2ff9de"
+    },
+    {
+      "path": "apps/mobile/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-76x76@1x.png",
+      "bytes": 762,
+      "sha256": "836c918cb613249eba0483a6b02fa3df3c1c0a89a315ee4d3b88509b83c7ab73"
+    },
+    {
+      "path": "apps/mobile/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-76x76@2x.png",
+      "bytes": 1226,
+      "sha256": "41c7d42f6e61f8fe7f30b1ffa2256aecbc9682be06d18c4a3062043e1a2e547c"
+    },
+    {
+      "path": "apps/mobile/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-83.5x83.5@2x.png",
+      "bytes": 1418,
+      "sha256": "5d7e5bdf01b93802bc973345b3a78c038907147625035952a08a115a563b7f81"
+    },
+    {
+      "path": "apps/mobile/ios/Runner/Assets.xcassets/LaunchImage.imageset/Contents.json",
+      "bytes": 414,
+      "sha256": "fbd112a9f3b541a1d811f71ac8e4fe68b6176687d973a5f4d99b7aa4a722e94e"
+    },
+    {
+      "path": "apps/mobile/ios/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage.png",
+      "bytes": 68,
+      "sha256": "93ae7d494fad0fb30cbf3ae746a39c4bc7a0f8bbf87fbb587a3f3c01f3c5ce20"
+    },
+    {
+      "path": "apps/mobile/ios/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage@2x.png",
+      "bytes": 68,
+      "sha256": "93ae7d494fad0fb30cbf3ae746a39c4bc7a0f8bbf87fbb587a3f3c01f3c5ce20"
+    },
+    {
+      "path": "apps/mobile/ios/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage@3x.png",
+      "bytes": 68,
+      "sha256": "93ae7d494fad0fb30cbf3ae746a39c4bc7a0f8bbf87fbb587a3f3c01f3c5ce20"
+    },
+    {
+      "path": "apps/mobile/ios/Runner/Assets.xcassets/LaunchImage.imageset/README.md",
+      "bytes": 340,
+      "sha256": "853ac958e2416fe2540f6f61165283a3618b71a7ba5f85f65ac41c2158dfcd21"
+    },
+    {
+      "path": "apps/mobile/ios/Runner/Base.lproj/LaunchScreen.storyboard",
+      "bytes": 2414,
+      "sha256": "bc3644fbb251ff1e18de25a4932c927850ae1a025be3dd1447940429633fe4b2"
+    },
+    {
+      "path": "apps/mobile/ios/Runner/Base.lproj/Main.storyboard",
+      "bytes": 1631,
+      "sha256": "dcea4686c02065e56217fd19fcfb73d7509b41872e7486126149d47a18559363"
+    },
+    {
+      "path": "apps/mobile/ios/Runner/GeneratedPluginRegistrant.h",
+      "bytes": 378,
+      "sha256": "a5f88cc6415d2e639d2cb549348b84e02a7fdd0261603b0063abef6fa11f075a"
+    },
+    {
+      "path": "apps/mobile/ios/Runner/GeneratedPluginRegistrant.m",
+      "bytes": 225,
+      "sha256": "4707ddc36a164aed1fdd809c9e4a046a5f2a8d01a2c6ec788b8d91bfcfc4018b"
+    },
+    {
+      "path": "apps/mobile/ios/Runner/Info.plist",
+      "bytes": 2304,
+      "sha256": "685464952854f33006ad0d2e4c5c7294da4b72ac09172f5cd976249a5b32ba28"
+    },
+    {
+      "path": "apps/mobile/ios/Runner/Runner-Bridging-Header.h",
+      "bytes": 39,
+      "sha256": "efe657d8b27f7f8595a0d416bffb33fe7d93bd2869d81f7353b556c439d7a1a7"
+    },
+    {
+      "path": "apps/mobile/ios/Runner/SceneDelegate.swift",
+      "bytes": 82,
+      "sha256": "edce811c671ca0a6ccb14753e14e16deb0d89a0adf4f1b685e362d87d8f4c366"
+    },
+    {
+      "path": "apps/mobile/ios/Runner.xcodeproj/project.pbxproj",
+      "bytes": 26438,
+      "sha256": "c83cf978e8a13269f1515bbe3ddc38fbdf901ef04b8c55a37d6220beb6d2654f"
+    },
+    {
+      "path": "apps/mobile/ios/Runner.xcodeproj/project.xcworkspace/contents.xcworkspacedata",
+      "bytes": 142,
+      "sha256": "ac28b35c2b940210bec0fff8e424b07fd0efe9112ab178a10533583f251a386c"
+    },
+    {
+      "path": "apps/mobile/ios/Runner.xcodeproj/project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist",
+      "bytes": 246,
+      "sha256": "d557c2c32fc6258ec28981fa45dc847b76c9968beb90a2e26d13ef9c4ea45c30"
+    },
+    {
+      "path": "apps/mobile/ios/Runner.xcodeproj/project.xcworkspace/xcshareddata/WorkspaceSettings.xcsettings",
+      "bytes": 234,
+      "sha256": "dd64c0308ab2971c456871b990b24a008bdc3ece09833e8dbe9675e33a496e74"
+    },
+    {
+      "path": "apps/mobile/ios/Runner.xcodeproj/xcshareddata/xcschemes/Runner.xcscheme",
+      "bytes": 4836,
+      "sha256": "a46c0d064503db8bf9f452b492c61fdf76f9febb8894005fe30b2facec21e550"
+    },
+    {
+      "path": "apps/mobile/ios/Runner.xcworkspace/contents.xcworkspacedata",
+      "bytes": 159,
+      "sha256": "706a4c812f2a1e220e6785c27580020d58048e2ae4d30d1280f3c43344ce6b38"
+    },
+    {
+      "path": "apps/mobile/ios/Runner.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist",
+      "bytes": 246,
+      "sha256": "d557c2c32fc6258ec28981fa45dc847b76c9968beb90a2e26d13ef9c4ea45c30"
+    },
+    {
+      "path": "apps/mobile/ios/Runner.xcworkspace/xcshareddata/WorkspaceSettings.xcsettings",
+      "bytes": 234,
+      "sha256": "dd64c0308ab2971c456871b990b24a008bdc3ece09833e8dbe9675e33a496e74"
+    },
+    {
+      "path": "apps/mobile/ios/RunnerTests/RunnerTests.swift",
+      "bytes": 297,
+      "sha256": "c0e04141287eb7f9c9f3d31cf5be8cb626a9ea71351206c9121578e8b8f480c3"
+    },
+    {
+      "path": "apps/mobile/lib/features/parent/demo_store.dart",
+      "bytes": 5548,
+      "sha256": "ea6e2cdaf0af1fc94eb28cd2e94e33911fa28093d8df68f218d7e21464ba9aa1"
+    },
+    {
+      "path": "apps/mobile/lib/features/parent/models.dart",
+      "bytes": 2149,
+      "sha256": "f5cf337cf3444afd3b3111fe4c8bac42051eeb1e2454fc50e72d6e3bf12bb515"
+    },
+    {
+      "path": "apps/mobile/lib/features/parent/parent_app.dart",
+      "bytes": 51066,
+      "sha256": "17bd7e4b59d0fa0c39b89dfe58c9dc79f7d4fa4576087305b68c1548a30ec4d7"
+    },
+    {
+      "path": "apps/mobile/lib/features/parent/password_page.dart",
+      "bytes": 9230,
+      "sha256": "0f5190d587705303a1cc530ddc1a8f61859e0b0616d69bec5119e66e95e0c4f3"
+    },
+    {
+      "path": "apps/mobile/lib/features/parent/widgets.dart",
+      "bytes": 7634,
+      "sha256": "466746bf90d6352baf3f0ee793993a0a8977c43b2fbb029f1a605434130ad775"
+    },
+    {
+      "path": "apps/mobile/lib/features/teacher/teacher_shell.dart",
+      "bytes": 17200,
+      "sha256": "e3d512649490db4e5980cead06fce3c94bdf7b0a37de9e1a24b8193926db18d4"
+    },
+    {
+      "path": "apps/mobile/lib/main.dart",
+      "bytes": 239,
+      "sha256": "4ed393abe2acaefa36de9bddfe0f663636582e8aa1e516169779533912f8a290"
+    },
+    {
+      "path": "apps/mobile/lib/role_app.dart",
+      "bytes": 4669,
+      "sha256": "b048e6f1d75e244fe91cbdcab1ce745a79124a3bc4dce726e74d35e956ce169c"
+    },
+    {
+      "path": "apps/mobile/linux/.gitignore",
+      "bytes": 19,
+      "sha256": "d7bbeac6ba86e2d94d8ccc63a1a2fbbac5ee7467f52f75c168165412d6ac3b60"
+    },
+    {
+      "path": "apps/mobile/linux/CMakeLists.txt",
+      "bytes": 4903,
+      "sha256": "c40de9eba950d8daed2f81f9ad22e5b7b5745ab854333ab54c68b3a6366eeab2"
+    },
+    {
+      "path": "apps/mobile/linux/flutter/CMakeLists.txt",
+      "bytes": 2903,
+      "sha256": "4eb17836308c1cd53f6b2bb8edb3b7b30610bff3b1d9df7fecc9317f9109700c"
+    },
+    {
+      "path": "apps/mobile/linux/flutter/generated_plugin_registrant.cc",
+      "bytes": 161,
+      "sha256": "7861b227b10a10cc1d7643f82a246b7db35b503f2d9ff1d3c906136e6c260dce"
+    },
+    {
+      "path": "apps/mobile/linux/flutter/generated_plugin_registrant.h",
+      "bytes": 303,
+      "sha256": "00f93bb5b1faefdede8f6065df327522900fb0b8efee86bacf424fd947ed14bb"
+    },
+    {
+      "path": "apps/mobile/linux/flutter/generated_plugins.cmake",
+      "bytes": 739,
+      "sha256": "d5aaa52ef8594d3128b35b6619c6a353e1be5f3c5a63a9c29c0a32b424e91952"
+    },
+    {
+      "path": "apps/mobile/linux/runner/CMakeLists.txt",
+      "bytes": 1000,
+      "sha256": "81ecf2604c50f480c23d460b2ddf653ecd39df29cc5b2fe4913f1a59f008a5a7"
+    },
+    {
+      "path": "apps/mobile/linux/runner/main.cc",
+      "bytes": 186,
+      "sha256": "905b4dfa4eab584c1eb6244899b7d5ef56d0bceaf3bffb5ea335ed7e0ba3c549"
+    },
+    {
+      "path": "apps/mobile/linux/runner/my_application.cc",
+      "bytes": 5623,
+      "sha256": "8478982cbc493071c6ff6dc9551a23a64f02148db66de410a92d1163eeeaf090"
+    },
+    {
+      "path": "apps/mobile/linux/runner/my_application.h",
+      "bytes": 472,
+      "sha256": "880393cb82d7feaaa95d9acd6c2317749afae0e17ea5f5ee44b456bc081b5987"
+    },
+    {
+      "path": "apps/mobile/macos/.gitignore",
+      "bytes": 96,
+      "sha256": "236a523a43625a2d63af3cd0f2ce8600a3668846f8cb278c1c7c5cbfd4aa4088"
+    },
+    {
+      "path": "apps/mobile/macos/Flutter/Flutter-Debug.xcconfig",
+      "bytes": 49,
+      "sha256": "7e9b3ee3961b7d7718b418ceaed812a5f06a4e4cec894aae712a78e159c32ab0"
+    },
+    {
+      "path": "apps/mobile/macos/Flutter/Flutter-Release.xcconfig",
+      "bytes": 49,
+      "sha256": "7e9b3ee3961b7d7718b418ceaed812a5f06a4e4cec894aae712a78e159c32ab0"
+    },
+    {
+      "path": "apps/mobile/macos/Flutter/GeneratedPluginRegistrant.swift",
+      "bytes": 147,
+      "sha256": "9ebc54b4d21464b875d1289b3dd5e44cd7e68930dbd6e8c7f954e438eb6ad499"
+    },
+    {
+      "path": "apps/mobile/macos/Runner/AppDelegate.swift",
+      "bytes": 324,
+      "sha256": "5b9cbdcb563ad8578a99b7c283958490e4af537322e9092fe1efbb3c29ab3e1b"
+    },
+    {
+      "path": "apps/mobile/macos/Runner/Assets.xcassets/AppIcon.appiconset/Contents.json",
+      "bytes": 1359,
+      "sha256": "992ba63d183dfb8f8e3af38ac203d834d23c004da1417c438b4c5a3d7d1d7103"
+    },
+    {
+      "path": "apps/mobile/macos/Runner/Assets.xcassets/AppIcon.appiconset/app_icon_1024.png",
+      "bytes": 102994,
+      "sha256": "6232e5815af17e25e0268b2fec7aea9e068cc92ec709e9605c2b31df4ff2a313"
+    },
+    {
+      "path": "apps/mobile/macos/Runner/Assets.xcassets/AppIcon.appiconset/app_icon_128.png",
+      "bytes": 5680,
+      "sha256": "15591f03f31313af6fd644ed0512106cc04365130b8b73244f1cfa6dddfb4400"
+    },
+    {
+      "path": "apps/mobile/macos/Runner/Assets.xcassets/AppIcon.appiconset/app_icon_16.png",
+      "bytes": 520,
+      "sha256": "cc6928b5adfc00dbf526192e2705dd9af641cdf20ab4c6c7ca7cd4936dca59f0"
+    },
+    {
+      "path": "apps/mobile/macos/Runner/Assets.xcassets/AppIcon.appiconset/app_icon_256.png",
+      "bytes": 14142,
+      "sha256": "416efd77cde932d42ef34168da24dd428a495b1f4f34bbbd125a18d2add186a2"
+    },
+    {
+      "path": "apps/mobile/macos/Runner/Assets.xcassets/AppIcon.appiconset/app_icon_32.png",
+      "bytes": 1066,
+      "sha256": "ae8c4458e41f1e28b1e851ed87d3268d4a0351ceea427fa2a84cc94ddfb6d4c5"
+    },
+    {
+      "path": "apps/mobile/macos/Runner/Assets.xcassets/AppIcon.appiconset/app_icon_512.png",
+      "bytes": 36406,
+      "sha256": "0a91c6c1bf242e54ee179e34629e9ef3e8a6d286c0fce01e302280a8be9277e6"
+    },
+    {
+      "path": "apps/mobile/macos/Runner/Assets.xcassets/AppIcon.appiconset/app_icon_64.png",
+      "bytes": 2218,
+      "sha256": "6ad229623498e5f1277800db3ab7cb11faf85eb2569e1213f7d8e55003c07b42"
+    },
+    {
+      "path": "apps/mobile/macos/Runner/Base.lproj/MainMenu.xib",
+      "bytes": 24072,
+      "sha256": "776c35481f6581f14148b90071558b25f6ce6262e771988985e9fe8d3e70a472"
+    },
+    {
+      "path": "apps/mobile/macos/Runner/Configs/AppInfo.xcconfig",
+      "bytes": 636,
+      "sha256": "cb05a6493d8a08aead15d1ae078e86d091d54be6075afdf0eee68558bd7a84d2"
+    },
+    {
+      "path": "apps/mobile/macos/Runner/Configs/Debug.xcconfig",
+      "bytes": 79,
+      "sha256": "86be603022e2a385dd7884fce4cc29255676c3dda579d3d4a56c958bf1e57de0"
+    },
+    {
+      "path": "apps/mobile/macos/Runner/Configs/Release.xcconfig",
+      "bytes": 81,
+      "sha256": "d1bf3f0349aadd5c58ee9d46c0ce4ce45467127c438936e9bb481d861d296565"
+    },
+    {
+      "path": "apps/mobile/macos/Runner/Configs/Warnings.xcconfig",
+      "bytes": 593,
+      "sha256": "aa8ded4c14068cb05f51f5446509fe56805cf1e29961ad6d5a97233bb0632bc1"
+    },
+    {
+      "path": "apps/mobile/macos/Runner/DebugProfile.entitlements",
+      "bytes": 360,
+      "sha256": "b2aa41d03e18907d360b721b7bb3edb302897c8a3de98ec47b6665033fea0b0e"
+    },
+    {
+      "path": "apps/mobile/macos/Runner/Info.plist",
+      "bytes": 1092,
+      "sha256": "047f9cb0f1122c04589483beaedbbe23492fdc8946b94e09bb13080736af4f93"
+    },
+    {
+      "path": "apps/mobile/macos/Runner/MainFlutterWindow.swift",
+      "bytes": 403,
+      "sha256": "8178ad756f958f986f794a8bb06e321a6630ceaaf8f235b3b4ae3936e415dc7c"
+    },
+    {
+      "path": "apps/mobile/macos/Runner/Release.entitlements",
+      "bytes": 248,
+      "sha256": "c3b881c72aa4cca9cf50da6654c4d675dec929056692af46a6fbecd00aef5990"
+    },
+    {
+      "path": "apps/mobile/macos/Runner.xcodeproj/project.pbxproj",
+      "bytes": 28710,
+      "sha256": "3079b2c59a1fa619e12bd5c01c75292fc69ff7c6194f7fc8b18da621b0090d6f"
+    },
+    {
+      "path": "apps/mobile/macos/Runner.xcodeproj/project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist",
+      "bytes": 246,
+      "sha256": "d557c2c32fc6258ec28981fa45dc847b76c9968beb90a2e26d13ef9c4ea45c30"
+    },
+    {
+      "path": "apps/mobile/macos/Runner.xcodeproj/xcshareddata/xcschemes/Runner.xcscheme",
+      "bytes": 4737,
+      "sha256": "0d31c9964c046db4e71ca6e2874f09b586034382ed15c12783a3ccb1b41fda8f"
+    },
+    {
+      "path": "apps/mobile/macos/Runner.xcworkspace/contents.xcworkspacedata",
+      "bytes": 159,
+      "sha256": "706a4c812f2a1e220e6785c27580020d58048e2ae4d30d1280f3c43344ce6b38"
+    },
+    {
+      "path": "apps/mobile/macos/Runner.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist",
+      "bytes": 246,
+      "sha256": "d557c2c32fc6258ec28981fa45dc847b76c9968beb90a2e26d13ef9c4ea45c30"
+    },
+    {
+      "path": "apps/mobile/macos/RunnerTests/RunnerTests.swift",
+      "bytes": 302,
+      "sha256": "8a0ff977c64ceac0750fffa48087988b7b4125d1b1c49019221e7fffb574423e"
+    },
+    {
+      "path": "apps/mobile/pubspec.lock",
+      "bytes": 7369,
+      "sha256": "0a6cfd30cb863994ee23d1e7951129c004484070bfda709e380c1a4f2444d1f7"
+    },
+    {
+      "path": "apps/mobile/pubspec.yaml",
+      "bytes": 3923,
+      "sha256": "0cef622053dbbade08bcc32e2de230db4bfb61f002d7a5dafe490019dcb1d905"
+    },
+    {
+      "path": "apps/mobile/test/browser/web_smoke_test.dart",
+      "bytes": 212,
+      "sha256": "74c2be79ec1c39c6f0bb2fa89bbed3677d5b787d88610ac7af4096693bc507e2"
+    },
+    {
+      "path": "apps/mobile/test/live_flow_vm_test.dart",
+      "bytes": 579,
+      "sha256": "614c7425366715f2097254631187a536631810e91b4b5799c8a0c1f49d2884ed"
+    },
+    {
+      "path": "apps/mobile/test/screenshots_test.dart",
+      "bytes": 3214,
+      "sha256": "7b128b3406d524d950b1c61c28d710eaefda3af8e0b211435bc39cb204b11f9d"
+    },
+    {
+      "path": "apps/mobile/test/support/live_flow.dart",
+      "bytes": 6437,
+      "sha256": "8d50cb5e4fd9df4a616264ec32ed047346aa4c723639ae722a8f258a2bb7e0a3"
+    },
+    {
+      "path": "apps/mobile/test/widget_test.dart",
+      "bytes": 3192,
+      "sha256": "aac880a7d494668221adc6b4ec431e2530a3d78e1e2c087a8cdcb1b785ad3789"
+    },
+    {
+      "path": "apps/mobile/web/favicon.png",
+      "bytes": 917,
+      "sha256": "7ab2525f4b86b65d3e4c70358a17e5a1aaf6f437f99cbcc046dad73d59bb9015"
+    },
+    {
+      "path": "apps/mobile/web/icons/Icon-192.png",
+      "bytes": 5292,
+      "sha256": "3dce99077602f70421c1c6b2a240bc9b83d64d86681d45f2154143310c980be3"
+    },
+    {
+      "path": "apps/mobile/web/icons/Icon-512.png",
+      "bytes": 8252,
+      "sha256": "baccb205ae45f0b421be1657259b4943ac40c95094ab877f3bcbe12cd544dcbe"
+    },
+    {
+      "path": "apps/mobile/web/icons/Icon-maskable-192.png",
+      "bytes": 5594,
+      "sha256": "d2c842e22a9f4ec9d996b23373a905c88d9a203b220c5c151885ad621f974b5c"
+    },
+    {
+      "path": "apps/mobile/web/icons/Icon-maskable-512.png",
+      "bytes": 20998,
+      "sha256": "6aee06cdcab6b2aef74b1734c4778f4421d2da100b0ff9e52b21b55240202929"
+    },
+    {
+      "path": "apps/mobile/web/index.html",
+      "bytes": 1556,
+      "sha256": "9b2c572b5d396d8b9cac3b8803fdd6cf70b14c2ec4e6c5a999ce74a3bcfb1c1e"
+    },
+    {
+      "path": "apps/mobile/web/manifest.json",
+      "bytes": 940,
+      "sha256": "4f03100a1c5cfe4f04775cec0b2dafa22883af4900cfe22ec20e9fcef34fbe33"
+    },
+    {
+      "path": "apps/mobile/windows/.gitignore",
+      "bytes": 308,
+      "sha256": "955e3110cb16494ee76e1cd5df47e2c212309eb94a49a123fe87f718de413cb8"
+    },
+    {
+      "path": "apps/mobile/windows/CMakeLists.txt",
+      "bytes": 4280,
+      "sha256": "88b98b85195783938691cb338250e54e4d393078043e6e9cf251136efe080eff"
+    },
+    {
+      "path": "apps/mobile/windows/flutter/CMakeLists.txt",
+      "bytes": 3851,
+      "sha256": "bd05e3268b2f246bcbafdb778165fe67a7bafdba04eb73599502563a67b8ae7e"
+    },
+    {
+      "path": "apps/mobile/windows/flutter/generated_plugin_registrant.cc",
+      "bytes": 164,
+      "sha256": "82e02567f2faf5e732dc92a2fb0d01104f7ba8c48973f8cfd41a860b4fac3f3b"
+    },
+    {
+      "path": "apps/mobile/windows/flutter/generated_plugin_registrant.h",
+      "bytes": 302,
+      "sha256": "dbc11635d7b1ba1887adf40df5b83d634e9c3ab0bee34510c71528bb4d73602a"
+    },
+    {
+      "path": "apps/mobile/windows/flutter/generated_plugins.cmake",
+      "bytes": 743,
+      "sha256": "286346b0d5303dc6b41072f9582d4c52bca35255b85b27b310f858e264dfdc56"
+    },
+    {
+      "path": "apps/mobile/windows/runner/CMakeLists.txt",
+      "bytes": 1836,
+      "sha256": "d765fdd05f63ad099e585a2cced0cbff13ec3229b7de68c8681b2107db850089"
+    },
+    {
+      "path": "apps/mobile/windows/runner/Runner.rc",
+      "bytes": 3190,
+      "sha256": "f577d6a3c0161b50b287042a16c1319aa3a8d86e886cb69f8d73557e4980eff2"
+    },
+    {
+      "path": "apps/mobile/windows/runner/flutter_window.cpp",
+      "bytes": 2193,
+      "sha256": "d615eedc06ae37321e59c2c00c7687d1887dcd97904eb7225fafd8dcb5b83da6"
+    },
+    {
+      "path": "apps/mobile/windows/runner/flutter_window.h",
+      "bytes": 961,
+      "sha256": "0252b804f5da380c7709cbe1daff2b8d18daf6c49d7e6dd43e5af3c99c19f56c"
+    },
+    {
+      "path": "apps/mobile/windows/runner/main.cpp",
+      "bytes": 1314,
+      "sha256": "23158b8b7a2d194ecbc4e3c9ddbf4e515d902f051db78a3d42ad64e09b877cd8"
+    },
+    {
+      "path": "apps/mobile/windows/runner/resource.h",
+      "bytes": 448,
+      "sha256": "d0e8bf7835468b4b6b1f8f0747f2e8f25c19841f2df2ac60aaa584ddae3aa7c6"
+    },
+    {
+      "path": "apps/mobile/windows/runner/resources/app_icon.ico",
+      "bytes": 33772,
+      "sha256": "c098d3fc85cacff98b8e69811b48e9f0d852fcee278132d794411d978869cbf8"
+    },
+    {
+      "path": "apps/mobile/windows/runner/runner.exe.manifest",
+      "bytes": 616,
+      "sha256": "639a56233fcd8cbcb8bbefcd93e4680ec2664f32d9acfb3d2ec1d8726a96e090"
+    },
+    {
+      "path": "apps/mobile/windows/runner/utils.cpp",
+      "bytes": 2237,
+      "sha256": "a128b67b9f3c2579e2ecef5b0dde2c33f222a097cdfe5da2a3067c73d1485b39"
+    },
+    {
+      "path": "apps/mobile/windows/runner/utils.h",
+      "bytes": 691,
+      "sha256": "832e246b6758253f89016fb0374b30791242e97ad950d27fc678b3d9feacfdc4"
+    },
+    {
+      "path": "apps/mobile/windows/runner/win32_window.cpp",
+      "bytes": 8822,
+      "sha256": "4e4f4dcf8e86ea6e097562cb3476039e693449bd8045367538afee579c017511"
+    },
+    {
+      "path": "apps/mobile/windows/runner/win32_window.h",
+      "bytes": 3624,
+      "sha256": "d154cf89ba85f820631a9b5bedacbe64fc5815e428fe6bc5da579ce649f69841"
+    },
+    {
+      "path": "docs/ARSITEKTUR.md",
+      "bytes": 5956,
+      "sha256": "e22e5a2c7f4b9acbe4bea02f4b67a5acf76be87225adce8636f5a33cb8fdbca4"
+    },
+    {
+      "path": "docs/AUDIT_FLUTTER_WEB.md",
+      "bytes": 3430,
+      "sha256": "c3160397556755f54bd6f6853d9c8c9c31b258367cd37e266dbccc8bcbf9fe45"
+    },
+    {
+      "path": "docs/AUDIT_SUMBER.md",
+      "bytes": 3361,
+      "sha256": "c7cafed74b81b19e54c31bc8b200c905fceb3e3bd7ad61578388bbf5dc5d566e"
+    },
+    {
+      "path": "docs/BELUM_SELESAI.md",
+      "bytes": 4970,
+      "sha256": "455fbdcf3921864964984d9f982eefe5e9c1e8feaa54945178ee2381d4f70af3"
+    },
+    {
+      "path": "docs/HASIL_PENGUJIAN.md",
+      "bytes": 5245,
+      "sha256": "01d742abf7c1976a37d7382b3ec39c653fc240cbffa6db58cebae61c04f47ccc"
+    },
+    {
+      "path": "docs/HASIL_PENGUJIAN_WEB.md",
+      "bytes": 5781,
+      "sha256": "1d4446fe96d0d116a13d5987b88a956cda129838d4dbff2bf6cf95f61dd9d923"
+    },
+    {
+      "path": "docs/INPUT_MANIFEST.json",
+      "bytes": 616,
+      "sha256": "53a3cb580795dcfb5b860f15a2d0dc74bf41db0f3997a3f984094b0d2206e24b"
+    },
+    {
+      "path": "docs/PANDUAN_FLUTTER_WEB.md",
+      "bytes": 5962,
+      "sha256": "f213df8e0ad642e9a009af6f83a00e2e4eb4218e32ff91d4c0de9ba4d30821f3"
+    },
+    {
+      "path": "docs/PRD.docx",
+      "bytes": 2716461,
+      "sha256": "66f1fc42144d2196fc2813489be315165c856eaca238853e274a0cbae75db0e2"
+    },
+    {
+      "path": "docs/PRD.txt",
+      "bytes": 41644,
+      "sha256": "9831c653c93da09463051f9ebfa957322162b3ee122c9f9e1972ccb5a17968b1"
+    },
+    {
+      "path": "docs/WEB_CHANGE_MANIFEST.json",
+      "bytes": 5065,
+      "sha256": "2ad3043d8d156271b01b0ed08682eef5af8cd1f301ec4bd8eff5a6855454c4a7"
+    },
+    {
+      "path": "docs/admin-preview/admin-dashboard.html",
+      "bytes": 15993,
+      "sha256": "9c454bcd8b3ce629928b266c218bdce9e5e87686f3af70bdca9ca01b254a610e"
+    },
+    {
+      "path": "docs/admin-preview/dashboard-admin.png",
+      "bytes": 251742,
+      "sha256": "e26ee82e1dcb3311999ab318fc092e4fa70ac0c85168ba2ed299a8a437a994e4"
+    },
+    {
+      "path": "docs/design/Smart School Mobile App UI/UX-1.png",
+      "bytes": 430492,
+      "sha256": "8a495d16dd14a0b1e4a5a50bae9abd1fc758b683fe2ddf9f8dee60f470e3299c"
+    },
+    {
+      "path": "docs/design/Smart School Mobile App UI/UX-10.png",
+      "bytes": 215642,
+      "sha256": "944b8c28f4bbe9dbd8b5ed1de342bc50a27a00a92fef7a186280f9d749e8a0f2"
+    },
+    {
+      "path": "docs/design/Smart School Mobile App UI/UX-11.png",
+      "bytes": 88542,
+      "sha256": "f5fb0f33f1a6dc28ae94ce5be2337aca4a17658ab849f65c460f64ad846d23e8"
+    },
+    {
+      "path": "docs/design/Smart School Mobile App UI/UX-12.png",
+      "bytes": 61056,
+      "sha256": "231920cef162743404964e1999eeda8238a67929ccf0243a3f0dce0e01cfc38c"
+    },
+    {
+      "path": "docs/design/Smart School Mobile App UI/UX-13.png",
+      "bytes": 215522,
+      "sha256": "5b2a70a68fb882197b4ee100080c9ec897476bdc26fe41e81f7632c674834a87"
+    },
+    {
+      "path": "docs/design/Smart School Mobile App UI/UX-14.png",
+      "bytes": 374432,
+      "sha256": "ef3058210741f11d18179c28cc9b1b53b5d5df7005602cdc0cc70da28330d6cd"
+    },
+    {
+      "path": "docs/design/Smart School Mobile App UI/UX-15.png",
+      "bytes": 250413,
+      "sha256": "eb30f89125cc528379e455647e55f87c7b1d9cc14bbf23cfc941db6095e151f1"
+    },
+    {
+      "path": "docs/design/Smart School Mobile App UI/UX-16.png",
+      "bytes": 524769,
+      "sha256": "9468da3cfdabf0b2b897c0f2338f22b72b329891cadc8d8a97317d064b8d6e2e"
+    },
+    {
+      "path": "docs/design/Smart School Mobile App UI/UX-17.png",
+      "bytes": 64445,
+      "sha256": "c962d5bbf41a6e7ab64f6692942f5576b57cd2753afb8b825d09e691577951dc"
+    },
+    {
+      "path": "docs/design/Smart School Mobile App UI/UX-18.png",
+      "bytes": 206117,
+      "sha256": "230ab5279807f8e6a6d0c506ce9dd80698e680e424d5889553fa19165b46e1f0"
+    },
+    {
+      "path": "docs/design/Smart School Mobile App UI/UX-19.png",
+      "bytes": 89846,
+      "sha256": "d114d0603b63f5257ab77d7ab5f9f9ad4381220f114c181904366c8c1df6de5b"
+    },
+    {
+      "path": "docs/design/Smart School Mobile App UI/UX-2.png",
+      "bytes": 430482,
+      "sha256": "5363a4dfb2ba62164d23cd781fd0c5dedb3affac272e249cb440219079189961"
+    },
+    {
+      "path": "docs/design/Smart School Mobile App UI/UX-20.png",
+      "bytes": 182526,
+      "sha256": "3db416aa4674882cb5f6da159de6eb103c04100f5b083deb9527df0b0ea5955e"
+    },
+    {
+      "path": "docs/design/Smart School Mobile App UI/UX-21.png",
+      "bytes": 426834,
+      "sha256": "7d065c301e2e1f4e4b4ff1fa90336cdebc2a34946e4cc1d63cc78395254b0091"
+    },
+    {
+      "path": "docs/design/Smart School Mobile App UI/UX-22.png",
+      "bytes": 250896,
+      "sha256": "d3aabd3c491a18a53bfe2d1e99fee010d6892e3c78dda978377e4e967c9a7e84"
+    },
+    {
+      "path": "docs/design/Smart School Mobile App UI/UX-3.png",
+      "bytes": 80541,
+      "sha256": "ed54eaf232bebfb09f21c58cb3f0a1bdfa83113535c15777c584be0f176f3556"
+    },
+    {
+      "path": "docs/design/Smart School Mobile App UI/UX-4.png",
+      "bytes": 218384,
+      "sha256": "ea493a91ae20fa4977c68dd6f77cab02890b1929769e4c6ff6ea52c420c396d2"
+    },
+    {
+      "path": "docs/design/Smart School Mobile App UI/UX-5.png",
+      "bytes": 755301,
+      "sha256": "37ec4a4bc8e47c9248c2fe85a5a5a74a7db00d559893bff91a059cb986b9c98b"
+    },
+    {
+      "path": "docs/design/Smart School Mobile App UI/UX-6.png",
+      "bytes": 281575,
+      "sha256": "42b27a33f3e37a62f0e2b3ccc8343509e1afac143f7ab01e177fcd291443f4c1"
+    },
+    {
+      "path": "docs/design/Smart School Mobile App UI/UX-7.png",
+      "bytes": 1010120,
+      "sha256": "5387adfad1f533d645151a1212ef8ad95ab1af57a431e522831f7466f232e855"
+    },
+    {
+      "path": "docs/design/Smart School Mobile App UI/UX-8.png",
+      "bytes": 160650,
+      "sha256": "48dbf29e0c813f90a350301401fa248615eac2b1cf038fba771d5a468d0d6730"
+    },
+    {
+      "path": "docs/design/Smart School Mobile App UI/UX-9.png",
+      "bytes": 714930,
+      "sha256": "87a48c88baeeb958526734d8d4f3fc3a3bbbbb74eee02367b6d85c233eb9f431"
+    },
+    {
+      "path": "docs/design/Smart School Mobile App UI/UX.png",
+      "bytes": 334945,
+      "sha256": "bc620b388146eaa085cdb5a9563e913fd231157f49ecd951363b60288a545907"
+    },
+    {
+      "path": "docs/screenshots/admin-dashboard.png",
+      "bytes": 210210,
+      "sha256": "4e725b7997566f5a2696587579cdf5148b292bdeb53659c01be284a5c5297eb8"
+    },
+    {
+      "path": "docs/screenshots/parent-dashboard.png",
+      "bytes": 137683,
+      "sha256": "bf99fdfa54b5ecfef365d963f11e35915c6e2e9fe1644bb0da69165dc53184d4"
+    },
+    {
+      "path": "docs/screenshots/teacher-attendance.png",
+      "bytes": 57691,
+      "sha256": "f33e534919dbf618dfa6170009f1aaa54d4a6a20a9235e41582534893ff08322"
+    },
+    {
+      "path": "docs/screenshots/teacher-dashboard.png",
+      "bytes": 96693,
+      "sha256": "480a8c3c5fab11714b03408c5dca7e12f0fa1aa3b09746b90c1ab5dfbe3e5507"
+    },
+    {
+      "path": "docs/test-logs/admin_windows-analyze.txt",
+      "bytes": 96,
+      "sha256": "4bc53938869d8ad274d86673ee7d2362548a28f5e2688f690f561d87bee827ff"
+    },
+    {
+      "path": "docs/test-logs/admin_windows-tests.txt",
+      "bytes": 1056,
+      "sha256": "4697f32828b6099e7b57f73c31815882165f7adac2546572cabb6bc2e32c4999"
+    },
+    {
+      "path": "docs/test-logs/android-build-attempt.txt",
+      "bytes": 557,
+      "sha256": "77b9d72f9f0a7f780a17ff0587113e824c5f21b8ec0fbc3bf992f9cd61c7b329"
+    },
+    {
+      "path": "docs/test-logs/demo-api-tests.txt",
+      "bytes": 2584,
+      "sha256": "8260bee7e504991cae1825e42d5385309375bb052a56fef75ba30566032d4c77"
+    },
+    {
+      "path": "docs/test-logs/mobile-analyze.txt",
+      "bytes": 96,
+      "sha256": "3cb3a249c900dd3bac7c65e619ae159941955ad5421e4f375db7d5ed97b95184"
+    },
+    {
+      "path": "docs/test-logs/mobile-tests.txt",
+      "bytes": 864,
+      "sha256": "0ec2f1fa9ed053b85c3d205f008f6550ece39d819e7081636467d3b02ae25cbc"
+    },
+    {
+      "path": "docs/test-logs/school_data-analyze.txt",
+      "bytes": 96,
+      "sha256": "f72b7279e2c66b77bc3c89cfaa3dc4466466ccc258e1b69168ed5595cbe06591"
+    },
+    {
+      "path": "docs/test-logs/school_data-tests.txt",
+      "bytes": 1305,
+      "sha256": "1e7508f8a6400e3731a3b038c9d9712ba73ab11b40fa5dd57e5ad1443668e04b"
+    },
+    {
+      "path": "docs/test-logs/summary.json",
+      "bytes": 1166,
+      "sha256": "68cd8c7dd998ebbc6933caa1bfdc7d2b8f12cceda6f2ab18a45dd40e4c543da1"
+    },
+    {
+      "path": "docs/web-test-logs/admin_windows-analyze.txt",
+      "bytes": 164,
+      "sha256": "674609c435897475a82b410f1962a5796d3eaab629704fc4f3b9495216041111"
+    },
+    {
+      "path": "docs/web-test-logs/admin_windows-pub.txt",
+      "bytes": 422,
+      "sha256": "4a50e2f601f121d3a244d54b20417721d54d8befb8b0b72d29f2229c16cab6b0"
+    },
+    {
+      "path": "docs/web-test-logs/admin_windows-test.txt",
+      "bytes": 1103,
+      "sha256": "65d5c54c0464565a73d2303c3596ef4cb65b64816ba5f7448c282f4bce70a9a8"
+    },
+    {
+      "path": "docs/web-test-logs/android-build-artifact.json",
+      "bytes": 281,
+      "sha256": "9b543f30d684fa27fedcc822fedcbf2b0ca194f327ed45f3b1d348c84be7d8d7"
+    },
+    {
+      "path": "docs/web-test-logs/android-build.txt",
+      "bytes": 44226,
+      "sha256": "5a9633319c3bcaf610e3d3e0845d4a7cc369ef7cbf9711f07b4444e181aef6bb"
+    },
+    {
+      "path": "docs/web-test-logs/build-web-artifacts.json",
+      "bytes": 575,
+      "sha256": "7b0cc07851779ab8b910f81a39629db867ade9b81cdb3844616fbba4d368836b"
+    },
+    {
+      "path": "docs/web-test-logs/build-web.txt",
+      "bytes": 247,
+      "sha256": "8549e9fca89f9172927e2dfa050bb9fd5c25f0bad82dbb647dfcc0e548cf55e2"
+    },
+    {
+      "path": "docs/web-test-logs/checks.json",
+      "bytes": 1193,
+      "sha256": "badfcbbf9b818a1b0317fa7ae0321942658cb0e3440900c3a71d19ed7955a7fe"
+    },
+    {
+      "path": "docs/web-test-logs/chrome-tests.txt",
+      "bytes": 3116,
+      "sha256": "517cabf9814d3cfa3a51d9579d66aafc266423087fbc0a25054189aa4c66859d"
+    },
+    {
+      "path": "docs/web-test-logs/demo-api-cors-tests.txt",
+      "bytes": 4207,
+      "sha256": "60dae86d396c4789dba959ac674f51bc44051e8604991e48e57fda03a1fca1b4"
+    },
+    {
+      "path": "docs/web-test-logs/live-flow-api.txt",
+      "bytes": 1233,
+      "sha256": "3a9c7c08efd313a1d2e921cbcf7c57d2d3eec7c8aefccc4fddf81c4b32803ce1"
+    },
+    {
+      "path": "docs/web-test-logs/mobile-analyze.txt",
+      "bytes": 96,
+      "sha256": "77ba040f55796143220aeae5be547318f1161b0d25a34a107f279e58db154d55"
+    },
+    {
+      "path": "docs/web-test-logs/mobile-pub.txt",
+      "bytes": 361,
+      "sha256": "db5263bcd4693f2a26aa8fc3a4de63c29b501a79f3e18f95eb2e21adb68dfb9e"
+    },
+    {
+      "path": "docs/web-test-logs/mobile-test.txt",
+      "bytes": 1228,
+      "sha256": "534006357c8163cdf855371c1eeedebc82e1fbf254cc049cc390d62988010c2a"
+    },
+    {
+      "path": "docs/web-test-logs/native-live-flow.txt",
+      "bytes": 291,
+      "sha256": "d80d19e11b7cbc4657c5507330a404ee8fcc5e3eba2e7761132e528640c466fc"
+    },
+    {
+      "path": "docs/web-test-logs/results.json",
+      "bytes": 408,
+      "sha256": "07427e46eaaea81afc824726aa096d19cea5c55543afda4df7d9c8fdc41191f4"
+    },
+    {
+      "path": "docs/web-test-logs/school_data-analyze.txt",
+      "bytes": 96,
+      "sha256": "b8f407cae26141aa988265437c0aaf3cec2ffc3ecd913bde915392d392d95b96"
+    },
+    {
+      "path": "docs/web-test-logs/school_data-pub.txt",
+      "bytes": 280,
+      "sha256": "ab0d116c8406a7a1517a6daa14eeff49947d908f55f09bd7bd6b583ba601103f"
+    },
+    {
+      "path": "docs/web-test-logs/school_data-test.txt",
+      "bytes": 3081,
+      "sha256": "391d5a807d916b5f269e05ee9a662c69c56e9d1678e1927dd9d59db641176bbe"
+    },
+    {
+      "path": "docs/web-test-logs/ui-preservation.json",
+      "bytes": 1370,
+      "sha256": "03710d6585e4580cdf641a92375b18bd67d29906224d0ddb8857350c4d4a64f9"
+    },
+    {
+      "path": "firebase/firestore.indexes.json",
+      "bytes": 206,
+      "sha256": "fb7b1903fcecefe5f386beecad101a2f4f5ea7eb427dc0d14eacd601144cb02d"
+    },
+    {
+      "path": "firebase/firestore.rules",
+      "bytes": 313,
+      "sha256": "1376effcb0fde968d6c86296ecbae45f06ded7d494e293c697b48ff937f636be"
+    },
+    {
+      "path": "firebase/storage.rules",
+      "bytes": 221,
+      "sha256": "b2d070357b42ccc5f0e2116b3ea5cb612d426828992ec3796b4a5e28a8111d03"
+    },
+    {
+      "path": "firebase.json",
+      "bytes": 247,
+      "sha256": "d224964089d0c0dd145a47d2cfcb6bb75f21438efeb765199ab3c498fe20cc26"
+    },
+    {
+      "path": "packages/school_data/lib/demo_connection.dart",
+      "bytes": 4203,
+      "sha256": "6aa444b23ff0374c1dd2b341ac2a4f20c1b5ee5eaeccb73152e9242b7e8c128b"
+    },
+    {
+      "path": "packages/school_data/lib/demo_endpoint.dart",
+      "bytes": 605,
+      "sha256": "5a001ffacec01c7883c269911b47eb2281f4984e8cdfe0d443a18c236994aa81"
+    },
+    {
+      "path": "packages/school_data/lib/dialogs.dart",
+      "bytes": 545,
+      "sha256": "d9b3e58a7dabe1a6936010900f15f85ee8a3a8d12432bcb0845b5fa3d5124a23"
+    },
+    {
+      "path": "packages/school_data/lib/live_api.dart",
+      "bytes": 1743,
+      "sha256": "5c254934ca18a8de0c3f6d2015225b3e3936bef6480872a40f5bd90d520811c3"
+    },
+    {
+      "path": "packages/school_data/lib/school_data.dart",
+      "bytes": 168,
+      "sha256": "1b0f6b0886910e350b07ff7beedd00e470d2d13c7bc89da7dd97fb1bb183b0b9"
+    },
+    {
+      "path": "packages/school_data/lib/src/demo_repository.dart",
+      "bytes": 21704,
+      "sha256": "36ac84788c0c0f0d1d91ce355299bd3db072a9dd1f28866cf2e97164d9044cad"
+    },
+    {
+      "path": "packages/school_data/lib/src/json_http_transport.dart",
+      "bytes": 1523,
+      "sha256": "ae66f18e11b0b49b2113b8724246872b09aad75a7679e03c30a33bba882258cf"
+    },
+    {
+      "path": "packages/school_data/lib/src/models.dart",
+      "bytes": 6451,
+      "sha256": "1fd3df17c80b5490bc3684c597c0d2dd127a44437d06bc215c7bc23171b0d85e"
+    },
+    {
+      "path": "packages/school_data/pubspec.lock",
+      "bytes": 6504,
+      "sha256": "bf0befea1772611b978b83d8d8e57c0445945ddadcea3584bb6fbc4d2978ed17"
+    },
+    {
+      "path": "packages/school_data/pubspec.yaml",
+      "bytes": 196,
+      "sha256": "c396ce2b90a82b7112d19555973b636a8012b9bca52288062df725f5bc904231"
+    },
+    {
+      "path": "packages/school_data/test/api_integration_test.dart",
+      "bytes": 3422,
+      "sha256": "9c1c684bef97dcc058b2b55c3569c92a18968f94c51913e6e6e42c78a7bc526c"
+    },
+    {
+      "path": "packages/school_data/test/fonts/DEJAVU-LICENSE.txt",
+      "bytes": 3859,
+      "sha256": "63d3ba759d12804c5b31a9d5940d855c1820d1f5999e6b0872eb1c7ff045fbc9"
+    },
+    {
+      "path": "packages/school_data/test/fonts/DejaVuSans.ttf",
+      "bytes": 759720,
+      "sha256": "57f73e11f51999432bf7ab22ce55b6f945d5eca1bf824404cfa9ec2e3718c84e"
+    },
+    {
+      "path": "packages/school_data/test/fonts/MaterialIcons-Regular.otf",
+      "bytes": 1645184,
+      "sha256": "d9865b671a09d683d13a863089d8825e0f61a37696ce5d7d448bc8023aa62453"
+    },
+    {
+      "path": "packages/school_data/test/fonts/MaterialIcons_LICENSE.txt",
+      "bytes": 18531,
+      "sha256": "be698262aecd042c0de6f886cc0af622f8def446462026992cc530275d8a9e74"
+    },
+    {
+      "path": "packages/school_data/test/load_fonts.dart",
+      "bytes": 452,
+      "sha256": "af94e88f13fc401747773c3aa2613a6d783f53d219f62e5a11adffcb9badbdfb"
+    },
+    {
+      "path": "packages/school_data/test/seed_test.dart",
+      "bytes": 817,
+      "sha256": "a74b75bf3b4fc53bc0e2c6e011ffed5a5204a3cae3ebb70c805d808f125c40c1"
+    },
+    {
+      "path": "packages/school_data/test/session_test.dart",
+      "bytes": 3047,
+      "sha256": "0c3937c59ca8ca951054099d1e55318362118e11ab0a088eaf550c4b85c417dd"
+    },
+    {
+      "path": "packages/school_data/test/web_transport_test.dart",
+      "bytes": 4418,
+      "sha256": "f93f288e8caf6e8bd658c6927cb704b31d8b127bf54cb565e3784e08e2334f01"
+    },
+    {
+      "path": "scripts/check.ps1",
+      "bytes": 590,
+      "sha256": "edc6fdc327a9c831e1ccdb4182ac0e61daf9352ceae87504ed1b2e4328c3e751"
+    },
+    {
+      "path": "scripts/check_web.ps1",
+      "bytes": 1047,
+      "sha256": "f765aff098da0ed5334240fba7f4d8acf8e047e4214240d9a2b6b4b84b39e86d"
+    },
+    {
+      "path": "scripts/run_admin.bat",
+      "bytes": 179,
+      "sha256": "8166701d052f0d679a9d57e65bf4ad6aeb4f754ca080c7a11ebe3921b97ad842"
+    },
+    {
+      "path": "scripts/run_demo_api.bat",
+      "bytes": 66,
+      "sha256": "0f8e6b8df2d9f2c4b185900bd5c6c372a762477b059b7508d65f18bd97ddaedb"
+    },
+    {
+      "path": "scripts/run_mobile.bat",
+      "bytes": 160,
+      "sha256": "7423947781c288caee3efa9cfa241807444d47745b549784b5f94ee5a81a0b63"
+    },
+    {
+      "path": "scripts/run_web.bat",
+      "bytes": 212,
+      "sha256": "a9b27d7317c49c4a3d8ff68df36725a362e5894abfd2d804a4e68947d5ddc34c"
+    },
+    {
+      "path": "services/cloud_run_api/Dockerfile",
+      "bytes": 206,
+      "sha256": "569d78ff6384521ace195c2d4c0b548cdf1ba944292a021d97bb4e79fe8aacef"
+    },
+    {
+      "path": "services/cloud_run_api/main.py",
+      "bytes": 4178,
+      "sha256": "fe3bccfb740950da5ebb7c44d27ade076243eedc2d8ab5be0fca235e13146304"
+    },
+    {
+      "path": "services/cloud_run_api/requirements.txt",
+      "bytes": 58,
+      "sha256": "6223fad95b6007fd22386137348f88d646635dbc7859d7f15756dc2901803b0a"
+    },
+    {
+      "path": "services/demo_api/seed.json",
+      "bytes": 8080,
+      "sha256": "02c654d0032f53dbe0dfd98f4c08ec3043d5c032abb47105c55fa701b1baaa84"
+    },
+    {
+      "path": "services/demo_api/server.py",
+      "bytes": 14907,
+      "sha256": "0f56802023710e9edaea5d9beb0658007059f13b03dd28331a3f6f3cf52e5213"
+    },
+    {
+      "path": "services/demo_api/test_cors.py",
+      "bytes": 3893,
+      "sha256": "117cc523310298b287153ab95dcc88ef0d3dc66c645999e796a76b679894605d"
+    },
+    {
+      "path": "services/demo_api/test_server.py",
+      "bytes": 5047,
+      "sha256": "5ba818530f1bd7c89748acdd16380df5658224383983cc1e75f3c6aeea007c0b"
+    }
+  ]
+}

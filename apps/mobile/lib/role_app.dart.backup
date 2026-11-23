@@ -1,0 +1,137 @@
+// Keep original Material UI imports compatible with the uploaded project.
+// ignore: deprecated_member_use
+import 'package:flutter/material.dart';
+import 'package:school_data/school_data.dart';
+import 'package:school_data/demo_connection.dart';
+
+import 'features/parent/parent_app.dart';
+import 'features/teacher/teacher_shell.dart';
+
+class RoleGateway extends StatefulWidget {
+  const RoleGateway({super.key});
+  @override
+  State<RoleGateway> createState() => _RoleGatewayState();
+}
+
+class _RoleGatewayState extends State<RoleGateway> {
+  SchoolStore? data;
+  String role = 'teacher';
+  String teacher = 'T01';
+  void enter() {
+    setState(() {
+      data = SchoolStore()
+        ..demoRole = role
+        ..demoUid = (role == 'teacher' ? teacher : 'G01');
+    });
+  }
+
+  void exit() {
+    final old = data;
+    setState(() => data = null);
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      old?.dispose();
+    });
+  }
+
+  @override
+  void dispose() {
+    data?.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    if (data != null) {
+      return DemoConnection(
+        store: data!,
+        child: role == 'teacher'
+            ? TeacherShell(data: data!, uid: teacher, onExit: exit)
+            : ParentShell(data: data!, onExit: exit),
+      );
+    }
+    return Scaffold(
+      body: SafeArea(
+        child: Center(
+          child: SingleChildScrollView(
+            padding: const EdgeInsets.all(24),
+            child: ConstrainedBox(
+              constraints: const BoxConstraints(maxWidth: 440),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  const Icon(
+                    Icons.school_rounded,
+                    size: 68,
+                    color: Color(0xFF1765C5),
+                  ),
+                  const SizedBox(height: 22),
+                  const Text(
+                    'Smart School',
+                    style: TextStyle(fontSize: 32, fontWeight: FontWeight.w800),
+                  ),
+                  const SizedBox(height: 10),
+                  const Text(
+                    'Selamat Datang',
+                    style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                  ),
+                  const SizedBox(height: 8),
+                  const Text(
+                    'Pilih peran untuk menjelajahi alur demo sekolah.',
+                  ),
+                  const SizedBox(height: 24),
+                  SegmentedButton<String>(
+                    segments: const [
+                      ButtonSegment(
+                        value: 'teacher',
+                        label: Text('Guru'),
+                        icon: Icon(Icons.co_present),
+                      ),
+                      ButtonSegment(
+                        value: 'parent',
+                        label: Text('Orang Tua'),
+                        icon: Icon(Icons.family_restroom),
+                      ),
+                    ],
+                    selected: {role},
+                    onSelectionChanged: (v) => setState(() => role = v.first),
+                  ),
+                  const SizedBox(height: 22),
+                  if (role == 'teacher')
+                    DropdownButtonFormField<String>(
+                      initialValue: teacher,
+                      items: const [
+                        DropdownMenuItem(
+                          value: 'T01',
+                          child: Text('Ahmad — Matematika'),
+                        ),
+                        DropdownMenuItem(
+                          value: 'T02',
+                          child: Text('Siti — IPA'),
+                        ),
+                      ],
+                      onChanged: (v) => teacher = v!,
+                      decoration: const InputDecoration(
+                        labelText: 'Identitas demo guru',
+                      ),
+                    ),
+                  if (role == 'parent')
+                    const Text('Wali demo: Rina Andini • Ahmad Rizki (8A)'),
+                  const SizedBox(height: 22),
+                  FilledButton(
+                    onPressed: enter,
+                    child: const Text('Buka Demo'),
+                  ),
+                  const SizedBox(height: 16),
+                  const Text(
+                    'DEMO • Bukan login akun asli. Admin hanya tersedia di aplikasi Windows. Backend Firebase dan FCM belum terhubung.',
+                    style: TextStyle(fontSize: 12, color: Colors.blueGrey),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}

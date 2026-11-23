@@ -1,0 +1,12 @@
+{
+  "analyze": "PASS: shared/admin/mobile",
+  "native_and_http_tests_passed": 46,
+  "web_release_build": "PASS",
+  "android_debug_build": "PASS",
+  "android_device_run": "NOT_TESTED",
+  "chrome_browser_suite": "BLOCKED_ENVIRONMENT_SOCKET_PERMISSION",
+  "chrome_web_to_api_cors": "NOT_VERIFIED_IN_BROWSER",
+  "backend_cors_tests": "PASS",
+  "mobile_ui_source_unchanged": true,
+  "runtime_dart_io_imports": 0
+}

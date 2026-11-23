@@ -1,0 +1,35 @@
+test_admin_write_persists_and_stale_writer_gets_conflict (test_server.DemoApiTests.test_admin_write_persists_and_stale_writer_gets_conflict) ... 127.0.0.1 - - [16/Nov/2026 14:07:34] "GET /snapshot HTTP/1.1" 200 -
+127.0.0.1 - - [16/Nov/2026 14:07:34] "PUT /snapshot HTTP/1.1" 200 -
+127.0.0.1 - - [16/Nov/2026 14:07:34] "PUT /snapshot HTTP/1.1" 409 -
+ok
+test_closed_session_rejects_teacher_change (test_server.DemoApiTests.test_closed_session_rejects_teacher_change) ... 127.0.0.1 - - [16/Nov/2026 14:07:34] "GET /snapshot HTTP/1.1" 200 -
+127.0.0.1 - - [16/Nov/2026 14:07:34] "PUT /snapshot HTTP/1.1" 403 -
+ok
+test_identity_is_required (test_server.DemoApiTests.test_identity_is_required) ... 127.0.0.1 - - [16/Nov/2026 14:07:34] "GET /snapshot HTTP/1.1" 403 -
+ok
+test_parent_cannot_change_attendance (test_server.DemoApiTests.test_parent_cannot_change_attendance) ... 127.0.0.1 - - [16/Nov/2026 14:07:34] "GET /snapshot HTTP/1.1" 200 -
+127.0.0.1 - - [16/Nov/2026 14:07:34] "PUT /snapshot HTTP/1.1" 403 -
+ok
+test_parent_only_gets_linked_students (test_server.DemoApiTests.test_parent_only_gets_linked_students) ... 127.0.0.1 - - [16/Nov/2026 14:07:34] "GET /snapshot HTTP/1.1" 200 -
+ok
+test_parent_profile_cannot_relink_child (test_server.DemoApiTests.test_parent_profile_cannot_relink_child) ... 127.0.0.1 - - [16/Nov/2026 14:07:34] "GET /snapshot HTTP/1.1" 200 -
+127.0.0.1 - - [16/Nov/2026 14:07:34] "PUT /snapshot HTTP/1.1" 403 -
+ok
+test_shared_flow_manual_attendance_to_parent_and_admin (test_server.DemoApiTests.test_shared_flow_manual_attendance_to_parent_and_admin) ... 127.0.0.1 - - [16/Nov/2026 14:07:34] "GET /snapshot HTTP/1.1" 200 -
+127.0.0.1 - - [16/Nov/2026 14:07:34] "PUT /snapshot HTTP/1.1" 200 -
+127.0.0.1 - - [16/Nov/2026 14:07:34] "PUT /snapshot HTTP/1.1" 200 -
+127.0.0.1 - - [16/Nov/2026 14:07:34] "GET /snapshot HTTP/1.1" 200 -
+127.0.0.1 - - [16/Nov/2026 14:07:34] "PUT /snapshot HTTP/1.1" 200 -
+127.0.0.1 - - [16/Nov/2026 14:07:34] "GET /snapshot HTTP/1.1" 200 -
+ok
+test_teacher_cannot_change_master_data (test_server.DemoApiTests.test_teacher_cannot_change_master_data) ... 127.0.0.1 - - [16/Nov/2026 14:07:34] "GET /snapshot HTTP/1.1" 200 -
+127.0.0.1 - - [16/Nov/2026 14:07:34] "PUT /snapshot HTTP/1.1" 403 -
+ok
+test_teacher_cannot_submit_wrong_session (test_server.DemoApiTests.test_teacher_cannot_submit_wrong_session) ... 127.0.0.1 - - [16/Nov/2026 14:07:34] "GET /snapshot HTTP/1.1" 200 -
+127.0.0.1 - - [16/Nov/2026 14:07:34] "PUT /snapshot HTTP/1.1" 403 -
+ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.535s
+
+OK

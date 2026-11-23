@@ -1,0 +1,22 @@
+[
+  {
+    "path": "index.html",
+    "bytes": 1539,
+    "sha256": "72251c8e92cd10a9d9bb7c35e9a7c9206041ef8075bacf1b22888e64d0b4dbe9"
+  },
+  {
+    "path": "flutter_bootstrap.js",
+    "bytes": 14152,
+    "sha256": "6ed2c498b07280003c01c2832c324c0caec58e98fb1ed1d8573bb2bee13ed248"
+  },
+  {
+    "path": "main.dart.js",
+    "bytes": 2757137,
+    "sha256": "eec013575341733c65fc85210a36cd894e4ea28c9bfdd38e70a4300a87cc22ad"
+  },
+  {
+    "path": "canvaskit/canvaskit.wasm",
+    "bytes": 7315452,
+    "sha256": "f3c2ff164f324217ebe1d84900110e425c0195fc63f34e8b58de842a047e0c1c"
+  }
+]

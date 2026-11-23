@@ -1,0 +1,25 @@
+00:00 +0: loading /workspace/scratch/6e7f0ffd107d/web-work/SMART_SCHOOL/apps/mobile/test/browser/web_smoke_test.dart
+[CHROME STDERR]: [115:115:1116/171148.652051:FATAL:chrome/browser/process_singleton_posix.cc:297] Check failed: . socket() failed: Operation not permitted (1)
+[CHROME STDERR]: [1116/171148.659976:ERROR:third_party/crashpad/crashpad/util/linux/scoped_ptrace_attach.cc:27] ptrace: Operation not permitted (1)
+Failed to launch browser after 3 tries. Command used to launch it: /workspace/scratch/6e7f0ffd107d/google-chrome-test/chrome-test --user-data-dir=/tmp/flutter_tools.BTEFDG/flutter_tools_chrome_device.ZFUNOK --remote-debugging-port=45705 --disable-background-timer-throttling --disable-renderer-backgrounding --disable-background-networking --disable-sync --disable-client-side-phishing-detection --disable-notifications --disable-features=GCM --gcm-checkin-url=http://127.0.0.1 --gcm-registration-url=http://127.0.0.1 --gcm-mcs-endpoint=127.0.0.1:0 --disable-extensions --disable-popup-blocking --bwsi --no-first-run --no-default-browser-check --disable-default-apps --disable-translate --password-store=basic --disable-search-engine-choice-screen --no-sandbox --headless --use-gl=angle --use-angle=swiftshader --enable-unsafe-swiftshader --disable-gpu-sandbox --force-device-scale-factor=3 --window-size=800,600 http://localhost:32931/static/index.html?managerUrl=ws%3A%2F%2Flocalhost%3A32931%2F0&debug=false
+00:00 +0 -1: loading /workspace/scratch/6e7f0ffd107d/web-work/SMART_SCHOOL/apps/mobile/test/browser/web_smoke_test.dart [E]
+  Failed to load "/workspace/scratch/6e7f0ffd107d/web-work/SMART_SCHOOL/apps/mobile/test/browser/web_smoke_test.dart":
+  Failed to launch browser. Make sure you are using an up-to-date Chrome or Edge. Otherwise, consider using -d web-server instead and filing an issue at https://github.com/flutter/flutter/issues.
+  Error: Exception: Chrome process exited with code -6 before DevTools listening.
+  package:flutter_tools/src/base/common.dart 36:3                  throwToolExit
+  package:flutter_tools/src/web/chrome.dart 444:11                 ChromiumLauncher._spawnChromiumProcess
+  ===== asynchronous gap ===========================
+  package:flutter_tools/src/web/chrome.dart 318:38                 ChromiumLauncher.launch
+  ===== asynchronous gap ===========================
+  package:flutter_tools/src/test/flutter_web_platform.dart 964:29  BrowserManager.start
+  ===== asynchronous gap ===========================
+  package:flutter_tools/src/test/flutter_web_platform.dart 631:27  FlutterWebPlatform.load
+  ===== asynchronous gap ===========================
+  package:test_core/src/runner/loader.dart 249:27                  Loader.loadFile.<fn>
+  ===== asynchronous gap ===========================
+  package:test_core/src/runner/load_suite.dart 95:21               new LoadSuite.<fn>.<fn>
+  
+00:00 +0 -1: Some tests failed.
+
+Failing tests:
+  /workspace/scratch/6e7f0ffd107d/web-work/SMART_SCHOOL/apps/mobile/test/browser/web_smoke_test.dart: loading /workspace/scratch/6e7f0ffd107d/web-work/SMART_SCHOOL/apps/mobile/test/browser/web_smoke_test.dart

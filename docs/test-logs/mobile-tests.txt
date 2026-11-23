@@ -1,0 +1,7 @@
+00:00 +0: loading /workspace/scratch/6e7f0ffd107d/SMART_SCHOOL/apps/mobile/test/widget_test.dart
+00:00 +0: /workspace/scratch/6e7f0ffd107d/SMART_SCHOOL/apps/mobile/test/widget_test.dart: parent adapter uses shared attendance and grades rather than static counts
+00:00 +1: /workspace/scratch/6e7f0ffd107d/SMART_SCHOOL/apps/mobile/test/widget_test.dart: mobile entry offers teacher and parent, never admin
+00:00 +2: /workspace/scratch/6e7f0ffd107d/SMART_SCHOOL/apps/mobile/test/screenshots_test.dart: phone layouts at 390x844 render without overflow
+00:01 +3: /workspace/scratch/6e7f0ffd107d/SMART_SCHOOL/apps/mobile/test/screenshots_test.dart: phone layouts at 390x844 render without overflow
+00:02 +4: /workspace/scratch/6e7f0ffd107d/SMART_SCHOOL/apps/mobile/test/screenshots_test.dart: phone layouts at 390x844 render without overflow
+00:02 +5: All tests passed!

@@ -1,0 +1,8 @@
+00:00 +0: loading /workspace/scratch/6e7f0ffd107d/web-work/SMART_SCHOOL/apps/admin_windows/test/store_test.dart
+00:00 +0: /workspace/scratch/6e7f0ffd107d/web-work/SMART_SCHOOL/apps/admin_windows/test/store_test.dart: penugasan satu guru dapat mencakup lebih dari satu kelas
+00:00 +1: /workspace/scratch/6e7f0ffd107d/web-work/SMART_SCHOOL/apps/admin_windows/test/store_test.dart: jadwal bentrok kelas ditolak secara logika
+00:00 +2: /workspace/scratch/6e7f0ffd107d/web-work/SMART_SCHOOL/apps/admin_windows/test/store_test.dart: jadwal yang bersisian tidak dianggap bentrok
+00:00 +3: /workspace/scratch/6e7f0ffd107d/web-work/SMART_SCHOOL/apps/admin_windows/test/store_test.dart: koreksi absensi menambahkan log audit tanpa menghapus riwayat
+00:00 +4: /workspace/scratch/6e7f0ffd107d/web-work/SMART_SCHOOL/apps/admin_windows/test/store_test.dart: pencabutan consent mempertahankan jalur manual sebagai kebijakan UI
+00:00 +5: /workspace/scratch/6e7f0ffd107d/web-work/SMART_SCHOOL/apps/admin_windows/test/widget_test.dart: admin navigation and add teacher form remain interactive
+00:06 +6: All tests passed!

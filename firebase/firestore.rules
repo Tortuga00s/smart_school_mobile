@@ -1,0 +1,8 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Foundation: clients use authenticated Cloud Run API; direct access blocked.
+    // Firebase Admin SDK bypasses rules: server authorization is mandatory.
+    match /{document=**} { allow read, write: if false; }
+  }
+}

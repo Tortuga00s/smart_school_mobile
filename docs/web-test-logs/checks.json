@@ -1,0 +1,83 @@
+[
+  {
+    "check": "school_data-pub",
+    "exit_code": 0,
+    "command": [
+      "flutter",
+      "pub",
+      "get"
+    ]
+  },
+  {
+    "check": "school_data-analyze",
+    "exit_code": 0,
+    "command": [
+      "flutter",
+      "analyze"
+    ]
+  },
+  {
+    "check": "school_data-test",
+    "exit_code": 0,
+    "command": [
+      "flutter",
+      "test",
+      "--reporter",
+      "expanded"
+    ]
+  },
+  {
+    "check": "admin_windows-pub",
+    "exit_code": 0,
+    "command": [
+      "flutter",
+      "pub",
+      "get"
+    ]
+  },
+  {
+    "check": "admin_windows-analyze",
+    "exit_code": 0,
+    "command": [
+      "flutter",
+      "analyze"
+    ]
+  },
+  {
+    "check": "admin_windows-test",
+    "exit_code": 0,
+    "command": [
+      "flutter",
+      "test",
+      "--reporter",
+      "expanded"
+    ]
+  },
+  {
+    "check": "mobile-pub",
+    "exit_code": 0,
+    "command": [
+      "flutter",
+      "pub",
+      "get"
+    ]
+  },
+  {
+    "check": "mobile-analyze",
+    "exit_code": 0,
+    "command": [
+      "flutter",
+      "analyze"
+    ]
+  },
+  {
+    "check": "mobile-test",
+    "exit_code": 0,
+    "command": [
+      "flutter",
+      "test",
+      "--reporter",
+      "expanded"
+    ]
+  }
+]
